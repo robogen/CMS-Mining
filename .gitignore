@@ -1,3 +1,5 @@
 .gitignore
 config
 file_out
+*.swp
+CMS_Plots.pdf
