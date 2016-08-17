@@ -4,12 +4,14 @@ from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 import datetime as dt
 from datetime import timedelta
-from datetime import timezone
 import math
 import json
 
 with open('sites.json', 'r+') as txt:
     sitesArray = json.load(txt)
+
+with open('cms.json', 'r+') as txt:
+    cmsLocate = json.load(txt)
 
 with open("config", "r+") as txt:
     contents = list(map(str.rstrip, txt))
@@ -26,8 +28,11 @@ scrollPreserve="3m"
 startDate = "2016-07-17T00:00:00"
 endDate = "2016-07-23T00:00:00"
 
-def conAtlasTime(time):
-    return dt.datetime.strptime(time, '%Y-%m-%dT%X')
+def conAtlasTime(time, switch):
+    if switch:
+        return (dt.datetime.strptime(time, '%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
+    else:
+        return dt.datetime.strptime(time, '%Y-%m-%dT%X')
 
 def atlasLatency(srcSite, destSite):
     queryAtlas={"query" :
@@ -70,9 +75,9 @@ def atlasLatency(srcSite, destSite):
                                        scroll=scrollPreserve)
         for hit in responseAtlas["hits"]["hits"]:
             arrRet["dates"] = np.append(arrRet["dates"], 
-                              conAtlasTime(hit["_source"]["timestamp"]))
+                              conAtlasTime(hit["_source"]["timestamp"], False))
             arrRet["datesF"] = np.append(arrRet["datesF"], 
-                               conAtlasTime(hit["_source"]["timestamp"])
+                               conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
         #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["delay_mean"] = np.append(arrRet["delay_mean"], float(hit["_source"]["delay_mean"]))
@@ -123,9 +128,9 @@ def atlasPacketLoss(srcSite, destSite):
                                        scroll=scrollPreserve)
         for hit in responseAtlas["hits"]["hits"]:
             arrRet["dates"] = np.append(arrRet["dates"], 
-                              conAtlasTime(hit["_source"]["timestamp"]))
+                              conAtlasTime(hit["_source"]["timestamp"], False))
             arrRet["datesF"] = np.append(arrRet["datesF"], 
-                               conAtlasTime(hit["_source"]["timestamp"])
+                               conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
         #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["packet_loss"] = np.append(arrRet["packet_loss"], float(hit["_source"]["packet_loss"]))
@@ -173,9 +178,9 @@ def atlasThroughput(srcSite, destSite):
                                        scroll=scrollPreserve)
         for hit in responseAtlas["hits"]["hits"]:
             arrRet["dates"] = np.append(arrRet["dates"], 
-                              conAtlasTime(hit["_source"]["timestamp"]))
+                              conAtlasTime(hit["_source"]["timestamp"], False))
             arrRet["datesF"] = np.append(arrRet["datesF"], 
-                               conAtlasTime(hit["_source"]["timestamp"])
+                               conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
         #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["throughput"] = np.append(arrRet["throughput"], float(hit["_source"]["throughput"]))
@@ -196,8 +201,8 @@ def hccQuery(site):
                       },
                       {"range" : {
                          "CompletionDate" : {
-                             "gt" : conAtlasTime(startDate),
-                             "lt" : conAtlasTime(endDate)
+                             "gt" : conAtlasTime(startDate, True),
+                             "lt" : conAtlasTime(endDate, True)
                          }
                       }},
                       {"match" :
@@ -222,36 +227,35 @@ def hccQuery(site):
     scrollIdHCC = scannerHCC['_scroll_id']
     countHitsHCC = scannerHCC["hits"]["total"]
     arrRet = {}
-
+    arrRet["CpuEff"] = np.zeros(0)
+    arrRet["EventRate"] = np.zeros(0)
+    arrRet["location"] = np.zeros(0)
     while countHitsHCC > 0:
         responseHCC = es.scroll(scroll_id=scrollIdHCC, 
                                 scroll=scrollPreserve)
         for hit in responseHCC["hits"]["hits"]:
-            print("placeholder")
+            arrRet["CpuEff"] = np.append(arrRet["CpuEff"], float(hit["_source"]["CpuEff"]))
+            arrRet["EventRate"] = np.append(arrRet["EventRate"], float(hit["_source"]["EventRate"]))
+            arrRet["location"] = np.append(arrRet["location"], hit["_source"]["DataLocations"])
         countHitsHCC -= len(responseHCC['hits']['hits'])
     es.clear_scroll(scroll_id=scrollIdHCC)
     return arrRet
 
-print(conAtlasTime(startDate).replace(tzinfo=timezone.utc).timestamp())
+with PdfPages('CMS_Plots.pdf') as pp:
+    d = pp.infodict()
+    d['Title'] = 'CMS Grid Plots'
+    d['Author'] = u'Jerrod T. Dixon\xe4nen'
+    d['Subject'] = 'Plot of network affects on grid jobs'
+    d['Keywords'] = 'PdfPages matplotlib CMS grid'
+    d['CreationDate'] = dt.datetime.today()
+    d['ModDate'] = dt.datetime.today()
 
-#arrayAtlas = atlasPacketLoss(queryAtlas)
-#fig = plt.figure(figsize=(12, 6))
+    fig = plt.figure(figsize=(12, 6))
+    fig.autofmt_xdate()
+    hput = fig.add_subplot(111)
+    hput.plot(arrayAtlas["dates"], arrayAtlas["packetLoss"], 'bs')
+    hput.hlines(arrayAtlas["packetLoss"], arrayAtlas["datesF"], arrayAtlas["dates"])
+    hput.set_xlabel("Time Period")
+    hput.set_title("Packet Loss")
 
-#hput = fig.add_subplot(111)
-#hput.plot(arrayAtlas["dates"], arrayAtlas["packetLoss"], 'bs')
-#hput.hlines(arrayAtlas["packetLoss"], arrayAtlas["datesF"], arrayAtlas["dates"])
-#hput.set_xlabel("Time Period")
-#hput.set_title("Packet Loss")
-#fig.autofmt_xdate()
-#plt.show()
-
-#with PdfPages('CMS_Plots.pdf') as pp:
-#    d = pp.infodict()
-#    d['Title'] = 'CMS Grid Plots'
-#    d['Author'] = u'Jerrod T. Dixon\xe4nen'
-#    d['Subject'] = 'Plot of network affects on grid jobs'
-#    d['Keywords'] = 'PdfPages matplotlib CMS grid'
-#    d['CreationDate'] = dt.datetime.today()
-#    d['ModDate'] = dt.datetime.today()
-
-#    pp.savefig(fig)
+    pp.savefig(fig)
