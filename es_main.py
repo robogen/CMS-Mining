@@ -85,7 +85,7 @@ def atlasLatency(srcSite, destSite):
             arrRet["delay_sd"] = np.append(arrRet["delay_sd"], float(hit["_source"]["delay_sd"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    es.clear_scroll(scroll_id=scrollIdAtlas)
+    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 
@@ -136,7 +136,7 @@ def atlasPacketLoss(srcSite, destSite):
             arrRet["packet_loss"] = np.append(arrRet["packet_loss"], float(hit["_source"]["packet_loss"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    es.clear_scroll(scroll_id=scrollIdAtlas)
+    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 def atlasThroughput(srcSite, destSite):
@@ -186,7 +186,7 @@ def atlasThroughput(srcSite, destSite):
             arrRet["throughput"] = np.append(arrRet["throughput"], float(hit["_source"]["throughput"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    es.clear_scroll(scroll_id=scrollIdAtlas)
+    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 def hccQuery(site):
@@ -219,17 +219,19 @@ def hccQuery(site):
           }
       }
 
-    scannerHCC = es.search(index="cms-*", 
-                           doc_type="job", 
-                           body=queryHCC, 
-                           search_type="scan", 
-                           scroll=scrollPreserve)
+    scannerHCC = esHCC.search(index="cms-*", 
+                              doc_type="job", 
+                              body=queryHCC, 
+                              search_type="scan", 
+                              scroll=scrollPreserve)
     scrollIdHCC = scannerHCC['_scroll_id']
     countHitsHCC = scannerHCC["hits"]["total"]
     arrRet = {}
     arrRet["CpuEff"] = np.zeros(0)
     arrRet["EventRate"] = np.zeros(0)
     arrRet["location"] = np.zeros(0)
+    arrRet["startDate"] = np.zeros(0)
+    arrRet["endDate"] = np.zeros(0)
     while countHitsHCC > 0:
         responseHCC = es.scroll(scroll_id=scrollIdHCC, 
                                 scroll=scrollPreserve)
@@ -237,8 +239,10 @@ def hccQuery(site):
             arrRet["CpuEff"] = np.append(arrRet["CpuEff"], float(hit["_source"]["CpuEff"]))
             arrRet["EventRate"] = np.append(arrRet["EventRate"], float(hit["_source"]["EventRate"]))
             arrRet["location"] = np.append(arrRet["location"], hit["_source"]["DataLocations"])
+            arrRet["startDate"] = np.append(arrRet["startDate"], dt.utcfromtimestamp(hit["_source"]["JobCurrentStartDate"]))
+            arrRet["endDate"] = np.append(arrRet["endDate"], dt.utcfromtimestamp(hit["_source"]["JobFinishedHookDone"]))
         countHitsHCC -= len(responseHCC['hits']['hits'])
-    es.clear_scroll(scroll_id=scrollIdHCC)
+    esHCC.clear_scroll(scroll_id=scrollIdHCC)
     return arrRet
 
 with PdfPages('CMS_Plots.pdf') as pp:
@@ -250,12 +254,16 @@ with PdfPages('CMS_Plots.pdf') as pp:
     d['CreationDate'] = dt.datetime.today()
     d['ModDate'] = dt.datetime.today()
 
-    fig = plt.figure(figsize=(12, 6))
-    fig.autofmt_xdate()
-    hput = fig.add_subplot(111)
-    hput.plot(arrayAtlas["dates"], arrayAtlas["packetLoss"], 'bs')
-    hput.hlines(arrayAtlas["packetLoss"], arrayAtlas["datesF"], arrayAtlas["dates"])
-    hput.set_xlabel("Time Period")
-    hput.set_title("Packet Loss")
+    for hit in cmsLocate["locations"]:
+        hccResult = hccQuery(hit)
 
-    pp.savefig(fig)
+        fig = plt.figure(figsize=(12, 6))
+        fig.autofmt_xdate()
+        hput = fig.add_subplot(111)
+        hput.plot(hccResult["startDate"], hccResult["CpuEff"], 'bs')
+        hput.hlines(hccResult["CpuEff"], hccResult["startDate"], arrayAtlas["endDate"])
+        hput.set_xlabel("Date of job period")
+        hput.set_ylabel("CpuEff")
+        hput.set_title(str(hit + " Cpu Efficiency"))
+
+        pp.savefig(fig)
