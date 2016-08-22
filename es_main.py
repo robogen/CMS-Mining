@@ -85,7 +85,6 @@ def atlasLatency(srcSite, destSite):
             arrRet["delay_sd"] = np.append(arrRet["delay_sd"], float(hit["_source"]["delay_sd"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 
@@ -136,7 +135,6 @@ def atlasPacketLoss(srcSite, destSite):
             arrRet["packet_loss"] = np.append(arrRet["packet_loss"], float(hit["_source"]["packet_loss"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 def atlasThroughput(srcSite, destSite):
@@ -186,7 +184,6 @@ def atlasThroughput(srcSite, destSite):
             arrRet["throughput"] = np.append(arrRet["throughput"], float(hit["_source"]["throughput"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
-    esAtlas.clear_scroll(scroll_id=scrollIdAtlas)
     return arrRet
 
 def hccQuery(site):
@@ -201,8 +198,8 @@ def hccQuery(site):
                       },
                       {"range" : {
                          "CompletionDate" : {
-                             "gt" : conAtlasTime(startDate, True),
-                             "lt" : conAtlasTime(endDate, True)
+                             "gt" : int(conAtlasTime(startDate, True)),
+                             "lt" : int(conAtlasTime(endDate, True))
                          }
                       }},
                       {"match" :
@@ -227,22 +224,37 @@ def hccQuery(site):
     scrollIdHCC = scannerHCC['_scroll_id']
     countHitsHCC = scannerHCC["hits"]["total"]
     arrRet = {}
-    arrRet["CpuEff"] = np.zeros(0)
-    arrRet["EventRate"] = np.zeros(0)
     arrRet["location"] = np.zeros(0)
-    arrRet["startDate"] = np.zeros(0)
-    arrRet["endDate"] = np.zeros(0)
     while countHitsHCC > 0:
-        responseHCC = es.scroll(scroll_id=scrollIdHCC, 
-                                scroll=scrollPreserve)
+        responseHCC = esHCC.scroll(scroll_id=scrollIdHCC, 
+                                   scroll=scrollPreserve)
         for hit in responseHCC["hits"]["hits"]:
-            arrRet["CpuEff"] = np.append(arrRet["CpuEff"], float(hit["_source"]["CpuEff"]))
-            arrRet["EventRate"] = np.append(arrRet["EventRate"], float(hit["_source"]["EventRate"]))
-            arrRet["location"] = np.append(arrRet["location"], hit["_source"]["DataLocations"])
-            arrRet["startDate"] = np.append(arrRet["startDate"], dt.utcfromtimestamp(hit["_source"]["JobCurrentStartDate"]))
-            arrRet["endDate"] = np.append(arrRet["endDate"], dt.utcfromtimestamp(hit["_source"]["JobFinishedHookDone"]))
+            location = hit["_source"]["DataLocations"]
+            if not str(location[0]) in arrRet["location"]:
+                arrRet["location"] = np.append(arrRet["location"], 
+                                               str(location[0]))
+                arrRet[str(location[0])] = {}
+                arrRet[str(location[0])]["CpuEff"] = np.zeros(0)
+                arrRet[str(location[0])]["EventRate"] = np.zeros(0)
+                arrRet[str(location[0])]["startDate"] = np.zeros(0)
+                arrRet[str(location[0])]["endDate"] = np.zeros(0)
+            arrRet[str(location[0])]["CpuEff"] = \
+                  np.append(arrRet[str(location[0])]["CpuEff"], 
+                  float(hit["_source"]["CpuEff"]))
+            arrRet[str(location[0])]["EventRate"] = \
+                  np.append(arrRet[str(location[0])]["EventRate"], 
+                  float(hit["_source"]["EventRate"]))
+            arrRet[str(location[0])]["startDate"] = \
+                  np.append(arrRet[str(location[0])]["startDate"], 
+                  dt.datetime.fromtimestamp(hit["_source"]["JobCurrentStartDate"], 
+                        dt.timezone.utc))
+            arrRet[str(location[0])]["endDate"] = \
+                  np.append(arrRet[str(location[0])]["endDate"], 
+                  dt.datetime.fromtimestamp(hit["_source"]["JobFinishedHookDone"], 
+                        dt.timezone.utc))
+
+            
         countHitsHCC -= len(responseHCC['hits']['hits'])
-    esHCC.clear_scroll(scroll_id=scrollIdHCC)
     return arrRet
 
 with PdfPages('CMS_Plots.pdf') as pp:
@@ -256,14 +268,30 @@ with PdfPages('CMS_Plots.pdf') as pp:
 
     for hit in cmsLocate["locations"]:
         hccResult = hccQuery(hit)
+        for note in hccResult["location"]:
+            fig = plt.figure(figsize=(12, 6))
+            fig.autofmt_xdate()
+            hcpu = fig.add_subplot(111)
+            hcpu.plot(hccResult[note]["startDate"], hccResult[note]["CpuEff"], 'bs')
+            hcpu.hlines(hccResult[note]["CpuEff"], 
+                        hccResult[note]["startDate"], 
+                        hccResult[note]["endDate"])
+            hcpu.set_xlabel("Date of job period")
+            hcpu.set_ylabel("CpuEff")
+            hcpu.set_title(str("From " + hit + " To " + note + " Cpu Efficiency"))
 
-        fig = plt.figure(figsize=(12, 6))
-        fig.autofmt_xdate()
-        hput = fig.add_subplot(111)
-        hput.plot(hccResult["startDate"], hccResult["CpuEff"], 'bs')
-        hput.hlines(hccResult["CpuEff"], hccResult["startDate"], arrayAtlas["endDate"])
-        hput.set_xlabel("Date of job period")
-        hput.set_ylabel("CpuEff")
-        hput.set_title(str(hit + " Cpu Efficiency"))
+            figu = plt.figure(figsize=(12,6))
+            figu.autofmt_xdate()        
+            hevent = figu.add_subplot(111)
+            hevent.plot(hccResult[note]["startDate"], hccResult[note]["EventRate"], 'bs')
+            hevent.hlines(hccResult[note]["EventRate"], 
+                          hccResult[note]["startDate"], 
+                          hccResult[note]["endDate"])
+            hevent.set_xlabel("Date of job period")
+            hevent.set_ylabel("EventRate")
+            hevent.set_title(str("From " + hit + " To " + note + " Event Rate"))
 
-        pp.savefig(fig)
+            pp.savefig(fig)
+            pp.savefig(figu)
+            plt.close(figu)
+            plt.close(fig)
