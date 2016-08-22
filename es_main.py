@@ -1,6 +1,7 @@
 from elasticsearch import Elasticsearch
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
+from matplotlib.dates import AutoDateLocator, AutoDateFormatter
 import numpy as np
 import datetime as dt
 from datetime import timedelta
@@ -230,28 +231,29 @@ def hccQuery(site):
                                    scroll=scrollPreserve)
         for hit in responseHCC["hits"]["hits"]:
             location = hit["_source"]["DataLocations"]
-            if not str(location[0]) in arrRet["location"]:
-                arrRet["location"] = np.append(arrRet["location"], 
-                                               str(location[0]))
-                arrRet[str(location[0])] = {}
-                arrRet[str(location[0])]["CpuEff"] = np.zeros(0)
-                arrRet[str(location[0])]["EventRate"] = np.zeros(0)
-                arrRet[str(location[0])]["startDate"] = np.zeros(0)
-                arrRet[str(location[0])]["endDate"] = np.zeros(0)
-            arrRet[str(location[0])]["CpuEff"] = \
-                  np.append(arrRet[str(location[0])]["CpuEff"], 
-                  float(hit["_source"]["CpuEff"]))
-            arrRet[str(location[0])]["EventRate"] = \
-                  np.append(arrRet[str(location[0])]["EventRate"], 
-                  float(hit["_source"]["EventRate"]))
-            arrRet[str(location[0])]["startDate"] = \
-                  np.append(arrRet[str(location[0])]["startDate"], 
-                  dt.datetime.fromtimestamp(hit["_source"]["JobCurrentStartDate"], 
-                        dt.timezone.utc))
-            arrRet[str(location[0])]["endDate"] = \
-                  np.append(arrRet[str(location[0])]["endDate"], 
-                  dt.datetime.fromtimestamp(hit["_source"]["JobFinishedHookDone"], 
-                        dt.timezone.utc))
+            if str(location[0]).lower() in cmsLocate["locations"]:
+                if not str(location[0]) in arrRet["location"]:
+                    arrRet["location"] = np.append(arrRet["location"], 
+                                                   str(location[0]))
+                    arrRet[str(location[0])] = {}
+                    arrRet[str(location[0])]["CpuEff"] = np.zeros(0)
+                    arrRet[str(location[0])]["EventRate"] = np.zeros(0)
+                    arrRet[str(location[0])]["startDate"] = np.zeros(0)
+                    arrRet[str(location[0])]["endDate"] = np.zeros(0)
+                arrRet[str(location[0])]["CpuEff"] = \
+                      np.append(arrRet[str(location[0])]["CpuEff"], 
+                      float(hit["_source"]["CpuEff"]))
+                arrRet[str(location[0])]["EventRate"] = \
+                      np.append(arrRet[str(location[0])]["EventRate"], 
+                      float(hit["_source"]["EventRate"]))
+                arrRet[str(location[0])]["startDate"] = \
+                      np.append(arrRet[str(location[0])]["startDate"], 
+                      dt.datetime.fromtimestamp(hit["_source"]["JobCurrentStartDate"], 
+                            dt.timezone.utc))
+                arrRet[str(location[0])]["endDate"] = \
+                      np.append(arrRet[str(location[0])]["endDate"], 
+                      dt.datetime.fromtimestamp(hit["_source"]["JobFinishedHookDone"], 
+                            dt.timezone.utc))
 
             
         countHitsHCC -= len(responseHCC['hits']['hits'])
@@ -269,29 +271,61 @@ with PdfPages('CMS_Plots.pdf') as pp:
     for hit in cmsLocate["locations"]:
         hccResult = hccQuery(hit)
         for note in hccResult["location"]:
-            fig = plt.figure(figsize=(12, 6))
-            fig.autofmt_xdate()
-            hcpu = fig.add_subplot(111)
-            hcpu.plot(hccResult[note]["startDate"], hccResult[note]["CpuEff"], 'bs')
-            hcpu.hlines(hccResult[note]["CpuEff"], 
+            atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
+            atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
+            atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
+            figH, axH = plt.subplots(2, sharex=True)
+            figA, axA = plt.subplots(3, sharex=True)
+
+            axH[1].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
+                                                              defaultfmt="%m-%d %H:%M"))
+            figH.autofmt_xdate(bottom=0.2, rotation=30, ha='right')
+            axH[0].plot(hccResult[note]["startDate"], hccResult[note]["CpuEff"], 'bs')
+            axH[0].hlines(hccResult[note]["CpuEff"], 
                         hccResult[note]["startDate"], 
                         hccResult[note]["endDate"])
-            hcpu.set_xlabel("Date of job period")
-            hcpu.set_ylabel("CpuEff")
-            hcpu.set_title(str("From " + hit + " To " + note + " Cpu Efficiency"))
+            axH[0].set_ylabel("CpuEff")
+            axH[0].set_title(str("2016 From " + hit + " To " + note))
 
-            figu = plt.figure(figsize=(12,6))
-            figu.autofmt_xdate()        
-            hevent = figu.add_subplot(111)
-            hevent.plot(hccResult[note]["startDate"], hccResult[note]["EventRate"], 'bs')
-            hevent.hlines(hccResult[note]["EventRate"], 
-                          hccResult[note]["startDate"], 
-                          hccResult[note]["endDate"])
-            hevent.set_xlabel("Date of job period")
-            hevent.set_ylabel("EventRate")
-            hevent.set_title(str("From " + hit + " To " + note + " Event Rate"))
+            axH[1].plot(hccResult[note]["startDate"], hccResult[note]["EventRate"], 'bs')
+            axH[1].hlines(hccResult[note]["EventRate"], 
+                         hccResult[note]["startDate"], 
+                         hccResult[note]["endDate"])
+            axH[1].set_ylabel("EventRate")
 
-            pp.savefig(fig)
-            pp.savefig(figu)
-            plt.close(figu)
-            plt.close(fig)
+            #axA[2].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
+            #                                                   defaultfmt="%m-%d %H:%M"))
+            axA[0].set_title(str("2016 From " + \
+                                 hit + " (" + \
+                                 sitesArray[hit] + \
+                                 ")" + " To " + \
+                                 note + " (" + sitesArray[note.lower()] + ")"))
+            figA.autofmt_xdate(bottom=0.2, rotation=30, ha='right')
+            axA[0].plot(atlasP["dates"], atlasP["packet_loss"], 'bs')
+            axA[0].set_ylabel("Packet Loss")
+            axA[0].hlines(atlasP["packet_loss"],
+                          atlasP["datesF"],
+                          atlasP["dates"])
+            axA[1].set_ylabel("Latency")
+            axA[1].plot(atlasL["dates"], atlasL["delay_mean"], 'bs', label="delay_mean")
+            axA[1].hlines(atlasL["delay_mean"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
+            axA[1].plot(atlasL["dates"], atlasL["delay_median"], 'rs', label="delay_median")
+            axA[1].hlines(atlasL["delay_median"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
+            axA[1].plot(atlasL["dates"], atlasL["delay_sd"], 'g^', label="delay_sd")
+            axA[1].hlines(atlasL["delay_sd"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
+            axA[2].set_ylabel("Throughput")
+            axA[2].plot(atlasT["dates"], atlasT["throughput"], 'bs')
+            axA[2].hlines(atlasT["throughput"],
+                          atlasT["datesF"],
+                          atlasT["dates"])
+
+            pp.savefig(figH)
+            pp.savefig(figA)
+            plt.close(figH)
+            plt.close(figA)
