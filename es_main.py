@@ -7,6 +7,7 @@ import datetime as dt
 from datetime import timedelta
 import math
 import json
+from operator import itemgetter
 
 with open('sites.json', 'r+') as txt:
     sitesArray = json.load(txt)
@@ -29,11 +30,17 @@ scrollPreserve="3m"
 startDate = "2016-07-17T00:00:00"
 endDate = "2016-07-23T00:00:00"
 
+loc = {}
+loc["location"] = np.zeros(0)
+
 def conAtlasTime(time, switch):
     if switch:
         return (dt.datetime.strptime(time, '%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
     else:
         return dt.datetime.strptime(time, '%Y-%m-%dT%X')
+
+def utcDate(time):
+    return dt.datetime.fromtimestamp(time, dt.timezone.utc)
 
 def atlasLatency(srcSite, destSite):
     queryAtlas={"query" :
@@ -80,7 +87,6 @@ def atlasLatency(srcSite, destSite):
             arrRet["datesF"] = np.append(arrRet["datesF"], 
                                conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
-        #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["delay_mean"] = np.append(arrRet["delay_mean"], float(hit["_source"]["delay_mean"]))
             arrRet["delay_median"] = np.append(arrRet["delay_median"], float(hit["_source"]["delay_median"]))
             arrRet["delay_sd"] = np.append(arrRet["delay_sd"], float(hit["_source"]["delay_sd"]))
@@ -132,7 +138,6 @@ def atlasPacketLoss(srcSite, destSite):
             arrRet["datesF"] = np.append(arrRet["datesF"], 
                                conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
-        #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["packet_loss"] = np.append(arrRet["packet_loss"], float(hit["_source"]["packet_loss"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
@@ -181,7 +186,6 @@ def atlasThroughput(srcSite, destSite):
             arrRet["datesF"] = np.append(arrRet["datesF"], 
                                conAtlasTime(hit["_source"]["timestamp"], False)
                                  - timedelta(seconds=14400))
-        #throughPut = np.append(throughPut, float(hit["_source"]["throughput"]) / math.pow(1000,3))
             arrRet["throughput"] = np.append(arrRet["throughput"], float(hit["_source"]["throughput"]))
 
         atlasTotalRec -= len(responseAtlas['hits']['hits'])
@@ -192,11 +196,14 @@ def hccQuery(site):
               {"bool": {
                   "must": [
                       {"match" : 
-                         {"Type" : "production"}
+                         {"CMS_JobType" : "Processing"}
                       },
                       {"range" :
                          {"EventRate" : {"gte" : "0"}}
                       },
+                      #{"match" : 
+                      #   {"TaskType" : "Production"}
+                      #},
                       {"range" : {
                          "CompletionDate" : {
                              "gt" : int(conAtlasTime(startDate, True)),
@@ -225,38 +232,37 @@ def hccQuery(site):
     scrollIdHCC = scannerHCC['_scroll_id']
     countHitsHCC = scannerHCC["hits"]["total"]
     arrRet = {}
-    arrRet["location"] = np.zeros(0)
+    #dtype=np.dtype([('CpuEff', np.float64),
+    #                ('EventRate', np.float64),
+    #                ('startDate', np.datetime64),
+    #                ('endDate', np.datetime64)])
+    #dtHCC=np.dtype({'names': ['CpuEff', 'EventRate', 'startDate', 'endDate'],
+    #                'formats': [np.float64, np.float64, np.datetime64, np.datetime64]})
     while countHitsHCC > 0:
         responseHCC = esHCC.scroll(scroll_id=scrollIdHCC, 
                                    scroll=scrollPreserve)
         for hit in responseHCC["hits"]["hits"]:
             location = hit["_source"]["DataLocations"]
             if str(location[0]).lower() in cmsLocate["locations"]:
-                if not str(location[0]) in arrRet["location"]:
-                    arrRet["location"] = np.append(arrRet["location"], 
-                                                   str(location[0]))
-                    arrRet[str(location[0])] = {}
-                    arrRet[str(location[0])]["CpuEff"] = np.zeros(0)
-                    arrRet[str(location[0])]["EventRate"] = np.zeros(0)
-                    arrRet[str(location[0])]["startDate"] = np.zeros(0)
-                    arrRet[str(location[0])]["endDate"] = np.zeros(0)
-                arrRet[str(location[0])]["CpuEff"] = \
-                      np.append(arrRet[str(location[0])]["CpuEff"], 
-                      float(hit["_source"]["CpuEff"]))
-                arrRet[str(location[0])]["EventRate"] = \
-                      np.append(arrRet[str(location[0])]["EventRate"], 
-                      float(hit["_source"]["EventRate"]))
-                arrRet[str(location[0])]["startDate"] = \
-                      np.append(arrRet[str(location[0])]["startDate"], 
-                      dt.datetime.fromtimestamp(hit["_source"]["JobCurrentStartDate"], 
-                            dt.timezone.utc))
-                arrRet[str(location[0])]["endDate"] = \
-                      np.append(arrRet[str(location[0])]["endDate"], 
-                      dt.datetime.fromtimestamp(hit["_source"]["JobFinishedHookDone"], 
-                            dt.timezone.utc))
+                tempHolder = np.array([hit["_source"]["CpuEff"],
+                                       hit["_source"]["EventRate"],
+                                       hit["_source"]["JobCurrentStartDate"],
+                                       hit["_source"]["JobFinishedHookDone"]])
+                if not str(location[0]) in loc["location"]:
+                    loc["location"] = np.append(loc["location"], 
+                                                str(location[0]))
+                    arrRet[str(location[0])] = tempHolder
+                else:
+                    arrRet[str(location[0])] = np.vstack((arrRet[str(location[0])],tempHolder))
 
-            
         countHitsHCC -= len(responseHCC['hits']['hits'])
+    for hit in arrRet:
+        #print(arrRet)
+        #tempRay = arrRet[str(hit)]
+        #arrRet[str(hit)] = tempRay[tempRay[:,2].argsort()]
+        #arrRet[str(hit)] = sorted(arrRet[str(hit)], key=lambda x : x[2])
+        arrRet[str(hit)].view('f8,f8,f8,f8').sort(order=['f2'], axis=0)
+
     return arrRet
 
 with PdfPages('CMS_Plots.pdf') as pp:
@@ -269,28 +275,47 @@ with PdfPages('CMS_Plots.pdf') as pp:
     d['ModDate'] = dt.datetime.today()
 
     for hit in cmsLocate["locations"]:
+        loc["location"] = np.zeros(0)
         hccResult = hccQuery(hit)
-        for note in hccResult["location"]:
+        for note in loc["location"]:
             atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
             atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
             atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
             figH, axH = plt.subplots(2, sharex=True)
-            figA, axA = plt.subplots(3, sharex=True)
+            figA, axA = plt.subplots(2, sharex=True)
+            figL, axL = plt.subplots(3, sharex=True)
+
+            tempArr = hccResult[note]
+            arrCpu = np.array([]);
+            arrEvent = np.array([]);
+            arrStart = np.array([]);
+            arrEnd = np.array([]);
+            try:
+                for tpl in tempArr:
+                    arrCpu = np.append(arrCpu, tpl[0]);
+                    arrEvent = np.append(arrEvent, tpl[1]);
+                    arrStart = np.append(arrStart, utcDate(tpl[2]));
+                    arrEnd = np.append(arrEnd, utcDate(tpl[3]));
+            except IndexError:
+                arrCpu = np.append(arrCpu, tempArr[0])
+                arrEvent = np.append(arrEvent, tempArr[1])
+                arrStart = np.append(arrStart, utcDate(tempArr[2]))
+                arrEnd = np.append(arrEnd, utcDate(tempArr[3]))
 
             axH[1].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
                                                               defaultfmt="%m-%d %H:%M"))
             figH.autofmt_xdate(bottom=0.2, rotation=30, ha='right')
-            axH[0].plot(hccResult[note]["startDate"], hccResult[note]["CpuEff"], 'bs')
-            axH[0].hlines(hccResult[note]["CpuEff"], 
-                        hccResult[note]["startDate"], 
-                        hccResult[note]["endDate"])
+            axH[0].plot(arrStart, arrCpu, 'bs')
+            axH[0].hlines(arrCpu, 
+                          arrStart, 
+                          arrEnd)
             axH[0].set_ylabel("CpuEff")
             axH[0].set_title(str("2016 From " + hit + " To " + note))
 
-            axH[1].plot(hccResult[note]["startDate"], hccResult[note]["EventRate"], 'bs')
-            axH[1].hlines(hccResult[note]["EventRate"], 
-                         hccResult[note]["startDate"], 
-                         hccResult[note]["endDate"])
+            axH[1].plot(arrStart, arrEvent, 'bs')
+            axH[1].hlines(arrEvent, 
+                          arrStart, 
+                          arrEnd)
             axH[1].set_ylabel("EventRate")
 
             #axA[2].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
@@ -306,26 +331,37 @@ with PdfPages('CMS_Plots.pdf') as pp:
             axA[0].hlines(atlasP["packet_loss"],
                           atlasP["datesF"],
                           atlasP["dates"])
-            axA[1].set_ylabel("Latency")
-            axA[1].plot(atlasL["dates"], atlasL["delay_mean"], 'bs', label="delay_mean")
-            axA[1].hlines(atlasL["delay_mean"],
-                          atlasL["datesF"],
-                          atlasL["dates"])
-            axA[1].plot(atlasL["dates"], atlasL["delay_median"], 'rs', label="delay_median")
-            axA[1].hlines(atlasL["delay_median"],
-                          atlasL["datesF"],
-                          atlasL["dates"])
-            axA[1].plot(atlasL["dates"], atlasL["delay_sd"], 'g^', label="delay_sd")
-            axA[1].hlines(atlasL["delay_sd"],
-                          atlasL["datesF"],
-                          atlasL["dates"])
-            axA[2].set_ylabel("Throughput")
-            axA[2].plot(atlasT["dates"], atlasT["throughput"], 'bs')
-            axA[2].hlines(atlasT["throughput"],
+
+            axA[1].set_ylabel("Throughput")
+            axA[1].plot(atlasT["dates"], atlasT["throughput"], 'bs')
+            axA[1].hlines(atlasT["throughput"],
                           atlasT["datesF"],
                           atlasT["dates"])
+            axL[0].set_title(str("2016 Latency From " + \
+                                 hit + " (" + \
+                                 sitesArray[hit] + \
+                                 ")" + " To " + \
+                                 note + " (" + sitesArray[note.lower()] + ")"))
+            figL.autofmt_xdate(bottom=0.2, rotation=30, ha='right')
+            axL[0].set_ylabel("Mean")
+            axL[0].plot(atlasL["dates"], atlasL["delay_mean"], 'bs', label="delay_mean")
+            axL[0].hlines(atlasL["delay_mean"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
+            axL[1].set_ylabel("Median")
+            axL[1].plot(atlasL["dates"], atlasL["delay_median"], 'rs', label="delay_median")
+            axL[1].hlines(atlasL["delay_median"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
+            axL[2].set_ylabel("Std. Dev")
+            axL[2].plot(atlasL["dates"], atlasL["delay_sd"], 'g^', label="delay_sd")
+            axL[2].hlines(atlasL["delay_sd"],
+                          atlasL["datesF"],
+                          atlasL["dates"])
 
             pp.savefig(figH)
             pp.savefig(figA)
+            pp.savefig(figL)
             plt.close(figH)
             plt.close(figA)
+            plt.close(figL)
