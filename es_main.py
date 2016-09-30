@@ -35,8 +35,8 @@ esCon = Elasticsearch([{
 }], timeout=30)
 
 scrollPreserve="3m"
-startDate = "2016-07-17T00:00:00"
-endDate = "2016-07-23T00:00:00"
+startDate = "2016-09-15T00:00:00"
+endDate = "2016-09-30T00:00:00"
 tenMin = np.multiply(10,60)
 stampStart = conAtlasTime(startDate) - tenMin
 stampEnd = conAtlasTime(endDate)
@@ -59,8 +59,8 @@ def atlasLatency(srcSite, destSite):
                      },
                      {"range" : {
                          "timestamp" : {
-                             "gt" : startDate,
-                             "lt" : endDate
+                             "gt" : int(conAtlasTime(startDate)),
+                             "lt" : int(conAtlasTime(endDate))
                          }
                      }}
                    ]
@@ -84,16 +84,16 @@ def atlasLatency(srcSite, destSite):
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None # Initialize
                 if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]),
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"],
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)),
                                         float(hit["_source"]["delay_mean"]),
                                         float(hit["_source"]["delay_median"]),
                                         float(hit["_source"]["delay_sd"]),
                                         float(0.0)])
                 elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]),
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"],
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)),
                                         float(hit["_source"]["delay_mean"]),
                                         float(hit["_source"]["delay_median"]),
@@ -108,7 +108,6 @@ def atlasLatency(srcSite, destSite):
             atlasTotalRec -= len(responseAtlas['hits']['hits'])
         arrRet.view('f8,f8,f8,f8,f8,f8').sort(order=['f0'], axis=0)
         return arrRet
-
 
 def atlasPacketLoss(srcSite, destSite):
     queryAtlas={"query" :
@@ -125,8 +124,8 @@ def atlasPacketLoss(srcSite, destSite):
                      },
                      {"range" : {
                          "timestamp" : {
-                             "gt" : startDate,
-                             "lt" : endDate
+                             "gt" : int(conAtlasTime(startDate)),
+                             "lt" : int(conAtlasTime(endDate))
                          }
                      }}
                    ]
@@ -150,14 +149,14 @@ def atlasPacketLoss(srcSite, destSite):
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None # Initialize
                 if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]),
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"],
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)),
                                         float(hit["_source"]["packet_loss"]),
                                         float(0.0)])
                 elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]),
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"],
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)),
                                         float(hit["_source"]["packet_loss"]),
                                         float(1.0)])
@@ -187,8 +186,8 @@ def atlasThroughput(srcSite, destSite):
                      },
                      {"range" : {
                          "timestamp" : {
-                             "gt" : startDate,
-                             "lt" : endDate
+                             "gt" : int(conAtlasTime(startDate)),
+                             "lt" : int(conAtlasTime(endDate))
                          }
                      }}
                    ]
@@ -211,14 +210,14 @@ def atlasThroughput(srcSite, destSite):
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None #Initialize in local context
                 if hit["_source"]["src"] == hit["_source"]["MA"]: # Means MA is the src site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]), 
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"], 
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)), 
                                         float(hit["_source"]["throughput"]),
                                         float(0.0)])
                 elif hit["_source"]["dest"] == hit["_source"]["MA"]: #Means MA is the dest site
-                    tempRay = np.array([conAtlasTime(hit["_source"]["timestamp"]),
-                                        conAtlasTime(hit["_source"]["timestamp"])
+                    tempRay = np.array([hit["_source"]["timestamp"],
+                                        hit["_source"]["timestamp"]
                                           - np.multiply(4, np.multiply(60, 60)),
                                         float(hit["_source"]["throughput"]),
                                         float(1.0)])
@@ -273,120 +272,114 @@ def hccQuery(site):
     scrollIdHCC = scannerHCC['_scroll_id']
     countHitsHCC = scannerHCC["hits"]["total"]
     arrRet = {}
-    #dtype=np.dtype([('CpuEff', np.float64),
-    #                ('EventRate', np.float64),
-    #                ('startDate', np.datetime64),
-    #                ('endDate', np.datetime64)])
-    #dtHCC=np.dtype({'names': ['CpuEff', 'EventRate', 'startDate', 'endDate'],
-    #                'formats': [np.float64, np.float64, np.datetime64, np.datetime64]})
-    while countHitsHCC > 0:
-        responseHCC = esHCC.scroll(scroll_id=scrollIdHCC, 
-                                   scroll=scrollPreserve)
-        for hit in responseHCC["hits"]["hits"]:
-            location = hit["_source"]["DataLocations"]
-            if str(location[0]).lower() in cmsLocate["locations"]:
-                tempHolder = np.array([hit["_source"]["CpuEff"],
-                                       hit["_source"]["EventRate"],
-                                       hit["_source"]["JobCurrentStartDate"],
-                                       hit["_source"]["JobFinishedHookDone"]])
-                if not str(location[0]) in loc["location"]:
-                    loc["location"] = np.append(loc["location"], 
-                                                str(location[0]))
-                    arrRet[str(location[0])] = np.reshape(tempHolder, (1,4))
-                else:
-                    arrRet[str(location[0])] = np.vstack((arrRet[str(location[0])],tempHolder))
+    if countHitsHCC == 0:
+        return None
+    else:
+        while countHitsHCC > 0:
+            responseHCC = esHCC.scroll(scroll_id=scrollIdHCC, 
+                                       scroll=scrollPreserve)
+            for hit in responseHCC["hits"]["hits"]:
+                location = hit["_source"]["DataLocations"]
+                if str(location[0]).lower() in cmsLocate["locations"]:
+                    tempHolder = np.array([hit["_source"]["CpuEff"],
+                                           hit["_source"]["EventRate"],
+                                           hit["_source"]["JobCurrentStartDate"],
+                                           hit["_source"]["JobFinishedHookDone"]])
+                    if not str(location[0]) in loc["location"]:
+                        loc["location"] = np.append(loc["location"], 
+                                                    str(location[0]))
+                        arrRet[str(location[0])] = np.reshape(tempHolder, (1,4))
+                    else:
+                        arrRet[str(location[0])] = np.vstack((arrRet[str(location[0])],tempHolder))
 
-        countHitsHCC -= len(responseHCC['hits']['hits'])
-    for hit in arrRet:
-        #print(arrRet)
-        #tempRay = arrRet[str(hit)]
-        #arrRet[str(hit)] = tempRay[tempRay[:,2].argsort()]
-        #arrRet[str(hit)] = sorted(arrRet[str(hit)], key=lambda x : x[2])
-        arrRet[str(hit)].view('f8,f8,f8,f8').sort(order=['f2'], axis=0)
+            countHitsHCC -= len(responseHCC['hits']['hits'])
+        for hit in arrRet:
+            #print(arrRet)
+            #tempRay = arrRet[str(hit)]
+            #arrRet[str(hit)] = tempRay[tempRay[:,2].argsort()]
+            #arrRet[str(hit)] = sorted(arrRet[str(hit)], key=lambda x : x[2])
+            arrRet[str(hit)].view('f8,f8,f8,f8').sort(order=['f2'], axis=0)
 
-    return arrRet
+        return arrRet
 
 for hit in cmsLocate["locations"]:
     loc["location"] = np.zeros(0)
     hccResult = hccQuery(hit)
-    for note in loc["location"]:
-        atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
-        atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
-        atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
-        stampStart = conAtlasTime(startDate) - tenMin
-        while stampStart <= stampEnd:
-            tplCpu = np.array([])
-            tplRate = np.array([])
-            for tpl in hccResult[note]:
-                if tpl[2] <= stampStart and tpl[3] >= (stampStart + tenMin):
-                    tplCpu = np.append(tplCpu, tpl[0])
-                    tplRate = np.append(tplRate, tpl[1])
+    print("after entering loop")
+    if not hccResult == None:
+        for note in loc["location"]:
+            atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
+            atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
+            atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
+            print("after atlas calls")
+            stampStart = conAtlasTime(startDate) - tenMin
+            while stampStart <= stampEnd:
+                tplCpu = np.array([])
+                tplRate = np.array([])
+                #print(hccResult[note])
+                for tpl in hccResult[note]:
+                    if tpl[2] <= int(stampStart) and tpl[3] >= (int(stampStart) + tenMin):
+                        tplCpu = np.append(tplCpu, tpl[0])
+                        tplRate = np.append(tplRate, tpl[1])
+                if not tplCpu.size > 0:
+                    stampStart = stampStart + tenMin
                 else:
-                    break
-            if not tplCpu.size > 0:
-                stampStart = stampStart + tenMin
-                break
-            srcThrough = np.array([])
-            destThrough = np.array([])
-            if not atlasT == None:
-                for tpl in atlasT:
-                    if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                        if tpl[3] == float(0.0):
-                            srcThrough = np.append(srcThrough, tpl[2])
-                        else:
-                            destThrough = np.append(destThrough, tpl[2])
-                    else:
-                        break
-            if not srcThrough.size > 0:
-                srcThrough = np.append(srcThrough, 0.0)
-            if not destThrough.size > 0:
-                destThrough = np.append(destThrough, 0.0)
-            srcPacket = np.array([])
-            destPacket = np.array([])
-            if not atlasP == None:
-                for tpl in atlasP:
-                    if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                        if tpl[3] == float(0.0):
-                            srcPacket = np.append(srcPacket, tpl[2])
-                        else:
-                            destPacket = np.append(destPacket, tpl[2])
-                    else:
-                        break
-            if not srcPacket.size > 0:
-                srcPacket = np.append(srcPacket, 0.0)
-            if not destPacket.size > 0:
-                destPacket = np.append(destPacket, 0.0)
-            srcLatency = np.array([])
-            destLatency = np.array([])
-            if not atlasL == None:
-                for tpl in atlasL:
-                    if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                        if tpl[5] == float(0.0):
-                            srcLatency = np.append(srcLatency, tpl[2])
-                        else:
-                            destLatency = np.append(destLatency, tpl[2])
-                    else:
-                        break
-            if not srcLatency.size > 0:
-                srcLatency = np.append(srcLatency, 0.0)
-            if not destLatency.size > 0:
-                destLatency = np.append(destLatency, 0.0)
-            qBody={
-                      "src": hit,
-                      "dest": note,
-                      "CpuEff": np.mean(tplCpu),
-                      "EventRate": np.mean(tplRate),
-                      "srcThroughput": np.mean(srcThrough),
-                      "srcPacket": np.mean(srcPacket),
-                      "srcLatency": np.mean(srcLatency),
-                      "destThroughput": np.mean(destThrough),
-                      "destPacket": np.mean(destPacket),
-                      "destLatency": np.mean(destLatency),
-                      "beginDate": stampStart,
-                      "endDate": (stampStart + tenMin)
-                  }
-            esCon.index(index='net-health', doc_type='dev', body=qBody)
-            stampStart = stampStart + tenMin
+                    srcThrough = np.array([])
+                    destThrough = np.array([])
+                    if not atlasT == None:
+                        for tpl in atlasT:
+                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
+                                if tpl[3] == float(0.0):
+                                    srcThrough = np.append(srcThrough, tpl[2])
+                                else:
+                                    destThrough = np.append(destThrough, tpl[2])
+                    if not srcThrough.size > 0:
+                        srcThrough = np.append(srcThrough, 0.0)
+                    if not destThrough.size > 0:
+                        destThrough = np.append(destThrough, 0.0)
+                    srcPacket = np.array([])
+                    destPacket = np.array([])
+                    if not atlasP == None:
+                        for tpl in atlasP:
+                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
+                                if tpl[3] == float(0.0):
+                                    srcPacket = np.append(srcPacket, tpl[2])
+                                else:
+                                    destPacket = np.append(destPacket, tpl[2])
+                    if not srcPacket.size > 0:
+                        srcPacket = np.append(srcPacket, 0.0)
+                    if not destPacket.size > 0:
+                        destPacket = np.append(destPacket, 0.0)
+                    srcLatency = np.array([])
+                    destLatency = np.array([])
+                    if not atlasL == None:
+                        for tpl in atlasL:
+                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
+                                if tpl[5] == float(0.0):
+                                    srcLatency = np.append(srcLatency, tpl[2])
+                                else:
+                                    destLatency = np.append(destLatency, tpl[2])
+                    if not srcLatency.size > 0:
+                        srcLatency = np.append(srcLatency, 0.0)
+                    if not destLatency.size > 0:
+                        destLatency = np.append(destLatency, 0.0)
+                    qBody={
+                              "src": hit,
+                              "dest": note,
+                              "CpuEff": np.mean(tplCpu),
+                              "EventRate": np.mean(tplRate),
+                              "srcThroughput": np.mean(srcThrough),
+                              "srcPacket": np.mean(srcPacket),
+                              "srcLatency": np.mean(srcLatency),
+                              "destThroughput": np.mean(destThrough),
+                              "destPacket": np.mean(destPacket),
+                              "destLatency": np.mean(destLatency),
+                              "beginDate": int(stampStart),
+                              "endDate": int(stampStart + tenMin)
+                          }
+                    print("about to post")
+                    esCon.index(index='net-health', doc_type='dev', body=qBody)
+                    stampStart = stampStart + tenMin
 
 print("Gonna break as pp is changed")
 with PdfPages('CMS_Plots.pdf') as pc:
