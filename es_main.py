@@ -42,7 +42,7 @@ stampStart = conAtlasTime(startDate) - tenMin
 stampEnd = conAtlasTime(endDate)
 
 loc = {}
-loc["location"] = np.zeros(0)
+loc["location"] = np.array([])
 
 def atlasLatency(srcSite, destSite):
     queryAtlas={"query" :
@@ -300,7 +300,8 @@ def hccQuery(site):
                 location = hit["_source"]["DataLocations"]
                 if str(location[0]).lower() in cmsLocate["locations"]:
                     tempHolder = np.array([hit["_source"]["CpuEff"],
-                                           hit["_source"]["EventRate"],
+                                           #hit["_source"]["EventRate"],
+                                           hit["_source"]["ChirpCMSSWEventRate"],
                                            hit["_source"]["JobCurrentStartDate"],
                                            hit["_source"]["JobFinishedHookDone"]])
                     if not str(location[0]) in loc["location"]:
@@ -320,16 +321,23 @@ def hccQuery(site):
 
         return arrRet
 
-for hit in cmsLocate["locations"]:
-    loc["location"] = np.zeros(0)
-    hccResult = hccQuery(hit)
-    print("after entering loop")
-    if not type(hccResult) == type(None):
+with PdfPages('CMS_Plots.pdf') as pp:
+    d = pp.infodict()
+    d['Title'] = 'CMS Grid Plots'
+    d['Author'] = u'Jerrod T. Dixon\xe4nen'
+    d['Subject'] = 'Plot of network affects on grid jobs'
+    d['Keywords'] = 'PdfPages matplotlib CMS grid'
+    d['CreationDate'] = dt.datetime.today()
+    d['ModDate'] = dt.datetime.today()
+
+    for hit in cmsLocate["locations"]:
+        loc["location"] = np.array([])
+        hccResult = hccQuery(hit)
         for note in loc["location"]:
             atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
             atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
             atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
-            print("after atlas calls")
+
             stampStart = conAtlasTime(startDate) - tenMin
             while stampStart <= stampEnd:
                 tplCpu = np.array([])
@@ -395,24 +403,6 @@ for hit in cmsLocate["locations"]:
                     esCon.index(index='net-health', doc_type='dev', body=qBody)
                     stampStart = stampStart + tenMin
 
-print("Gonna break as pp is changed")
-with PdfPages('CMS_Plots.pdf') as pc:
-    d = pp.infodict()
-    d['Title'] = 'CMS Grid Plots'
-    d['Author'] = u'Jerrod T. Dixon\xe4nen'
-    d['Subject'] = 'Plot of network affects on grid jobs'
-    d['Keywords'] = 'PdfPages matplotlib CMS grid'
-    d['CreationDate'] = dt.datetime.today()
-    d['ModDate'] = dt.datetime.today()
-
-    for hit in cmsLocate["locations"]:
-        loc["location"] = np.zeros(0)
-        hccResult = hccQuery(hit)
-        for note in loc["location"]:
-            atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
-            atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
-            atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
-
             tempArr = hccResult[note]
             arrCpu = np.array([]);
             arrEvent = np.array([]);
@@ -444,14 +434,13 @@ with PdfPages('CMS_Plots.pdf') as pc:
             plt.close(figH)
             #axA[2].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
             #                                                   defaultfmt="%m-%d %H:%M"))
-            if not atlasT == None and not atlasP == None:
+            if not type(atlasT) == type(None) and not type(atlasP) == type(None):
                 tDate = np.array([])
                 tDatef = np.array([])
                 tPut = np.array([])
                 pDate = np.array([])
                 pDatef = np.array([])
                 pLoss = np.array([])
-                print(atlasT)
                 for tpl in atlasT:
                     tDate = np.append(tDate, tpl[0])
                     tDatef = np.append(tDatef, tpl[1])
@@ -481,7 +470,7 @@ with PdfPages('CMS_Plots.pdf') as pc:
                 pp.savefig(figA)
                 plt.close(figA)
 
-            if not atlasL == None:
+            if not type(atlasL) == type(None):
                 lDate = np.array([])
                 lDatef = np.array([])
                 lMean = np.array([])

@@ -16,8 +16,13 @@ esCon = Elasticsearch([{
 }], timeout=30)
 
 scrollPreserve="3m"
+startDate = "2016-07-21T00:00:00"
+endDate = "2016-07-25T00:00:00"
 
 pp = pprint.PrettyPrinter(indent=4)
+
+def utcStamp(time):
+    return (dt.datetime.strptime(time,'%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
 
 def esConAgg(field):
     queryBody={"aggs": {
@@ -50,10 +55,17 @@ def esConQuery(src, dest):
                     },
                     {"match" :
                       {"dest" : dest}
+                    },
+                    {"range" : {
+                       "beginDate" : {
+                         "gt" : int(utcStamp(startDate)),
+                         "lt" : int(utcStamp(endDate))
+                       }
+                     }
                     }
                   ]
                  }
-                }
+                }, "sort": {"beginDate": {"order": "desc"}}
               }
     scannerCon = esCon.search(index="net-health",
                               body=queryBody,
@@ -113,11 +125,20 @@ with PdfPages('CMS_Scatter.pdf') as pc:
             if not type(qResults) == type(None):
                 srcRes = qResults['src']
                 destRes = qResults['dest']
-                figC, axC = plt.subplots(1, sharex=True)
-                axC.scatter(srcRes[:,0],srcRes[:,1])
-                axC.set_ylabel("CpuEff")
-                axC.set_title(str(ping + " to " + pong))
-                pc.savefig(figC)
-                plt.close(figC)
+                figL, axL = plt.subplots(1, sharex=True)
+                axL.scatter(srcRes[:,0],srcRes[:,1])
+                axL.set_ylabel("CpuEff")
+                axL.set_xlabel("Latency")
+                axL.set_title(str(ping + " to " + pong))
+                pc.savefig(figL)
+                plt.close(figL)
+                figP, axP = plt.subplots(1, sharex=True)
+                axP.scatter(srcRes[:,0],srcRes[:,2])
+                axP.set_ylabel("EventRate")
+                axP.set_xlabel("Latency")
+                axP.set_title(str(ping + " to " + pong))
+                pc.savefig(figP)
+                plt.close(figP)
+                
     #axC[1].scatter(destRes[:,0],destRes[:,1])
     #axC[1].set_ylabel("CpuEff")
