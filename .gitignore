@@ -1,6 +1,8 @@
 .gitignore
 config
+config.bak
 file_out
 *.swp
 CMS_Plots.pdf
 CMS_Scatter.pdf
+CMS_Metrics.pdf

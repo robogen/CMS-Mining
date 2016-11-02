@@ -24,15 +24,15 @@ def utcDate(time):
 
 esAtlas = Elasticsearch([{
     'host': contents[2], 'port': contents[3]
-}], timeout=30)
+}], timeout=50)
 
 esHCC = Elasticsearch([{
     'host': contents[0], 'port': contents[1]
-}], timeout=30)
+}], timeout=50)
 
 esCon = Elasticsearch([{
     'host': contents[4], 'port': contents[5]
-}], timeout=30)
+}], timeout=50)
 
 scrollPreserve="3m"
 startDate = "2016-07-17T00:00:00"
@@ -303,11 +303,20 @@ def hccQuery(site):
                                            #hit["_source"]["EventRate"],
                                            hit["_source"]["ChirpCMSSWEventRate"],
                                            hit["_source"]["JobCurrentStartDate"],
-                                           hit["_source"]["JobFinishedHookDone"]])
+                                           hit["_source"]["JobFinishedHookDone"],
+                                           hit["_source"]["CpuTimeHr"],
+                                           hit["_source"]["WallClockHr"],
+                                           hit["_source"]["RequestCpus"],
+                                           hit["_source"]["MemoryMB"],
+                                           hit["_source"]["QueueHrs"],
+                                           hit["_source"]["RequestMemory"],
+                                           hit["_source"]["CoreHr"],
+                                           hit["_source"]["CpuBadput"],
+                                           hit["_source"]["KEvents"]])
                     if not str(location[0]) in loc["location"]:
                         loc["location"] = np.append(loc["location"], 
                                                     str(location[0]))
-                        arrRet[str(location[0])] = np.reshape(tempHolder, (1,4))
+                        arrRet[str(location[0])] = np.reshape(tempHolder, (1,13))
                     else:
                         arrRet[str(location[0])] = np.vstack((arrRet[str(location[0])],tempHolder))
 
@@ -317,7 +326,7 @@ def hccQuery(site):
             #tempRay = arrRet[str(hit)]
             #arrRet[str(hit)] = tempRay[tempRay[:,2].argsort()]
             #arrRet[str(hit)] = sorted(arrRet[str(hit)], key=lambda x : x[2])
-            arrRet[str(hit)].view('f8,f8,f8,f8').sort(order=['f2'], axis=0)
+            arrRet[str(hit)].view('f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8').sort(order=['f2'], axis=0)
 
         return arrRet
 
@@ -342,11 +351,29 @@ with PdfPages('CMS_Plots.pdf') as pp:
             while stampStart <= stampEnd:
                 tplCpu = np.array([])
                 tplRate = np.array([])
+                tplCpuTimeHr = np.array([])
+                tplWallClockHr = np.array([])
+                tplRequestCpus = np.array([])
+                tplMemoryMB = np.array([])
+                tplQueueHrs = np.array([])
+                tplRequestMemory = np.array([])
+                tplCoreHr = np.array([])
+                tplCpuBadput = np.array([])
+                tplKEvents = np.array([])
                 #print(hccResult[note])
                 for tpl in hccResult[note]:
                     if tpl[2] <= int(stampStart) and tpl[3] >= (int(stampStart) + tenMin):
                         tplCpu = np.append(tplCpu, tpl[0])
                         tplRate = np.append(tplRate, tpl[1])
+                        tplCpuTimeHr = np.append(tplCpuTimeHr, tpl[4])
+                        tplWallClockHr = np.append(tplWallClockHr, tpl[5])
+                        tplRequestCpus = np.append(tplRequestCpus, tpl[6])
+                        tplMemoryMB = np.append(tplMemoryMB, tpl[7])
+                        tplQueueHrs = np.append(tplQueueHrs, tpl[8])
+                        tplRequestMemory = np.append(tplRequestMemory, tpl[9])
+                        tplCoreHr = np.append(tplCoreHr, tpl[10])
+                        tplCpuBadput = np.append(tplCpuBadput, tpl[11])
+                        tplKEvents = np.append(tplKEvents, tpl[12])
                 if not tplCpu.size > 0:
                     stampStart = stampStart + tenMin
                 elif type(atlasT) == type(None) and type(atlasP) == type(None) and type(atlasL) == type(None):
@@ -384,6 +411,15 @@ with PdfPages('CMS_Plots.pdf') as pp:
                               "dest": note,
                               "CpuEff": np.mean(tplCpu),
                               "EventRate": np.mean(tplRate),
+                              "CpuTimeHr": np.mean(tplCpuTimeHr),
+                              "WallClockHr": np.mean(tplWallClockHr),
+                              "RequestCpus": np.mean(tplRequestCpus),
+                              "MemoryMB": np.mean(tplMemoryMB),
+                              "QueueHrs": np.mean(tplQueueHrs),
+                              "RequestMemory": np.mean(tplRequestMemory),
+                              "CoreHr": np.mean(tplCoreHr),
+                              "CpuBadput": np.mean(tplCpuBadput),
+                              "KEvents": np.mean(tplKEvents),
                               "beginDate": int(stampStart),
                               "endDate": int(stampStart + tenMin)
                           }
