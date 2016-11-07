@@ -6,3 +6,5 @@ file_out
 CMS_Plots.pdf
 CMS_Scatter.pdf
 CMS_Metrics.pdf
+spark-2.0.1.tgz
+spark-2.0.1/*
