@@ -6,3 +6,11 @@ file_out
 CMS_Plots.pdf
 CMS_Scatter.pdf
 CMS_Metrics.pdf
+spark-2.0.1.tgz
+spark-2.0.1/*
+prime-run.err
+prime-run.out
+local/*
+protobuf-2.5.0.zip
+protobuf-2.5.0/
+spark/*
