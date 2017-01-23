@@ -3,9 +3,11 @@ config
 config.bak
 file_out
 *.swp
-CMS_Plots.pdf
-CMS_Scatter.pdf
-CMS_Metrics.pdf
+*.pdf
+*.out
+*.err
+*.tgz
+data/*
 spark-2.0.1.tgz
 spark-2.0.1/*
 prime-run.err

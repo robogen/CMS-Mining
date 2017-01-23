@@ -6,6 +6,7 @@ import numpy as np
 import datetime as dt
 import math
 import json
+import time
 
 with open('sites.json', 'r+') as txt:
     sitesArray = json.load(txt)
@@ -17,22 +18,22 @@ with open("config", "r+") as txt:
     contents = list(map(str.rstrip, txt))
 
 def conAtlasTime(time):
-    return (dt.datetime.strptime(time, '%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
+    if type(time) == type("s"):
+        return (dt.datetime.strptime(time, '%Y-%m-%dT%X')) \
+                 .replace(tzinfo=dt.timezone.utc).timestamp()
+    else:
+        return time
 
 def utcDate(time):
     return dt.datetime.fromtimestamp(time, dt.timezone.utc)
 
-esAtlas = Elasticsearch([{
-    'host': contents[2], 'port': contents[3]
-}], timeout=50)
-
 esHCC = Elasticsearch([{
     'host': contents[0], 'port': contents[1]
-}], timeout=50)
+}], timeout=600)
 
 esCon = Elasticsearch([{
     'host': contents[4], 'port': contents[5]
-}], timeout=50)
+}], timeout=600)
 
 scrollPreserve="3m"
 startDate = "2016-07-17T00:00:00"
@@ -48,9 +49,6 @@ def atlasLatency(srcSite, destSite):
     queryAtlas={"query" :
                 {"bool": {
                    "must": [
-                     {"match" : 
-                         {"_type" : "latency" }
-                     },
                      {"match" :
                          {"srcSite" : srcSite }
                      },
@@ -69,50 +67,52 @@ def atlasLatency(srcSite, destSite):
                  }
                 }
                }
-    scannerAtlas = esAtlas.search(index="network_weather_2-*", 
+    responseAtlas = esCon.search(index="network_weather_2-*", 
                                   body=queryAtlas, 
-                                  search_type="scan", 
+                                  search_type="scan",
+                                  size=500,
+                                  doc_type="latency", 
                                   scroll=scrollPreserve)
-    scrollIdAtlas = scannerAtlas['_scroll_id']
-    atlasTotalRec = scannerAtlas["hits"]["total"]
+    scrollIdAtlas = responseAtlas['_scroll_id']
+    atlasTotalRec = responseAtlas["hits"]["total"]
     arrRet = np.array([])
 
     if atlasTotalRec == 0:
         return None
     else:
         while atlasTotalRec > 0:
-            responseAtlas = esAtlas.scroll(scroll_id=scrollIdAtlas, 
+            responseAtlas = esCon.scroll(scroll_id=scrollIdAtlas, 
                                        scroll=scrollPreserve)
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None # Initialize
-                if "srcSite" in hit["_source"].keys() and "destSite" in hit["_source"].keys():
-                    if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
-                        tempRay = np.array([#hit["_source"]["timestamp"],
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)),
-                                            float(hit["_source"]["delay_mean"]),
-                                            float(hit["_source"]["delay_median"]),
-                                            float(hit["_source"]["delay_sd"]),
-                                            float(0.0)])
-                    elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
-                        tempRay = np.array([#hit["_source"]["timestamp"],
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)),
-                                            float(hit["_source"]["delay_mean"]),
-                                            float(hit["_source"]["delay_median"]),
-                                            float(hit["_source"]["delay_sd"]),
-                                            float(1.0)])
-                    else:
-                        raise NameError('MA is not the src or dest')
-                    if arrRet.size == 0:
-                        arrRet = np.reshape(tempRay, (1,6))
-                    else:
-                        arrRet = np.vstack((arrRet, tempRay))
-            atlasTotalRec -= len(responseAtlas['hits']['hits'])
+                if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
+                    tempRay = np.array([#hit["_source"]["timestamp"],
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)),
+                                        float(hit["_source"]["delay_mean"]),
+                                        float(hit["_source"]["delay_median"]),
+                                        float(hit["_source"]["delay_sd"]),
+                                        float(0.0)])
+                elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
+                    tempRay = np.array([#hit["_source"]["timestamp"],
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)),
+                                        float(hit["_source"]["delay_mean"]),
+                                        float(hit["_source"]["delay_median"]),
+                                        float(hit["_source"]["delay_sd"]),
+                                        float(1.0)])
+                else:
+                    raise NameError('MA is not the src or dest')
+                if arrRet.size == 0:
+                    arrRet = np.reshape(tempRay, (1,6))
+                else:
+                    arrRet = np.vstack((arrRet, tempRay))
+            scrollIdAtlas = responseAtlas['_scroll_id']
+            atlasTotalRec = len(responseAtlas['hits']['hits'])
         arrRet.view('f8,f8,f8,f8,f8,f8').sort(order=['f0'], axis=0)
         return arrRet
 
@@ -120,9 +120,6 @@ def atlasPacketLoss(srcSite, destSite):
     queryAtlas={"query" :
                 {"bool": {
                    "must": [
-                     {"match" : 
-                         {"_type" : "packet_loss_rate"}
-                     },
                      {"match" :
                          {"srcSite" : srcSite }
                      },
@@ -141,47 +138,48 @@ def atlasPacketLoss(srcSite, destSite):
                  }
                 }
                }
-    scannerAtlas = esAtlas.search(index="network_weather_2-*", 
+    responseAtlas = esCon.search(index="network_weather_2-*", 
                                   body=queryAtlas, 
-                                  search_type="scan", 
+                                  doc_type="packet_loss_rate",
+                                  search_type="scan",
+                                  size=500, 
                                   scroll=scrollPreserve)
-    scrollIdAtlas = scannerAtlas['_scroll_id']
-    atlasTotalRec = scannerAtlas["hits"]["total"]
+    scrollIdAtlas = responseAtlas['_scroll_id']
+    atlasTotalRec = responseAtlas["hits"]["total"]
     arrRet = np.array([])
 
     if atlasTotalRec == 0:
         return None
     else:
         while atlasTotalRec > 0:
-            responseAtlas = esAtlas.scroll(scroll_id=scrollIdAtlas, 
+            responseAtlas = esCon.scroll(scroll_id=scrollIdAtlas, 
                                            scroll=scrollPreserve)
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None # Initialize
-                if "srcSite" in hit["_source"].keys() and "destSite" in hit["_source"].keys():
-                    if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
-                        tempRay = np.array([#hit["_source"]["timestamp"],
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)),
-                                            float(hit["_source"]["packet_loss"]),
-                                            float(0.0)])
-                    elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
-                        tempRay = np.array([#hit["_source"]["timestamp"],
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)),
-                                            float(hit["_source"]["packet_loss"]),
-                                            float(1.0)])
-                    else:
-                        raise NameError('MA is not src or dest')
-                    if arrRet.size == 0:
-                        arrRet = np.reshape(tempRay, (1, 4))
-                    else:
-                        arrRet = np.vstack((arrRet, tempRay))
-
-            atlasTotalRec -= len(responseAtlas['hits']['hits'])
+                if hit["_source"]["src"] == hit["_source"]["MA"]: # means MA is the src site
+                    tempRay = np.array([#hit["_source"]["timestamp"],
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)),
+                                        float(hit["_source"]["packet_loss"]),
+                                        float(0.0)])
+                elif hit["_source"]["dest"] == hit["_source"]["MA"]: # means MA is the dest site
+                    tempRay = np.array([#hit["_source"]["timestamp"],
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)),
+                                        float(hit["_source"]["packet_loss"]),
+                                        float(1.0)])
+                else:
+                    raise NameError('MA is not src or dest')
+                if arrRet.size == 0:
+                    arrRet = np.reshape(tempRay, (1, 4))
+                else:
+                    arrRet = np.vstack((arrRet, tempRay))
+            scrollIdAtlas = responseAtlas['_scroll_id']
+            atlasTotalRec = len(responseAtlas['hits']['hits'])
         arrRet.view('f8,f8,f8,f8').sort(order=['f0'], axis=0)
         return arrRet
 
@@ -189,9 +187,6 @@ def atlasThroughput(srcSite, destSite):
     queryAtlas={"query" :
                 {"bool": {
                    "must": [
-                     {"match" : 
-                         {"_type" : "throughput"}
-                     },
                      {"match" :
                          {"srcSite" : srcSite }
                      },
@@ -210,45 +205,47 @@ def atlasThroughput(srcSite, destSite):
                  }
                 }
                }
-    scannerAtlas = esAtlas.search(index="network_weather_2-*", 
+    responseAtlas = esCon.search(index="network_weather_2-*", 
                                   body=queryAtlas, 
                                   search_type="scan", 
+                                  doc_type="throughput",
+                                  size=500,
                                   scroll=scrollPreserve)
-    scrollIdAtlas = scannerAtlas['_scroll_id']
-    atlasTotalRec = scannerAtlas["hits"]["total"]
+    scrollIdAtlas = responseAtlas['_scroll_id']
+    atlasTotalRec = responseAtlas["hits"]["total"]
     arrRet = np.array([])
     if atlasTotalRec == 0:
         return None
     else:
         while atlasTotalRec > 0:
-            responseAtlas = esAtlas.scroll(scroll_id=scrollIdAtlas, 
+            responseAtlas = esCon.scroll(scroll_id=scrollIdAtlas, 
                                            scroll=scrollPreserve)
             for hit in responseAtlas["hits"]["hits"]:
                 tempRay = None #Initialize in local context
-                if "srcSite" in hit["_source"].keys() and "destSite" in hit["_source"].keys():
-                    if hit["_source"]["src"] == hit["_source"]["MA"]: # Means MA is the src site
-                        tempRay = np.array([#hit["_source"]["timestamp"], 
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)), 
-                                            float(hit["_source"]["throughput"]),
-                                            float(0.0)])
-                    elif hit["_source"]["dest"] == hit["_source"]["MA"]: #Means MA is the dest site
-                        tempRay = np.array([#hit["_source"]["timestamp"],
-                                            #hit["_source"]["timestamp"]
-                                            conAtlasTime(hit["_source"]["timestamp"]),
-                                            conAtlasTime(hit["_source"]["timestamp"])
-                                              - np.multiply(4, np.multiply(60, 60)),
-                                            float(hit["_source"]["throughput"]),
-                                            float(1.0)])
-                    else:
-                        raise NameError('MA is not src or dest')
-                    if arrRet.size == 0:
-                        arrRet = np.reshape(tempRay, (1, 4))
-                    else:
-                        arrRet = np.vstack((arrRet, tempRay))
-            atlasTotalRec -= len(responseAtlas['hits']['hits'])
+                if hit["_source"]["src"] == hit["_source"]["MA"]: # Means MA is the src site
+                    tempRay = np.array([#hit["_source"]["timestamp"], 
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)), 
+                                        float(hit["_source"]["throughput"]),
+                                        float(0.0)])
+                elif hit["_source"]["dest"] == hit["_source"]["MA"]: #Means MA is the dest site
+                    tempRay = np.array([#hit["_source"]["timestamp"],
+                                        #hit["_source"]["timestamp"]
+                                        conAtlasTime(hit["_source"]["timestamp"]),
+                                        conAtlasTime(hit["_source"]["timestamp"])
+                                          - np.multiply(4, np.multiply(60, 60)),
+                                        float(hit["_source"]["throughput"]),
+                                        float(1.0)])
+                else:
+                    raise NameError('MA is not src or dest')
+                if arrRet.size == 0:
+                    arrRet = np.reshape(tempRay, (1, 4))
+                else:
+                    arrRet = np.vstack((arrRet, tempRay))
+            scrollIdAtlas = responseAtlas['_scroll_id']
+            atlasTotalRec = len(responseAtlas['hits']['hits'])
         arrRet.view('f8,f8,f8,f8').sort(order=['f0'], axis=0)
         return arrRet
 
@@ -322,18 +319,19 @@ def hccQuery(site):
                         arrRet[str(location[0])] = np.reshape(tempHolder, (1,13))
                     else:
                         arrRet[str(location[0])] = np.vstack((arrRet[str(location[0])],tempHolder))
-
-            countHitsHCC -= len(responseHCC['hits']['hits'])
+            scrollIdHCC = responseHCC['_scroll_id']
+            countHitsHCC = len(responseHCC['hits']['hits'])
         for hit in arrRet:
             #print(arrRet)
             #tempRay = arrRet[str(hit)]
             #arrRet[str(hit)] = tempRay[tempRay[:,2].argsort()]
             #arrRet[str(hit)] = sorted(arrRet[str(hit)], key=lambda x : x[2])
             arrRet[str(hit)].view('f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8,f8').sort(order=['f2'], axis=0)
-
+        
         return arrRet
-
-with PdfPages('CMS_Plots.pdf') as pp:
+print("Start")
+start_time = time.time()
+with PdfPages('CMS_Plots_Tester.pdf') as pp:
     d = pp.infodict()
     d['Title'] = 'CMS Grid Plots'
     d['Author'] = u'Jerrod T. Dixon\xe4nen'
@@ -346,102 +344,12 @@ with PdfPages('CMS_Plots.pdf') as pp:
         loc["location"] = np.array([])
         hccResult = hccQuery(hit)
         for note in loc["location"]:
+            print("step 1")
             atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
+            print("step 2")
             atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
             atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
-
-            stampStart = conAtlasTime(startDate) - tenMin
-            while stampStart <= stampEnd:
-                tplCpu = np.array([])
-                tplRate = np.array([])
-                tplCpuTimeHr = np.array([])
-                tplWallClockHr = np.array([])
-                tplRequestCpus = np.array([])
-                tplMemoryMB = np.array([])
-                tplQueueHrs = np.array([])
-                tplRequestMemory = np.array([])
-                tplCoreHr = np.array([])
-                tplCpuBadput = np.array([])
-                tplKEvents = np.array([])
-                #print(hccResult[note])
-                for tpl in hccResult[note]:
-                    if tpl[2] <= int(stampStart) and tpl[3] >= (int(stampStart) + tenMin):
-                        tplCpu = np.append(tplCpu, tpl[0])
-                        tplRate = np.append(tplRate, tpl[1])
-                        tplCpuTimeHr = np.append(tplCpuTimeHr, tpl[4])
-                        tplWallClockHr = np.append(tplWallClockHr, tpl[5])
-                        tplRequestCpus = np.append(tplRequestCpus, tpl[6])
-                        tplMemoryMB = np.append(tplMemoryMB, tpl[7])
-                        tplQueueHrs = np.append(tplQueueHrs, tpl[8])
-                        tplRequestMemory = np.append(tplRequestMemory, tpl[9])
-                        tplCoreHr = np.append(tplCoreHr, tpl[10])
-                        tplCpuBadput = np.append(tplCpuBadput, tpl[11])
-                        tplKEvents = np.append(tplKEvents, tpl[12])
-                if not tplCpu.size > 0:
-                    stampStart = stampStart + tenMin
-                elif type(atlasT) == type(None) and type(atlasP) == type(None) and type(atlasL) == type(None):
-                    stampStart = stampStart + tenMin
-                else:
-                    srcThrough = np.array([])
-                    destThrough = np.array([])
-                    if not type(atlasT) == type(None):
-                        for tpl in atlasT:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[3] == float(0.0):
-                                    srcThrough = np.append(srcThrough, tpl[2])
-                                else:
-                                    destThrough = np.append(destThrough, tpl[2])
-                    srcPacket = np.array([])
-                    destPacket = np.array([])
-                    if not type(atlasP) == type(None):
-                        for tpl in atlasP:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[3] == float(0.0):
-                                    srcPacket = np.append(srcPacket, tpl[2])
-                                else:
-                                    destPacket = np.append(destPacket, tpl[2])
-                    srcLatency = np.array([])
-                    destLatency = np.array([])
-                    if not type(atlasL) == type(None):
-                        for tpl in atlasL:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[5] == float(0.0):
-                                    srcLatency = np.append(srcLatency, tpl[2])
-                                else:
-                                    destLatency = np.append(destLatency, tpl[2])
-                    qBody={
-                              "src": hit,
-                              "dest": note,
-                              "CpuEff": np.mean(tplCpu),
-                              "EventRate": np.mean(tplRate),
-                              "CpuTimeHr": np.mean(tplCpuTimeHr),
-                              "WallClockHr": np.mean(tplWallClockHr),
-                              "RequestCpus": np.mean(tplRequestCpus),
-                              "MemoryMB": np.mean(tplMemoryMB),
-                              "QueueHrs": np.mean(tplQueueHrs),
-                              "RequestMemory": np.mean(tplRequestMemory),
-                              "CoreHr": np.mean(tplCoreHr),
-                              "CpuBadput": np.mean(tplCpuBadput),
-                              "KEvents": np.mean(tplKEvents),
-                              "beginDate": int(stampStart),
-                              "endDate": int(stampStart + tenMin)
-                          }
-                    if srcThrough.size > 0:
-                        qBody['srcThroughput'] = np.mean(srcThrough)
-                    if destThrough.size > 0:
-                        qBody['destThroughput'] = np.mean(destThrough)
-                    if srcPacket.size > 0:
-                        qBody['srcPacket'] = np.mean(srcPacket)
-                    if destPacket.size > 0:
-                        qBody['destPacket'] = np.mean(destPacket)
-                    if srcLatency.size > 0:
-                        qBody['srcLatency'] = np.mean(srcLatency)
-                    if destLatency.size > 0:
-                        qBody['destLatency'] = np.mean(destLatency)
-                    print("about to post")
-                    esCon.index(index='net-health', doc_type='dev', body=qBody)
-                    stampStart = stampStart + tenMin
-
+            print(hit + " To " + note)
             tempArr = hccResult[note]
             arrCpu = np.array([]);
             arrEvent = np.array([]);
@@ -545,3 +453,6 @@ with PdfPages('CMS_Plots.pdf') as pp:
                               lDate)
                 pp.savefig(figL)
                 plt.close(figL)
+print("finished")
+elapsed_time = time.time() - start_time
+print("Elaspsed time is %f" % elapsed_time)
