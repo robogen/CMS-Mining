@@ -1,0 +1,126 @@
+16/12/16 09:13:49 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 129331@c0120.crane.hcc.unl.edu
+16/12/16 09:13:49 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:13:49 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:13:49 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:13:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/16 09:13:50 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:50 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:50 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:50 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:53 WARN ThreadLocalRandom: Failed to generate a seed from SecureRandom within 3 seconds. Not enough entrophy?
+16/12/16 09:13:53 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 3103 ms (0 ms spent in bootstraps)
+16/12/16 09:13:54 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:54 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:54 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:54 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:54 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 16 ms (0 ms spent in bootstraps)
+16/12/16 09:13:54 INFO DiskBlockManager: Created local directory at /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/blockmgr-b062009a-2785-42dc-94ad-79f7607ec389
+16/12/16 09:13:54 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/16 09:13:54 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.1.20:43230
+16/12/16 09:13:54 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.1.20:36421
+16/12/16 09:13:54 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:36421 after 2 ms (0 ms spent in bootstraps)
+16/12/16 09:13:54 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.1.20:36421
+16/12/16 09:13:54 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/16 09:13:54 INFO Executor: Starting executor ID 60 on host 10.138.1.20
+16/12/16 09:13:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37205.
+16/12/16 09:13:54 INFO NettyBlockTransferService: Server created on 10.138.1.20:37205
+16/12/16 09:13:54 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(60, 10.138.1.20, 37205)
+16/12/16 09:13:54 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(60, 10.138.1.20, 37205)
+16/12/16 09:13:54 INFO CoarseGrainedExecutorBackend: Got assigned task 231
+16/12/16 09:13:54 INFO CoarseGrainedExecutorBackend: Got assigned task 232
+16/12/16 09:13:54 INFO Executor: Running task 32.2 in stage 20.0 (TID 232)
+16/12/16 09:13:54 INFO Executor: Running task 14.2 in stage 20.0 (TID 231)
+16/12/16 09:13:54 INFO Executor: Fetching spark://10.138.1.20:43230/files/es_sparklocal.py with timestamp 1481901132724
+16/12/16 09:13:54 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 8 ms (0 ms spent in bootstraps)
+16/12/16 09:13:54 INFO Utils: Fetching spark://10.138.1.20:43230/files/es_sparklocal.py to /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/spark-554cc8d5-eb6d-47d4-bc37-5f6e00d118c8/fetchFileTemp9136234646274203438.tmp
+16/12/16 09:13:54 INFO Utils: Copying /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/spark-554cc8d5-eb6d-47d4-bc37-5f6e00d118c8/17287905961481901132724_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/60/./es_sparklocal.py
+16/12/16 09:13:54 INFO Executor: Fetching spark://10.138.1.20:43230/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1481901132133
+16/12/16 09:13:54 INFO Utils: Fetching spark://10.138.1.20:43230/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/spark-554cc8d5-eb6d-47d4-bc37-5f6e00d118c8/fetchFileTemp4777167513289012666.tmp
+16/12/16 09:13:54 INFO Utils: Copying /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/spark-554cc8d5-eb6d-47d4-bc37-5f6e00d118c8/-8955836221481901132133_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/60/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+16/12/16 09:13:54 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/60/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+16/12/16 09:13:54 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+16/12/16 09:13:55 INFO TorrentBroadcast: Started reading broadcast variable 24
+16/12/16 09:13:55 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43213 after 3 ms (0 ms spent in bootstraps)
+16/12/16 09:13:55 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 6.7 KB, free 397.5 MB)
+16/12/16 09:13:55 INFO TorrentBroadcast: Reading broadcast variable 24 took 172 ms
+16/12/16 09:13:55 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 11.0 KB, free 397.5 MB)
+16/12/16 09:13:55 INFO HadoopRDD: Input split: file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/data/atlas-latency.json:469762048+33554432
+16/12/16 09:13:55 INFO TorrentBroadcast: Started reading broadcast variable 3
+16/12/16 09:13:55 INFO HadoopRDD: Input split: file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/data/atlas-latency.json:1073741824+33554432
+16/12/16 09:13:55 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 22.9 KB, free 397.5 MB)
+16/12/16 09:13:55 INFO TorrentBroadcast: Reading broadcast variable 3 took 11 ms
+16/12/16 09:13:55 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 291.3 KB, free 397.2 MB)
+16/12/16 09:13:55 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/12/16 09:13:55 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/12/16 09:13:55 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/12/16 09:13:55 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/12/16 09:13:55 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/12/16 09:13:57 WARN BlockManager: Putting block rdd_11_14 failed due to an exception
+16/12/16 09:13:57 WARN BlockManager: Block rdd_11_14 could not be removed as it was not found on disk or in memory
+16/12/16 09:13:57 ERROR Executor: Exception in task 14.2 in stage 20.0 (TID 231)
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at org.apache.spark.api.python.PythonWorkerFactory.redirectStreamsToStderr(PythonWorkerFactory.scala:210)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:169)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:89)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:65)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:114)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:128)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:319)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:332)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:330)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:951)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:926)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:866)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:926)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:670)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:330)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:281)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:319)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:283)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:70)
+	at org.apache.spark.scheduler.Task.run(Task.scala:86)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:274)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/16 09:13:57 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[Executor task launch worker-0,5,main]
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at org.apache.spark.api.python.PythonWorkerFactory.redirectStreamsToStderr(PythonWorkerFactory.scala:210)
+	at org.apache.spark.api.python.PythonWorkerFactory.startDaemon(PythonWorkerFactory.scala:169)
+	at org.apache.spark.api.python.PythonWorkerFactory.createThroughDaemon(PythonWorkerFactory.scala:89)
+	at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:65)
+	at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:114)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:128)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:319)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:332)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:330)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:951)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:926)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:866)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:926)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:670)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:330)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:281)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:319)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:283)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:70)
+	at org.apache.spark.scheduler.Task.run(Task.scala:86)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:274)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/16 09:13:57 INFO CoarseGrainedExecutorBackend: Got assigned task 235
+16/12/16 09:13:57 INFO DiskBlockManager: Shutdown hook called
+16/12/16 09:13:57 INFO Executor: Running task 30.3 in stage 20.0 (TID 235)
+16/12/16 09:13:57 INFO ShutdownHookManager: Shutdown hook called
+16/12/16 09:13:57 INFO ShutdownHookManager: Deleting directory /tmp/spark-6b8dbf8a-2f17-4db8-ae7e-d8d0cee00d40/executor-bf0351b5-959e-416d-b680-50068f8bc45b/spark-554cc8d5-eb6d-47d4-bc37-5f6e00d118c8

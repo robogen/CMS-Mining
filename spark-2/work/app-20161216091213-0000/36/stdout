@@ -1,0 +1,6 @@
+Error occurred during initialization of VM
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at java.lang.ref.Finalizer.<clinit>(Finalizer.java:226)
+

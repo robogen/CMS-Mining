@@ -1,0 +1,69 @@
+16/12/16 09:13:38 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 128589@c0120.crane.hcc.unl.edu
+16/12/16 09:13:38 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:13:38 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:13:38 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:13:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/16 09:13:39 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:39 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:39 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:39 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:43 WARN ThreadLocalRandom: Failed to generate a seed from SecureRandom within 3 seconds. Not enough entrophy?
+16/12/16 09:13:43 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 3136 ms (0 ms spent in bootstraps)
+16/12/16 09:13:43 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:43 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:43 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:43 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:43 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 2 ms (0 ms spent in bootstraps)
+16/12/16 09:13:43 INFO DiskBlockManager: Created local directory at /tmp/spark-a7c20511-b5d0-4bf2-a3cb-b9ea857212fd/executor-0558fb3f-9698-4cc3-a70d-9ee25d30476b/blockmgr-69e172eb-118d-4a53-8cd4-9459d8ce973e
+16/12/16 09:13:43 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/16 09:13:44 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.1.20:43230
+16/12/16 09:13:44 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.1.20:41483
+16/12/16 09:13:44 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:41483 after 2 ms (0 ms spent in bootstraps)
+16/12/16 09:13:44 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.1.20:41483
+16/12/16 09:13:44 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/16 09:13:44 INFO Executor: Starting executor ID 22 on host 10.138.1.20
+16/12/16 09:13:44 WARN AbstractChannel: Force-closing a channel whose registration task was not accepted by an event loop: [id: 0x1e14054e]
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.startThread(SingleThreadEventExecutor.java:720)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:689)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register(AbstractChannel.java:421)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:60)
+	at io.netty.channel.SingleThreadEventLoop.register(SingleThreadEventLoop.java:48)
+	at io.netty.channel.MultithreadEventLoopGroup.register(MultithreadEventLoopGroup.java:64)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:315)
+	at io.netty.bootstrap.AbstractBootstrap.doBind(AbstractBootstrap.java:271)
+	at io.netty.bootstrap.AbstractBootstrap.bind(AbstractBootstrap.java:267)
+	at org.apache.spark.network.server.TransportServer.init(TransportServer.java:129)
+	at org.apache.spark.network.server.TransportServer.<init>(TransportServer.java:74)
+	at org.apache.spark.network.TransportContext.createServer(TransportContext.java:104)
+	at org.apache.spark.network.netty.NettyBlockTransferService.org$apache$spark$network$netty$NettyBlockTransferService$$startService$1(NettyBlockTransferService.scala:78)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anonfun$createServer$1.apply(NettyBlockTransferService.scala:83)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anonfun$createServer$1.apply(NettyBlockTransferService.scala:83)
+	at org.apache.spark.util.Utils$$anonfun$startServiceOnPort$1.apply$mcVI$sp(Utils.scala:2171)
+	at scala.collection.immutable.Range.foreach$mVc$sp(Range.scala:160)
+	at org.apache.spark.util.Utils$.startServiceOnPort(Utils.scala:2162)
+	at org.apache.spark.network.netty.NettyBlockTransferService.createServer(NettyBlockTransferService.scala:83)
+	at org.apache.spark.network.netty.NettyBlockTransferService.init(NettyBlockTransferService.scala:70)
+	at org.apache.spark.storage.BlockManager.initialize(BlockManager.scala:159)
+	at org.apache.spark.executor.Executor.<init>(Executor.scala:90)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$$anonfun$receive$1.applyOrElse(CoarseGrainedExecutorBackend.scala:82)
+	at org.apache.spark.rpc.netty.Inbox$$anonfun$process$1.apply$mcV$sp(Inbox.scala:117)
+	at org.apache.spark.rpc.netty.Inbox.safelyCall(Inbox.scala:205)
+	at org.apache.spark.rpc.netty.Inbox.process(Inbox.scala:101)
+	at org.apache.spark.rpc.netty.Dispatcher$MessageLoop.run(Dispatcher.scala:213)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/16 09:13:44 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[dispatcher-event-loop-9,5,main]
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at java.util.concurrent.ThreadPoolExecutor.addWorker(ThreadPoolExecutor.java:949)
+	at java.util.concurrent.ThreadPoolExecutor.processWorkerExit(ThreadPoolExecutor.java:1017)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1163)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)

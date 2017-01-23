@@ -1,0 +1,264 @@
+16/12/15 21:43:21 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 245024@c0704.crane.hcc.unl.edu
+16/12/15 21:43:21 INFO SignalUtils: Registered signal handler for TERM
+16/12/15 21:43:21 INFO SignalUtils: Registered signal handler for HUP
+16/12/15 21:43:21 INFO SignalUtils: Registered signal handler for INT
+16/12/15 21:43:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/15 21:43:22 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 21:43:22 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 21:43:22 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 21:43:22 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 21:43:22 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 21:43:23 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 111 ms (0 ms spent in bootstraps)
+16/12/15 21:43:23 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 21:43:23 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 21:43:23 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 21:43:23 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 21:43:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 21:43:23 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:43:23 INFO DiskBlockManager: Created local directory at /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/blockmgr-6f8d5419-eabd-4a0a-97c4-8622c6720716
+16/12/15 21:43:23 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/15 21:43:23 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.7.4:41318
+16/12/15 21:43:23 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.7.4:34436
+16/12/15 21:43:23 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:34436 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:43:23 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.7.4:34436
+16/12/15 21:43:23 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/15 21:43:23 INFO Executor: Starting executor ID 2 on host 10.138.7.4
+16/12/15 21:43:24 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42060.
+16/12/15 21:43:24 INFO NettyBlockTransferService: Server created on 10.138.7.4:42060
+16/12/15 21:43:24 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(2, 10.138.7.4, 42060)
+16/12/15 21:43:24 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(2, 10.138.7.4, 42060)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5900
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5901
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5902
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5903
+16/12/15 21:43:24 INFO Executor: Running task 14.2 in stage 29.0 (TID 5901)
+16/12/15 21:43:24 INFO Executor: Running task 7.2 in stage 29.0 (TID 5900)
+16/12/15 21:43:24 INFO Executor: Running task 16.2 in stage 29.0 (TID 5902)
+16/12/15 21:43:24 INFO Executor: Running task 18.2 in stage 29.0 (TID 5903)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5904
+16/12/15 21:43:24 INFO Executor: Running task 17.2 in stage 29.0 (TID 5904)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5905
+16/12/15 21:43:24 INFO Executor: Running task 19.2 in stage 29.0 (TID 5905)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5906
+16/12/15 21:43:24 INFO Executor: Running task 12.2 in stage 29.0 (TID 5906)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5907
+16/12/15 21:43:24 INFO Executor: Running task 10.2 in stage 29.0 (TID 5907)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5908
+16/12/15 21:43:24 INFO Executor: Running task 4.2 in stage 29.0 (TID 5908)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5909
+16/12/15 21:43:24 INFO Executor: Running task 24.1 in stage 29.0 (TID 5909)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5910
+16/12/15 21:43:24 INFO Executor: Running task 5.2 in stage 29.0 (TID 5910)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5911
+16/12/15 21:43:24 INFO Executor: Running task 6.2 in stage 29.0 (TID 5911)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5912
+16/12/15 21:43:24 INFO Executor: Running task 27.1 in stage 29.0 (TID 5912)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5913
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5914
+16/12/15 21:43:24 INFO Executor: Running task 9.2 in stage 29.0 (TID 5913)
+16/12/15 21:43:24 INFO Executor: Running task 11.2 in stage 29.0 (TID 5914)
+16/12/15 21:43:24 INFO CoarseGrainedExecutorBackend: Got assigned task 5915
+16/12/15 21:43:24 INFO Executor: Running task 20.2 in stage 29.0 (TID 5915)
+16/12/15 21:43:24 INFO Executor: Fetching spark://10.138.7.4:41318/files/es_sparklocal.py with timestamp 1481856142594
+16/12/15 21:43:24 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:43:24 INFO Utils: Fetching spark://10.138.7.4:41318/files/es_sparklocal.py to /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-a7104be9-6cc6-4ff6-88f8-7d7056b0da12/fetchFileTemp6414033063251758282.tmp
+16/12/15 21:43:24 INFO Utils: Copying /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-a7104be9-6cc6-4ff6-88f8-7d7056b0da12/19326359771481856142594_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/2/./es_sparklocal.py
+16/12/15 21:43:24 INFO Executor: Fetching spark://10.138.7.4:41318/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1481856142306
+16/12/15 21:43:24 INFO Utils: Fetching spark://10.138.7.4:41318/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-a7104be9-6cc6-4ff6-88f8-7d7056b0da12/fetchFileTemp1658050910479363579.tmp
+16/12/15 21:43:24 INFO Utils: Copying /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-a7104be9-6cc6-4ff6-88f8-7d7056b0da12/8792227831481856142306_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/2/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+16/12/15 21:43:24 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/2/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+16/12/15 21:43:24 INFO TorrentBroadcast: Started reading broadcast variable 37
+16/12/15 21:43:24 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:36714 after 2 ms (0 ms spent in bootstraps)
+16/12/15 21:43:24 INFO MemoryStore: Block broadcast_37_piece0 stored as bytes in memory (estimated size 6.6 KB, free 397.5 MB)
+16/12/15 21:43:24 INFO TorrentBroadcast: Reading broadcast variable 37 took 183 ms
+16/12/15 21:43:24 INFO MemoryStore: Block broadcast_37 stored as values in memory (estimated size 10.8 KB, free 397.5 MB)
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1b0c7c33
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@14bccf7f
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@50ae0624
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5fb1d786
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4decb8c1
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@94baa70
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7055aede
+16/12/15 21:43:24 INFO TorrentBroadcast: Started reading broadcast variable 12
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6d9c24d7
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2636d779
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5a7c5c88
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1a9f1321
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@41a0e92e
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2b2cecab
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1265e4b2
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@36f426fb
+16/12/15 21:43:24 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@572b44ec
+16/12/15 21:43:24 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 23.2 KB, free 397.5 MB)
+16/12/15 21:43:24 INFO TorrentBroadcast: Reading broadcast variable 12 took 16 ms
+16/12/15 21:43:25 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 294.8 KB, free 397.2 MB)
+16/12/15 21:43:25 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+16/12/15 21:43:26 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/12/15 21:43:26 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:43:26 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:45:54 INFO MemoryStore: 2 blocks selected for dropping (29.8 KB bytes)
+16/12/15 21:45:54 INFO BlockManager: Dropping block broadcast_37_piece0 from memory
+16/12/15 21:45:54 INFO BlockManager: Writing block broadcast_37_piece0 to disk
+16/12/15 21:45:54 INFO BlockManager: Dropping block broadcast_12_piece0 from memory
+16/12/15 21:45:54 INFO BlockManager: Writing block broadcast_12_piece0 to disk
+16/12/15 21:45:54 INFO MemoryStore: After dropping 2 blocks, free memory is 397.2 MB
+16/12/15 21:45:54 INFO MemoryStore: Will not store rdd_15_27
+16/12/15 21:45:54 WARN MemoryStore: Not enough space to cache rdd_15_27 in memory! (computed 26.1 MB so far)
+16/12/15 21:45:54 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:54 WARN BlockManager: Block rdd_15_27 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:54 WARN BlockManager: Putting block rdd_15_27 failed
+16/12/15 21:45:54 INFO MemoryStore: Will not store rdd_15_16
+16/12/15 21:45:54 WARN MemoryStore: Not enough space to cache rdd_15_16 in memory! (computed 24.6 MB so far)
+16/12/15 21:45:54 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:55 WARN BlockManager: Block rdd_15_16 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:55 WARN BlockManager: Putting block rdd_15_16 failed
+16/12/15 21:45:56 INFO MemoryStore: Will not store rdd_15_14
+16/12/15 21:45:56 WARN MemoryStore: Not enough space to cache rdd_15_14 in memory! (computed 24.2 MB so far)
+16/12/15 21:45:56 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:56 WARN BlockManager: Block rdd_15_14 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:56 WARN BlockManager: Putting block rdd_15_14 failed
+16/12/15 21:45:56 INFO MemoryStore: Will not store rdd_15_24
+16/12/15 21:45:56 WARN MemoryStore: Not enough space to cache rdd_15_24 in memory! (computed 23.4 MB so far)
+16/12/15 21:45:56 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:56 WARN BlockManager: Block rdd_15_24 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:56 WARN BlockManager: Putting block rdd_15_24 failed
+16/12/15 21:45:56 INFO MemoryStore: Will not store rdd_15_4
+16/12/15 21:45:56 WARN MemoryStore: Not enough space to cache rdd_15_4 in memory! (computed 25.2 MB so far)
+16/12/15 21:45:56 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:56 WARN BlockManager: Block rdd_15_4 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:56 WARN BlockManager: Putting block rdd_15_4 failed
+16/12/15 21:45:56 INFO MemoryStore: Will not store rdd_15_7
+16/12/15 21:45:56 WARN MemoryStore: Not enough space to cache rdd_15_7 in memory! (computed 24.8 MB so far)
+16/12/15 21:45:56 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:45:56 WARN BlockManager: Block rdd_15_7 could not be removed as it was not found on disk or in memory
+16/12/15 21:45:56 WARN BlockManager: Putting block rdd_15_7 failed
+16/12/15 21:50:17 INFO MemoryStore: Will not store rdd_15_18
+16/12/15 21:50:17 WARN MemoryStore: Not enough space to cache rdd_15_18 in memory! (computed 40.6 MB so far)
+16/12/15 21:50:17 INFO MemoryStore: Memory use = 305.6 KB (blocks) + 397.2 MB (scratch space shared across 10 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:50:17 WARN BlockManager: Block rdd_15_18 could not be removed as it was not found on disk or in memory
+16/12/15 21:50:17 WARN BlockManager: Putting block rdd_15_18 failed
+16/12/15 21:52:14 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.concurrent.locks.ReentrantLock.<init>(ReentrantLock.java:262)
+	at java.util.concurrent.ConcurrentHashMap$Segment.<init>(ConcurrentHashMap.java:425)
+	at java.util.concurrent.ConcurrentHashMap.ensureSegment(ConcurrentHashMap.java:749)
+	at java.util.concurrent.ConcurrentHashMap.put(ConcurrentHashMap.java:1129)
+	at org.apache.hadoop.io.AbstractMapWritable.addToMap(AbstractMapWritable.java:84)
+	at org.apache.hadoop.io.AbstractMapWritable.<init>(AbstractMapWritable.java:142)
+	at org.apache.hadoop.io.MapWritable.<init>(MapWritable.java:44)
+	at org.elasticsearch.hadoop.mr.LinkedMapWritable.<init>(LinkedMapWritable.java:44)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$WritableEsInputRecordReader.createValue(EsInputFormat.java:339)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$WritableEsInputRecordReader.createValue(EsInputFormat.java:318)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$EsInputRecordReader.nextKeyValue(EsInputFormat.java:178)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1.hasNext(NewHadoopRDD.scala:182)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:120)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:112)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.foreach(SerDeUtil.scala:112)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1953)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+16/12/15 21:52:19 ERROR Utils: Uncaught exception in thread driver-heartbeater
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:18 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:19 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:16 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:415)
+	at java.lang.StringBuilder.append(StringBuilder.java:132)
+	at org.elasticsearch.hadoop.serialization.json.JacksonJsonParser.absoluteName(JacksonJsonParser.java:151)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.map(ScrollReader.java:783)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.read(ScrollReader.java:696)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.readHitAsMap(ScrollReader.java:466)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.readHit(ScrollReader.java:391)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.read(ScrollReader.java:286)
+	at org.elasticsearch.hadoop.serialization.ScrollReader.read(ScrollReader.java:259)
+	at org.elasticsearch.hadoop.rest.RestRepository.scroll(RestRepository.java:377)
+	at org.elasticsearch.hadoop.rest.ScrollQuery.hasNext(ScrollQuery.java:112)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$EsInputRecordReader.next(EsInputFormat.java:246)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$EsInputRecordReader.nextKeyValue(EsInputFormat.java:180)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1.hasNext(NewHadoopRDD.scala:182)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:120)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:112)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.foreach(SerDeUtil.scala:112)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1953)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+16/12/15 21:52:15 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:19 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:15 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:15 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:15 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:20 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:15 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:20 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:15 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:14 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.lang.StringCoding.encode(StringCoding.java:338)
+	at java.lang.String.getBytes(String.java:916)
+	at net.razorvine.pickle.Pickler.put_string(Pickler.java:648)
+	at net.razorvine.pickle.Pickler.dispatch(Pickler.java:260)
+	at net.razorvine.pickle.Pickler.save(Pickler.java:141)
+	at net.razorvine.pickle.Pickler.put_arrayOfObjects(Pickler.java:520)
+	at net.razorvine.pickle.Pickler.dispatch(Pickler.java:210)
+	at net.razorvine.pickle.Pickler.save(Pickler.java:141)
+	at net.razorvine.pickle.Pickler.put_arrayOfObjects(Pickler.java:535)
+	at net.razorvine.pickle.Pickler.dispatch(Pickler.java:210)
+	at net.razorvine.pickle.Pickler.save(Pickler.java:141)
+	at net.razorvine.pickle.Pickler.dump(Pickler.java:111)
+	at net.razorvine.pickle.Pickler.dumps(Pickler.java:96)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:123)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.next(SerDeUtil.scala:112)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.api.python.SerDeUtil$AutoBatchedPickler.foreach(SerDeUtil.scala:112)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1953)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+16/12/15 21:52:14 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:14 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:21 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for python,5,main]
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+16/12/15 21:52:14 ERROR Utils: Uncaught exception in thread stdout writer for python
+java.lang.OutOfMemoryError: GC overhead limit exceeded

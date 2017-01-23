@@ -1,0 +1,136 @@
+16/12/16 09:13:35 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 128185@c0120.crane.hcc.unl.edu
+16/12/16 09:13:35 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:13:35 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:13:35 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:13:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/16 09:13:36 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:36 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:36 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:36 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:36 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:36 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 132 ms (0 ms spent in bootstraps)
+16/12/16 09:13:36 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:36 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:36 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:36 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:36 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/16 09:13:36 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 9 ms (0 ms spent in bootstraps)
+16/12/16 09:13:37 INFO DiskBlockManager: Created local directory at /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/blockmgr-9fca62b2-2a4d-41ed-8ed4-dc757de578dc
+16/12/16 09:13:37 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/16 09:13:37 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.1.20:43230
+16/12/16 09:13:37 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.1.20:42123
+16/12/16 09:13:37 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:42123 after 1 ms (0 ms spent in bootstraps)
+16/12/16 09:13:37 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.1.20:42123
+16/12/16 09:13:37 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/16 09:13:37 INFO Executor: Starting executor ID 7 on host 10.138.1.20
+16/12/16 09:13:37 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42031.
+16/12/16 09:13:37 INFO NettyBlockTransferService: Server created on 10.138.1.20:42031
+16/12/16 09:13:37 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(7, 10.138.1.20, 42031)
+16/12/16 09:13:37 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(7, 10.138.1.20, 42031)
+16/12/16 09:13:45 INFO CoarseGrainedExecutorBackend: Got assigned task 210
+16/12/16 09:13:45 INFO Executor: Running task 25.0 in stage 20.0 (TID 210)
+16/12/16 09:13:46 INFO Executor: Fetching spark://10.138.1.20:43230/files/es_sparklocal.py with timestamp 1481901132724
+16/12/16 09:13:46 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:43230 after 2 ms (0 ms spent in bootstraps)
+16/12/16 09:13:46 INFO Utils: Fetching spark://10.138.1.20:43230/files/es_sparklocal.py to /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/spark-ff055fd0-c25d-435a-8410-ef8b5d925f6a/fetchFileTemp27439350732248606.tmp
+16/12/16 09:13:46 INFO Utils: Copying /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/spark-ff055fd0-c25d-435a-8410-ef8b5d925f6a/17287905961481901132724_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/7/./es_sparklocal.py
+16/12/16 09:13:46 INFO Executor: Fetching spark://10.138.1.20:43230/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1481901132133
+16/12/16 09:13:46 INFO Utils: Fetching spark://10.138.1.20:43230/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/spark-ff055fd0-c25d-435a-8410-ef8b5d925f6a/fetchFileTemp1669569054162703255.tmp
+16/12/16 09:13:46 INFO Utils: Copying /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/spark-ff055fd0-c25d-435a-8410-ef8b5d925f6a/-8955836221481901132133_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/7/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+16/12/16 09:13:46 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161216091213-0000/7/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+16/12/16 09:13:46 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+16/12/16 09:13:46 INFO TorrentBroadcast: Started reading broadcast variable 24
+16/12/16 09:13:46 INFO TransportClientFactory: Successfully created connection to /10.138.1.20:37972 after 4 ms (0 ms spent in bootstraps)
+16/12/16 09:13:46 WARN TransportChannelHandler: Exception in connection from /10.138.1.20:37972
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:384)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:313)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:242)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/16 09:13:46 ERROR TransportResponseHandler: Still have 1 requests outstanding when connection from /10.138.1.20:37972 is closed
+16/12/16 09:13:46 ERROR OneForOneBlockFetcher: Failed while starting block fetches
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:384)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:313)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:881)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:242)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:119)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/16 09:13:46 INFO RetryingBlockFetcher: Retrying fetch (1/3) for 1 outstanding blocks after 5000 ms
+16/12/16 09:13:51 INFO TransportClientFactory: Found inactive connection to /10.138.1.20:37972, creating a new one.
+16/12/16 09:13:51 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 1 retries)
+java.io.IOException: Failed to connect to /10.138.1.20:37972
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:228)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:179)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:96)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: /10.138.1.20:37972
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:744)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/12/16 09:13:51 INFO RetryingBlockFetcher: Retrying fetch (2/3) for 1 outstanding blocks after 5000 ms
+16/12/16 09:13:56 INFO TransportClientFactory: Found inactive connection to /10.138.1.20:37972, creating a new one.
+16/12/16 09:13:56 ERROR RetryingBlockFetcher: Exception while beginning fetch of 1 outstanding blocks (after 2 retries)
+java.io.IOException: Failed to connect to /10.138.1.20:37972
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:228)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:179)
+	at org.apache.spark.network.netty.NettyBlockTransferService$$anon$1.createAndStart(NettyBlockTransferService.scala:96)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.fetchAllOutstanding(RetryingBlockFetcher.java:140)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher.access$200(RetryingBlockFetcher.java:43)
+	at org.apache.spark.network.shuffle.RetryingBlockFetcher$1.run(RetryingBlockFetcher.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: /10.138.1.20:37972
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:744)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:224)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:289)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:528)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	... 1 more
+16/12/16 09:13:56 INFO RetryingBlockFetcher: Retrying fetch (3/3) for 1 outstanding blocks after 5000 ms
+16/12/16 09:13:57 INFO Executor: Executor is trying to kill task 25.0 in stage 20.0 (TID 210)
+16/12/16 09:13:58 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/12/16 09:13:58 INFO MemoryStore: MemoryStore cleared
+16/12/16 09:13:58 INFO BlockManager: BlockManager stopped
+16/12/16 09:13:58 INFO ShutdownHookManager: Shutdown hook called
+16/12/16 09:13:58 INFO ShutdownHookManager: Deleting directory /tmp/spark-c37e94f2-8fed-4666-96c0-9defb1247fc2/executor-dacebcaf-3f74-43f4-8cbc-0c17685bd56e/spark-ff055fd0-c25d-435a-8410-ef8b5d925f6a

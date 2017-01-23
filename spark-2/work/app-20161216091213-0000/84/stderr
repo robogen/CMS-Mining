@@ -1,0 +1,24 @@
+16/12/16 09:13:54 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 130099@c0120.crane.hcc.unl.edu
+16/12/16 09:13:54 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:13:54 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:13:54 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:13:55 ERROR Shell: Caught java.lang.OutOfMemoryError: unable to create new native thread. One possible reason is that ulimit setting of 'max user processes' is too low. If so, do 'ulimit -u <largerNum>' and try again.
+Exception in thread "main" java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at org.apache.hadoop.util.Shell.runCommand(Shell.java:559)
+	at org.apache.hadoop.util.Shell.run(Shell.java:479)
+	at org.apache.hadoop.util.Shell$ShellCommandExecutor.execute(Shell.java:773)
+	at org.apache.hadoop.util.Shell.isSetsidSupported(Shell.java:414)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:404)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.setConfiguration(UserGroupInformation.java:312)
+	at org.apache.spark.deploy.SparkHadoopUtil.<init>(SparkHadoopUtil.scala:55)
+	at org.apache.spark.deploy.SparkHadoopUtil$.hadoop$lzycompute(SparkHadoopUtil.scala:411)
+	at org.apache.spark.deploy.SparkHadoopUtil$.hadoop(SparkHadoopUtil.scala:411)
+	at org.apache.spark.deploy.SparkHadoopUtil$.get(SparkHadoopUtil.scala:439)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$.run(CoarseGrainedExecutorBackend.scala:174)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$.main(CoarseGrainedExecutorBackend.scala:270)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend.main(CoarseGrainedExecutorBackend.scala)

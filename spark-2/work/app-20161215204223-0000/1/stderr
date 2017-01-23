@@ -1,0 +1,198 @@
+16/12/15 21:32:49 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 244516@c0704.crane.hcc.unl.edu
+16/12/15 21:32:49 INFO SignalUtils: Registered signal handler for TERM
+16/12/15 21:32:49 INFO SignalUtils: Registered signal handler for HUP
+16/12/15 21:32:49 INFO SignalUtils: Registered signal handler for INT
+16/12/15 21:32:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/15 21:32:50 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 21:32:50 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 21:32:50 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 21:32:50 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 21:32:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 21:32:51 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 119 ms (0 ms spent in bootstraps)
+16/12/15 21:32:51 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 21:32:51 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 21:32:51 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 21:32:51 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 21:32:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 21:32:51 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:32:51 INFO DiskBlockManager: Created local directory at /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/blockmgr-a46f287c-9ce1-4cc1-a80a-1373e444db66
+16/12/15 21:32:51 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.7.4:41318
+16/12/15 21:32:51 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.7.4:34436
+16/12/15 21:32:51 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:34436 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:32:51 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.7.4:34436
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/15 21:32:51 INFO Executor: Starting executor ID 1 on host 10.138.7.4
+16/12/15 21:32:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42002.
+16/12/15 21:32:51 INFO NettyBlockTransferService: Server created on 10.138.7.4:42002
+16/12/15 21:32:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 10.138.7.4, 42002)
+16/12/15 21:32:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 10.138.7.4, 42002)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5879
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5880
+16/12/15 21:32:51 INFO Executor: Running task 20.1 in stage 29.0 (TID 5879)
+16/12/15 21:32:51 INFO Executor: Running task 21.1 in stage 29.0 (TID 5880)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5881
+16/12/15 21:32:51 INFO Executor: Running task 12.1 in stage 29.0 (TID 5881)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5882
+16/12/15 21:32:51 INFO Executor: Running task 9.1 in stage 29.0 (TID 5882)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5883
+16/12/15 21:32:51 INFO Executor: Running task 18.1 in stage 29.0 (TID 5883)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5884
+16/12/15 21:32:51 INFO Executor: Running task 6.1 in stage 29.0 (TID 5884)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5885
+16/12/15 21:32:51 INFO Executor: Running task 7.1 in stage 29.0 (TID 5885)
+16/12/15 21:32:51 INFO Executor: Fetching spark://10.138.7.4:41318/files/es_sparklocal.py with timestamp 1481856142594
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5886
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5887
+16/12/15 21:32:51 INFO Executor: Running task 16.1 in stage 29.0 (TID 5886)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5888
+16/12/15 21:32:51 INFO Executor: Running task 4.1 in stage 29.0 (TID 5887)
+16/12/15 21:32:51 INFO Executor: Running task 22.1 in stage 29.0 (TID 5888)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5889
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5890
+16/12/15 21:32:51 INFO Executor: Running task 19.1 in stage 29.0 (TID 5889)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5891
+16/12/15 21:32:51 INFO Executor: Running task 10.1 in stage 29.0 (TID 5890)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5892
+16/12/15 21:32:51 INFO Executor: Running task 11.1 in stage 29.0 (TID 5891)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5893
+16/12/15 21:32:51 INFO Executor: Running task 17.1 in stage 29.0 (TID 5892)
+16/12/15 21:32:51 INFO CoarseGrainedExecutorBackend: Got assigned task 5894
+16/12/15 21:32:51 INFO Executor: Running task 5.1 in stage 29.0 (TID 5893)
+16/12/15 21:32:51 INFO Executor: Running task 14.1 in stage 29.0 (TID 5894)
+16/12/15 21:32:52 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:41318 after 1 ms (0 ms spent in bootstraps)
+16/12/15 21:32:52 INFO Utils: Fetching spark://10.138.7.4:41318/files/es_sparklocal.py to /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-3d50e8d2-310b-4639-888d-25f5cd4ee642/fetchFileTemp704344225780938143.tmp
+16/12/15 21:32:52 INFO Utils: Copying /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-3d50e8d2-310b-4639-888d-25f5cd4ee642/19326359771481856142594_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/1/./es_sparklocal.py
+16/12/15 21:32:52 INFO Executor: Fetching spark://10.138.7.4:41318/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1481856142306
+16/12/15 21:32:52 INFO Utils: Fetching spark://10.138.7.4:41318/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-3d50e8d2-310b-4639-888d-25f5cd4ee642/fetchFileTemp2145063521741152595.tmp
+16/12/15 21:32:52 INFO Utils: Copying /tmp/spark-5e1bb8af-2952-4a15-8a2f-6ebcb634185c/executor-42da137b-27d3-48f8-aec5-91ad49cc2ea0/spark-3d50e8d2-310b-4639-888d-25f5cd4ee642/8792227831481856142306_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+16/12/15 21:32:52 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215204223-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+16/12/15 21:32:52 INFO TorrentBroadcast: Started reading broadcast variable 37
+16/12/15 21:32:52 INFO TransportClientFactory: Successfully created connection to /10.138.7.4:36714 after 17 ms (0 ms spent in bootstraps)
+16/12/15 21:32:52 INFO MemoryStore: Block broadcast_37_piece0 stored as bytes in memory (estimated size 6.6 KB, free 397.5 MB)
+16/12/15 21:32:52 INFO TorrentBroadcast: Reading broadcast variable 37 took 196 ms
+16/12/15 21:32:52 INFO MemoryStore: Block broadcast_37 stored as values in memory (estimated size 10.8 KB, free 397.5 MB)
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5bf196f2
+16/12/15 21:32:52 INFO TorrentBroadcast: Started reading broadcast variable 12
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@57cd2006
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2515c68f
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@51ed1906
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@48e71cec
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3d1bef58
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@74fe99bf
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7720069a
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5791a58f
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@51154edd
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@14bccf7f
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@77daa57b
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@33a66bb6
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@72e99437
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4501e1d1
+16/12/15 21:32:52 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7e9083bb
+16/12/15 21:32:52 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 23.2 KB, free 397.5 MB)
+16/12/15 21:32:52 INFO TorrentBroadcast: Reading broadcast variable 12 took 21 ms
+16/12/15 21:32:53 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 294.8 KB, free 397.2 MB)
+16/12/15 21:32:53 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+16/12/15 21:32:54 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:32:54 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:34:36 INFO PythonRunner: Times: total = 102358, boot = 1413, init = 2245, finish = 98700
+16/12/15 21:34:36 INFO MemoryStore: Block rdd_15_21 stored as bytes in memory (estimated size 18.5 MB, free 378.6 MB)
+16/12/15 21:34:37 INFO PythonRunner: Times: total = 933, boot = -72, init = 85, finish = 920
+16/12/15 21:34:37 INFO Executor: Finished task 21.1 in stage 29.0 (TID 5880). 3340 bytes result sent to driver
+16/12/15 21:34:37 INFO CoarseGrainedExecutorBackend: Got assigned task 5895
+16/12/15 21:34:37 INFO Executor: Running task 23.0 in stage 29.0 (TID 5895)
+16/12/15 21:34:37 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@271df4c4
+16/12/15 21:34:37 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:34:37 INFO PythonRunner: Times: total = 161, boot = 15, init = 146, finish = 0
+16/12/15 21:34:37 INFO MemoryStore: Block rdd_15_23 stored as bytes in memory (estimated size 21.0 B, free 378.6 MB)
+16/12/15 21:34:38 INFO PythonRunner: Times: total = 80, boot = -169, init = 249, finish = 0
+16/12/15 21:34:38 INFO Executor: Finished task 23.0 in stage 29.0 (TID 5895). 2027 bytes result sent to driver
+16/12/15 21:34:38 INFO CoarseGrainedExecutorBackend: Got assigned task 5896
+16/12/15 21:34:38 INFO Executor: Running task 24.0 in stage 29.0 (TID 5896)
+16/12/15 21:34:38 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1cf70dae
+16/12/15 21:34:38 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:34:41 INFO PythonRunner: Times: total = 107579, boot = 1459, init = 1965, finish = 104155
+16/12/15 21:34:41 INFO MemoryStore: Block rdd_15_22 stored as bytes in memory (estimated size 18.6 MB, free 360.0 MB)
+16/12/15 21:34:43 INFO PythonRunner: Times: total = 1297, boot = 19, init = 1, finish = 1277
+16/12/15 21:34:43 INFO Executor: Finished task 22.1 in stage 29.0 (TID 5888). 3458 bytes result sent to driver
+16/12/15 21:34:43 INFO CoarseGrainedExecutorBackend: Got assigned task 5897
+16/12/15 21:34:43 INFO Executor: Running task 25.0 in stage 29.0 (TID 5897)
+16/12/15 21:34:43 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@726bd909
+16/12/15 21:34:43 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:35:21 INFO MemoryStore: Will not store rdd_15_5
+16/12/15 21:35:21 WARN MemoryStore: Not enough space to cache rdd_15_5 in memory! (computed 24.0 MB so far)
+16/12/15 21:35:21 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:21 WARN BlockManager: Block rdd_15_5 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:21 WARN BlockManager: Putting block rdd_15_5 failed
+16/12/15 21:35:22 INFO MemoryStore: Will not store rdd_15_24
+16/12/15 21:35:22 WARN MemoryStore: Not enough space to cache rdd_15_24 in memory! (computed 6.6 MB so far)
+16/12/15 21:35:22 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:22 WARN BlockManager: Block rdd_15_24 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:22 WARN BlockManager: Putting block rdd_15_24 failed
+16/12/15 21:35:22 INFO MemoryStore: Will not store rdd_15_25
+16/12/15 21:35:22 WARN MemoryStore: Not enough space to cache rdd_15_25 in memory! (computed 5.4 MB so far)
+16/12/15 21:35:22 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 16 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:22 WARN BlockManager: Block rdd_15_25 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:22 WARN BlockManager: Putting block rdd_15_25 failed
+16/12/15 21:35:43 INFO MemoryStore: 2 blocks selected for dropping (29.8 KB bytes)
+16/12/15 21:35:43 INFO BlockManager: Dropping block broadcast_37_piece0 from memory
+16/12/15 21:35:43 INFO BlockManager: Writing block broadcast_37_piece0 to disk
+16/12/15 21:35:43 INFO BlockManager: Dropping block broadcast_12_piece0 from memory
+16/12/15 21:35:43 INFO BlockManager: Writing block broadcast_12_piece0 to disk
+16/12/15 21:35:43 INFO MemoryStore: After dropping 2 blocks, free memory is 360.0 MB
+16/12/15 21:35:43 INFO MemoryStore: Will not store rdd_15_20
+16/12/15 21:35:43 WARN MemoryStore: Not enough space to cache rdd_15_20 in memory! (computed 26.4 MB so far)
+16/12/15 21:35:43 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 13 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:43 WARN BlockManager: Block rdd_15_20 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:43 WARN BlockManager: Putting block rdd_15_20 failed
+16/12/15 21:35:44 INFO MemoryStore: Will not store rdd_15_10
+16/12/15 21:35:44 WARN MemoryStore: Not enough space to cache rdd_15_10 in memory! (computed 26.9 MB so far)
+16/12/15 21:35:44 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 13 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:44 WARN BlockManager: Block rdd_15_10 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:44 WARN BlockManager: Putting block rdd_15_10 failed
+16/12/15 21:35:44 INFO MemoryStore: Will not store rdd_15_4
+16/12/15 21:35:44 WARN MemoryStore: Not enough space to cache rdd_15_4 in memory! (computed 28.5 MB so far)
+16/12/15 21:35:44 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 13 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:35:44 WARN BlockManager: Block rdd_15_4 could not be removed as it was not found on disk or in memory
+16/12/15 21:35:44 WARN BlockManager: Putting block rdd_15_4 failed
+16/12/15 21:38:06 INFO MemoryStore: Will not store rdd_15_19
+16/12/15 21:38:06 WARN MemoryStore: Not enough space to cache rdd_15_19 in memory! (computed 37.3 MB so far)
+16/12/15 21:38:06 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 10 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:38:06 WARN BlockManager: Block rdd_15_19 could not be removed as it was not found on disk or in memory
+16/12/15 21:38:06 WARN BlockManager: Putting block rdd_15_19 failed
+16/12/15 21:38:10 INFO MemoryStore: Will not store rdd_15_18
+16/12/15 21:38:10 WARN MemoryStore: Not enough space to cache rdd_15_18 in memory! (computed 34.8 MB so far)
+16/12/15 21:38:10 INFO MemoryStore: Memory use = 37.5 MB (blocks) + 360.0 MB (scratch space shared across 10 tasks(s)) = 397.5 MB. Storage limit = 397.5 MB.
+16/12/15 21:38:10 WARN BlockManager: Block rdd_15_18 could not be removed as it was not found on disk or in memory
+16/12/15 21:38:10 WARN BlockManager: Putting block rdd_15_18 failed
+16/12/15 21:39:11 INFO PythonRunner: Times: total = 267498, boot = 1, init = 260, finish = 267237
+16/12/15 21:39:11 INFO PythonRunner: Times: total = 228571, boot = 16, init = 30, finish = 228525
+16/12/15 21:39:11 INFO Executor: Finished task 25.0 in stage 29.0 (TID 5897). 2483 bytes result sent to driver
+16/12/15 21:39:11 INFO CoarseGrainedExecutorBackend: Got assigned task 5898
+16/12/15 21:39:11 INFO Executor: Running task 26.0 in stage 29.0 (TID 5898)
+16/12/15 21:39:11 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7ffb7ed7
+16/12/15 21:39:11 WARN EsInputFormat: Cannot determine task id...
+16/12/15 21:39:11 INFO PythonRunner: Times: total = 50, boot = -697, init = 747, finish = 0
+16/12/15 21:39:12 INFO MemoryStore: Block rdd_15_26 stored as bytes in memory (estimated size 21.0 B, free 360.0 MB)
+16/12/15 21:39:13 INFO PythonRunner: Times: total = 71, boot = -982, init = 1029, finish = 24
+16/12/15 21:39:13 INFO Executor: Finished task 26.0 in stage 29.0 (TID 5898). 2027 bytes result sent to driver
+16/12/15 21:39:13 INFO CoarseGrainedExecutorBackend: Got assigned task 5899
+16/12/15 21:39:13 INFO Executor: Running task 27.0 in stage 29.0 (TID 5899)
+16/12/15 21:39:13 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@c953de7
+16/12/15 21:39:13 WARN EsInputFormat: Cannot determine task id...

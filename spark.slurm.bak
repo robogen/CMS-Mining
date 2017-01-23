@@ -1,0 +1,24 @@
+#!/bin/sh
+#SBATCH --time=00:40:00
+#SBATCH --nodes=1
+#SBATCH --mem=8000
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=3
+#SBATCH --job-name=cms-spark
+#SBATCH --error=/work/swanson/jdixon/CMS/CMS-Mining/prime-run.err
+#SBATCH --output=/work/swanson/jdixon/CMS/CMS-Mining/prime-run.out
+
+MASTER=$(dig $(hostname) a +short)
+
+srun -l $SLURM_SUBMIT_DIR/spark-start.sh $MASTER &
+ID=$!
+
+wait $ID
+
+module load anaconda/2.7
+source activate cms
+
+$SLURM_SUBMIT_DIR/spark-2/bin/spark-submit \
+#    --jars $SLURM_SUBMIT_DIR/elasticsearch-hadoop/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar \
+    --total-executor-cores 24 \
+    $SLURM_SUBMIT_DIR/es_sparklocal.py

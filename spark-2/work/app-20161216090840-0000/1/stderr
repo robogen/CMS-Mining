@@ -1,0 +1,7 @@
+16/12/16 09:08:41 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 125168@c0120.crane.hcc.unl.edu
+16/12/16 09:08:41 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:08:41 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:08:41 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:08:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/16 09:08:42 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+ry for your platform... using builtin-java classes where applicable

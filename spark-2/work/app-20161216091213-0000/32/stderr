@@ -1,0 +1,67 @@
+16/12/16 09:13:48 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 128889@c0120.crane.hcc.unl.edu
+16/12/16 09:13:48 INFO SignalUtils: Registered signal handler for TERM
+16/12/16 09:13:48 INFO SignalUtils: Registered signal handler for HUP
+16/12/16 09:13:48 INFO SignalUtils: Registered signal handler for INT
+16/12/16 09:13:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/16 09:13:49 INFO SecurityManager: Changing view acls to: jdixon
+16/12/16 09:13:49 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/16 09:13:49 INFO SecurityManager: Changing view acls groups to: 
+16/12/16 09:13:49 INFO SecurityManager: Changing modify acls groups to: 
+16/12/16 09:13:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+Exception in thread "main" java.lang.reflect.UndeclaredThrowableException
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1713)
+	at org.apache.spark.deploy.SparkHadoopUtil.runAsSparkUser(SparkHadoopUtil.scala:70)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$.run(CoarseGrainedExecutorBackend.scala:174)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$.main(CoarseGrainedExecutorBackend.scala:270)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend.main(CoarseGrainedExecutorBackend.scala)
+Caused by: org.apache.spark.SparkException: Exception thrown in awaitResult
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$1.applyOrElse(RpcTimeout.scala:77)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$1.applyOrElse(RpcTimeout.scala:75)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:59)
+	at scala.PartialFunction$OrElse.apply(PartialFunction.scala:167)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:83)
+	at org.apache.spark.rpc.RpcEnv.setupEndpointRefByURI(RpcEnv.scala:88)
+	at org.apache.spark.executor.CoarseGrainedExecutorBackend$$anonfun$run$1.apply$mcV$sp(CoarseGrainedExecutorBackend.scala:188)
+	at org.apache.spark.deploy.SparkHadoopUtil$$anon$1.run(SparkHadoopUtil.scala:71)
+	at org.apache.spark.deploy.SparkHadoopUtil$$anon$1.run(SparkHadoopUtil.scala:70)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1698)
+	... 4 more
+Caused by: io.netty.channel.ChannelException: Unable to create Channel from class class io.netty.channel.socket.nio.NioSocketChannel
+	at io.netty.bootstrap.AbstractBootstrap$BootstrapChannelFactory.newChannel(AbstractBootstrap.java:455)
+	at io.netty.bootstrap.AbstractBootstrap.initAndRegister(AbstractBootstrap.java:306)
+	at io.netty.bootstrap.Bootstrap.doConnect(Bootstrap.java:134)
+	at io.netty.bootstrap.Bootstrap.connect(Bootstrap.java:116)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:223)
+	at org.apache.spark.network.client.TransportClientFactory.createClient(TransportClientFactory.java:179)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.createClient(NettyRpcEnv.scala:197)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:191)
+	at org.apache.spark.rpc.netty.Outbox$$anon$1.call(Outbox.scala:187)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Thread.java:714)
+	at io.netty.util.internal.ThreadLocalRandom.getInitialSeedUniquifier(ThreadLocalRandom.java:95)
+	at io.netty.util.internal.ThreadLocalRandom.newSeed(ThreadLocalRandom.java:162)
+	at io.netty.util.internal.ThreadLocalRandom.<init>(ThreadLocalRandom.java:205)
+	at io.netty.util.internal.InternalThreadLocalMap.random(InternalThreadLocalMap.java:212)
+	at io.netty.util.internal.ThreadLocalRandom.current(ThreadLocalRandom.java:215)
+	at io.netty.channel.AbstractChannel.<init>(AbstractChannel.java:57)
+	at io.netty.channel.nio.AbstractNioChannel.<init>(AbstractNioChannel.java:82)
+	at io.netty.channel.nio.AbstractNioByteChannel.<init>(AbstractNioByteChannel.java:52)
+	at io.netty.channel.socket.nio.NioSocketChannel.<init>(NioSocketChannel.java:96)
+	at io.netty.channel.socket.nio.NioSocketChannel.<init>(NioSocketChannel.java:86)
+	at io.netty.channel.socket.nio.NioSocketChannel.<init>(NioSocketChannel.java:72)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at java.lang.Class.newInstance(Class.java:383)
+	at io.netty.bootstrap.AbstractBootstrap$BootstrapChannelFactory.newChannel(AbstractBootstrap.java:453)
+	... 12 more

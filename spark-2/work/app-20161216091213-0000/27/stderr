@@ -1,0 +1,3 @@
+Spark Executor Command: "/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.111.x86_64/jre/bin/java" "-cp" "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/*" "-Xmx1024M" "-Dspark.driver.port=43230" "-XX:MaxPermSize=256m" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.138.1.20:43230" "--executor-id" "27" "--hostname" "10.138.1.20" "--cores" "1" "--app-id" "app-20161216091213-0000" "--worker-url" "spark://Worker@10.138.1.20:41483"
+========================================
+

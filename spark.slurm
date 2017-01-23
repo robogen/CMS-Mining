@@ -1,26 +1,28 @@
 #!/bin/sh
-#SBATCH --time=00:10:00
-#SBATCH --nodes=2
-#SBATCH --mem=4000
-#SBATCH --mem-per-cpu=1024
-#SBATCH --ntasks-per-node=4
+#SBATCH --time=02:00:00
+#SBATCH --nodes=1
+#SBATCH --mem=8000
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=3
-#SBATCH --job-name=cms-spark
-#SBATCH --error=/work/swanson/jdixon/CMS/CMS-Mining/prime-run.err
-#SBATCH --output=/work/swanson/jdixon/CMS/CMS-Mining/prime-run.out
+#SBATCH --network=devtype=iponly
+#SBATCH --job-name=one-spark
+#SBATCH --error=/work/swanson/jdixon/CMS/CMS-Mining/onenode-run.err
+#SBATCH --output=/work/swanson/jdixon/CMS/CMS-Mining/onenode-run.out
 
-export HADOOP_PROTOC_PATH=/work/swanson/jdixon/CMS/CMS-Mining/local/bin/protoc
-export LD_LIBRARY_PATH=/work/swanson/jdixon/CMS/CMS-Mining/local/hadoop/lib/native:$LD_LIBRARY_PATH
-export HADOOP_COMMON_LIB_NATIVE_DIR=/work/swanson/jdixon/CMS/CMS-Mining/local/hadoop/lib/native/
-export HADOOP_OPTS="-Djava.library.path=/work/swanson/jdixon/CMS/CMS-Mining/local/hadoop/lib/"
+MASTER=$(hostname)
+
+srun -l $SLURM_SUBMIT_DIR/spark-start.sh $MASTER & 
+sleep 60
 
 module load anaconda/2.7
 source activate cms
 
-for i in `/usr/bin/scontrol show hostname $SLURM_JOB_NODELIST | /usr/bin/paste -d, -s | /bin/sed "s/,/ /g"`;
-do
-    echo $i
-done
+/bin/date +%s
 
-# /bin/sh $SLURM_SUBMIT_DIR/spark/sbin/start-master.sh
-# echo $MASTER
+$SLURM_SUBMIT_DIR/spark-2/bin/spark-submit \
+    --jars $SLURM_SUBMIT_DIR/elasticsearch-hadoop/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar \
+    --total-executor-cores 24 \
+    --master spark://$MASTER:7077 \
+    $SLURM_SUBMIT_DIR/es_sparkremote.py 1
+
+/bin/date +%s

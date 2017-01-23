@@ -1,0 +1,442 @@
+16/12/15 20:38:05 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 184222@c1815.crane.hcc.unl.edu
+16/12/15 20:38:05 INFO SignalUtils: Registered signal handler for TERM
+16/12/15 20:38:05 INFO SignalUtils: Registered signal handler for HUP
+16/12/15 20:38:05 INFO SignalUtils: Registered signal handler for INT
+16/12/15 20:38:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/15 20:38:06 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 20:38:06 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 20:38:06 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 20:38:06 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 20:38:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 20:38:09 INFO TransportClientFactory: Successfully created connection to /10.138.18.15:34047 after 2431 ms (0 ms spent in bootstraps)
+16/12/15 20:38:10 INFO SecurityManager: Changing view acls to: jdixon
+16/12/15 20:38:10 INFO SecurityManager: Changing modify acls to: jdixon
+16/12/15 20:38:10 INFO SecurityManager: Changing view acls groups to: 
+16/12/15 20:38:10 INFO SecurityManager: Changing modify acls groups to: 
+16/12/15 20:38:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+16/12/15 20:38:10 INFO TransportClientFactory: Successfully created connection to /10.138.18.15:34047 after 6 ms (0 ms spent in bootstraps)
+16/12/15 20:38:10 INFO DiskBlockManager: Created local directory at /tmp/spark-db323a53-5a15-48a8-9251-783cc4d1ca8c/executor-4fb272d9-093b-47a9-8cd3-d992d9117727/blockmgr-23859c00-0119-4a5b-851e-2ac8c7afd71a
+16/12/15 20:38:10 INFO MemoryStore: MemoryStore started with capacity 397.5 MB
+16/12/15 20:38:10 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.18.15:34047
+16/12/15 20:38:10 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.18.15:44927
+16/12/15 20:38:10 INFO TransportClientFactory: Successfully created connection to /10.138.18.15:44927 after 10 ms (0 ms spent in bootstraps)
+16/12/15 20:38:10 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.18.15:44927
+16/12/15 20:38:10 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+16/12/15 20:38:10 INFO Executor: Starting executor ID 1 on host 10.138.18.15
+16/12/15 20:38:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42313.
+16/12/15 20:38:10 INFO NettyBlockTransferService: Server created on 10.138.18.15:42313
+16/12/15 20:38:10 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 10.138.18.15, 42313)
+16/12/15 20:38:10 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 10.138.18.15, 42313)
+16/12/15 20:38:12 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+16/12/15 20:38:12 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+16/12/15 20:38:12 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+16/12/15 20:38:12 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+16/12/15 20:38:12 INFO Executor: Fetching spark://10.138.18.15:34047/files/es_sparklocal.py with timestamp 1481855883949
+16/12/15 20:38:12 INFO TransportClientFactory: Successfully created connection to /10.138.18.15:34047 after 3 ms (0 ms spent in bootstraps)
+16/12/15 20:38:12 INFO Utils: Fetching spark://10.138.18.15:34047/files/es_sparklocal.py to /tmp/spark-db323a53-5a15-48a8-9251-783cc4d1ca8c/executor-4fb272d9-093b-47a9-8cd3-d992d9117727/spark-1530dbd4-1c97-4d1f-b9b9-543d39dd33cc/fetchFileTemp8459612654203554073.tmp
+16/12/15 20:38:12 INFO Utils: Copying /tmp/spark-db323a53-5a15-48a8-9251-783cc4d1ca8c/executor-4fb272d9-093b-47a9-8cd3-d992d9117727/spark-1530dbd4-1c97-4d1f-b9b9-543d39dd33cc/2642161021481855883949_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215203804-0000/1/./es_sparklocal.py
+16/12/15 20:38:12 INFO Executor: Fetching spark://10.138.18.15:34047/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1481855883661
+16/12/15 20:38:12 INFO Utils: Fetching spark://10.138.18.15:34047/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-db323a53-5a15-48a8-9251-783cc4d1ca8c/executor-4fb272d9-093b-47a9-8cd3-d992d9117727/spark-1530dbd4-1c97-4d1f-b9b9-543d39dd33cc/fetchFileTemp3911721596479211021.tmp
+16/12/15 20:38:12 INFO Utils: Copying /tmp/spark-db323a53-5a15-48a8-9251-783cc4d1ca8c/executor-4fb272d9-093b-47a9-8cd3-d992d9117727/spark-1530dbd4-1c97-4d1f-b9b9-543d39dd33cc/-16800109161481855883661_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215203804-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+16/12/15 20:38:12 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20161215203804-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+16/12/15 20:38:12 INFO TorrentBroadcast: Started reading broadcast variable 3
+16/12/15 20:38:12 INFO TransportClientFactory: Successfully created connection to /10.138.18.15:41621 after 1 ms (0 ms spent in bootstraps)
+16/12/15 20:38:12 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 1703.0 B, free 397.5 MB)
+16/12/15 20:38:12 INFO TorrentBroadcast: Reading broadcast variable 3 took 122 ms
+16/12/15 20:38:12 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.7 KB, free 397.5 MB)
+16/12/15 20:38:12 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2208d3e2
+16/12/15 20:38:12 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@718eabe2
+16/12/15 20:38:12 INFO TorrentBroadcast: Started reading broadcast variable 0
+16/12/15 20:38:12 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.4 KB, free 397.5 MB)
+16/12/15 20:38:13 INFO TorrentBroadcast: Reading broadcast variable 0 took 12 ms
+16/12/15 20:38:13 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 295.0 KB, free 397.2 MB)
+16/12/15 20:38:13 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+16/12/15 20:38:13 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/12/15 20:38:13 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/12/15 20:38:13 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:13 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:13 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 825 bytes result sent to driver
+16/12/15 20:38:13 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 1833 bytes result sent to driver
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+16/12/15 20:38:13 INFO Executor: Running task 0.0 in stage 2.0 (TID 5)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+16/12/15 20:38:13 INFO TorrentBroadcast: Started reading broadcast variable 4
+16/12/15 20:38:13 INFO Executor: Running task 2.0 in stage 2.0 (TID 7)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+16/12/15 20:38:13 INFO Executor: Running task 4.0 in stage 2.0 (TID 9)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+16/12/15 20:38:13 INFO Executor: Running task 6.0 in stage 2.0 (TID 11)
+16/12/15 20:38:13 INFO Executor: Running task 8.0 in stage 2.0 (TID 13)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+16/12/15 20:38:13 INFO Executor: Running task 10.0 in stage 2.0 (TID 15)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+16/12/15 20:38:13 INFO Executor: Running task 12.0 in stage 2.0 (TID 17)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+16/12/15 20:38:13 INFO Executor: Running task 14.0 in stage 2.0 (TID 19)
+16/12/15 20:38:13 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+16/12/15 20:38:13 INFO Executor: Running task 18.0 in stage 2.0 (TID 23)
+16/12/15 20:38:13 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 1703.0 B, free 397.2 MB)
+16/12/15 20:38:14 INFO Executor: Running task 16.0 in stage 2.0 (TID 21)
+16/12/15 20:38:14 INFO TorrentBroadcast: Reading broadcast variable 4 took 72 ms
+16/12/15 20:38:14 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 2.7 KB, free 397.2 MB)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@bdf31b3
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6a37e4db
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1ff378a0
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@297460c3
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3f60ce3a
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6c836257
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2e7b134a
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@122f771d
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6a351a3e
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@444e12eb
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 0.0 in stage 2.0 (TID 5). 1567 bytes result sent to driver
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 12.0 in stage 2.0 (TID 17). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 4.0 in stage 2.0 (TID 9). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 16.0 in stage 2.0 (TID 21). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 14.0 in stage 2.0 (TID 19). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 10.0 in stage 2.0 (TID 15). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 2.0 in stage 2.0 (TID 7). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 8.0 in stage 2.0 (TID 13). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 6.0 in stage 2.0 (TID 11). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 18.0 in stage 2.0 (TID 23). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+16/12/15 20:38:14 INFO Executor: Running task 0.0 in stage 3.0 (TID 25)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+16/12/15 20:38:14 INFO Executor: Running task 4.0 in stage 3.0 (TID 29)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+16/12/15 20:38:14 INFO Executor: Running task 14.0 in stage 3.0 (TID 39)
+16/12/15 20:38:14 INFO Executor: Running task 2.0 in stage 3.0 (TID 27)
+16/12/15 20:38:14 INFO Executor: Running task 6.0 in stage 3.0 (TID 31)
+16/12/15 20:38:14 INFO Executor: Running task 12.0 in stage 3.0 (TID 37)
+16/12/15 20:38:14 INFO Executor: Running task 10.0 in stage 3.0 (TID 35)
+16/12/15 20:38:14 INFO Executor: Running task 8.0 in stage 3.0 (TID 33)
+16/12/15 20:38:14 INFO TorrentBroadcast: Started reading broadcast variable 5
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+16/12/15 20:38:14 INFO Executor: Running task 16.0 in stage 3.0 (TID 41)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+16/12/15 20:38:14 INFO Executor: Running task 18.0 in stage 3.0 (TID 43)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+16/12/15 20:38:14 INFO Executor: Running task 20.0 in stage 3.0 (TID 45)
+16/12/15 20:38:14 INFO Executor: Running task 22.0 in stage 3.0 (TID 47)
+16/12/15 20:38:14 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 1703.0 B, free 397.2 MB)
+16/12/15 20:38:14 INFO TorrentBroadcast: Reading broadcast variable 5 took 65 ms
+16/12/15 20:38:14 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 2.7 KB, free 397.2 MB)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6347cd60
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@49d127c7
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@614b722
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3a031c4c
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2056e42
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6b1ffb52
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5caf7668
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@428a9fad
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4c1dd796
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6ef795ba
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@217a9fdd
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@40871f40
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 16.0 in stage 3.0 (TID 41). 752 bytes result sent to driver
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Running task 24.0 in stage 3.0 (TID 49)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@fe31be8
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 8.0 in stage 3.0 (TID 33). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 22.0 in stage 3.0 (TID 47). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 12.0 in stage 3.0 (TID 37). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 10.0 in stage 3.0 (TID 35). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 6.0 in stage 3.0 (TID 31). 839 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 0.0 in stage 3.0 (TID 25). 1567 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 20.0 in stage 3.0 (TID 45). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 2.0 in stage 3.0 (TID 27). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 18.0 in stage 3.0 (TID 43). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 4.0 in stage 3.0 (TID 29). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 14.0 in stage 3.0 (TID 39). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 24.0 in stage 3.0 (TID 49). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+16/12/15 20:38:14 INFO Executor: Running task 25.0 in stage 3.0 (TID 50)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+16/12/15 20:38:14 INFO Executor: Running task 26.0 in stage 3.0 (TID 51)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+16/12/15 20:38:14 INFO Executor: Running task 27.0 in stage 3.0 (TID 52)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1bab6a4b
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@49b9914b
+16/12/15 20:38:14 INFO Executor: Running task 29.0 in stage 3.0 (TID 54)
+16/12/15 20:38:14 INFO Executor: Running task 28.0 in stage 3.0 (TID 53)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4c611056
+16/12/15 20:38:14 INFO Executor: Running task 30.0 in stage 3.0 (TID 55)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@111fefdf
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1e95aeb7
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7eb4b67a
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 56
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 57
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 58
+16/12/15 20:38:14 INFO Executor: Running task 33.0 in stage 3.0 (TID 58)
+16/12/15 20:38:14 INFO Executor: Running task 32.0 in stage 3.0 (TID 57)
+16/12/15 20:38:14 INFO Executor: Running task 31.0 in stage 3.0 (TID 56)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3b04c8e9
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 59
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6255e7ef
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6824cfe4
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 60
+16/12/15 20:38:14 INFO Executor: Running task 35.0 in stage 3.0 (TID 60)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 61
+16/12/15 20:38:14 INFO Executor: Running task 36.0 in stage 3.0 (TID 61)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@43830534
+16/12/15 20:38:14 INFO Executor: Finished task 25.0 in stage 3.0 (TID 50). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 28.0 in stage 3.0 (TID 53). 752 bytes result sent to driver
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 30.0 in stage 3.0 (TID 55). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 32.0 in stage 3.0 (TID 57). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Running task 34.0 in stage 3.0 (TID 59)
+16/12/15 20:38:14 INFO Executor: Finished task 29.0 in stage 3.0 (TID 54). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 78
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@72a859c7
+16/12/15 20:38:14 INFO Executor: Finished task 33.0 in stage 3.0 (TID 58). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2ce32e5b
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Running task 53.0 in stage 3.0 (TID 78)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 80
+16/12/15 20:38:14 INFO Executor: Running task 55.0 in stage 3.0 (TID 80)
+16/12/15 20:38:14 INFO Executor: Finished task 35.0 in stage 3.0 (TID 60). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO Executor: Finished task 27.0 in stage 3.0 (TID 52). 752 bytes result sent to driver
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6a40d73c
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 81
+16/12/15 20:38:14 INFO Executor: Running task 56.0 in stage 3.0 (TID 81)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 82
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 84
+16/12/15 20:38:14 INFO Executor: Running task 59.0 in stage 3.0 (TID 84)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6c9d1e9b
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Finished task 31.0 in stage 3.0 (TID 56). 752 bytes result sent to driver
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4853a08
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO Executor: Running task 57.0 in stage 3.0 (TID 82)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@477375a1
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6d2fc1ac
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 86
+16/12/15 20:38:14 INFO Executor: Running task 61.0 in stage 3.0 (TID 86)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 87
+16/12/15 20:38:14 INFO Executor: Running task 62.0 in stage 3.0 (TID 87)
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 88
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@524637b3
+16/12/15 20:38:14 INFO Executor: Running task 63.0 in stage 3.0 (TID 88)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@cb604f5
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7b62a3f
+16/12/15 20:38:14 INFO Executor: Finished task 34.0 in stage 3.0 (TID 59). 752 bytes result sent to driver
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:14 INFO CoarseGrainedExecutorBackend: Got assigned task 89
+16/12/15 20:38:14 INFO Executor: Running task 64.0 in stage 3.0 (TID 89)
+16/12/15 20:38:14 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@e23b2da
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 90
+16/12/15 20:38:15 INFO Executor: Running task 65.0 in stage 3.0 (TID 90)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4667820f
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO Executor: Finished task 56.0 in stage 3.0 (TID 81). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 36.0 in stage 3.0 (TID 61). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 99
+16/12/15 20:38:15 INFO Executor: Running task 74.0 in stage 3.0 (TID 99)
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 100
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@55a9a08c
+16/12/15 20:38:15 INFO Executor: Running task 75.0 in stage 3.0 (TID 100)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4cf0c9df
+16/12/15 20:38:15 INFO Executor: Finished task 62.0 in stage 3.0 (TID 87). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 61.0 in stage 3.0 (TID 86). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 57.0 in stage 3.0 (TID 82). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 64.0 in stage 3.0 (TID 89). 752 bytes result sent to driver
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO Executor: Finished task 53.0 in stage 3.0 (TID 78). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 55.0 in stage 3.0 (TID 80). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 59.0 in stage 3.0 (TID 84). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 104
+16/12/15 20:38:15 INFO Executor: Finished task 74.0 in stage 3.0 (TID 99). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Running task 79.0 in stage 3.0 (TID 104)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@d39f991
+16/12/15 20:38:15 INFO Executor: Finished task 63.0 in stage 3.0 (TID 88). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 105
+16/12/15 20:38:15 INFO Executor: Finished task 65.0 in stage 3.0 (TID 90). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 106
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 107
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 108
+16/12/15 20:38:15 INFO Executor: Running task 83.0 in stage 3.0 (TID 108)
+16/12/15 20:38:15 INFO Executor: Running task 82.0 in stage 3.0 (TID 107)
+16/12/15 20:38:15 INFO Executor: Running task 81.0 in stage 3.0 (TID 106)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1f469b15
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6845ec99
+16/12/15 20:38:15 INFO Executor: Running task 80.0 in stage 3.0 (TID 105)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3c58b102
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@17489f96
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 109
+16/12/15 20:38:15 INFO Executor: Running task 84.0 in stage 3.0 (TID 109)
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 113
+16/12/15 20:38:15 INFO Executor: Running task 88.0 in stage 3.0 (TID 113)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5ab846ae
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3bbd6883
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 114
+16/12/15 20:38:15 INFO Executor: Running task 89.0 in stage 3.0 (TID 114)
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 115
+16/12/15 20:38:15 INFO CoarseGrainedExecutorBackend: Got assigned task 117
+16/12/15 20:38:15 INFO Executor: Running task 92.0 in stage 3.0 (TID 117)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3ede0d08
+16/12/15 20:38:15 INFO Executor: Running task 90.0 in stage 3.0 (TID 115)
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2ab29231
+16/12/15 20:38:15 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6b4fb71e
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:15 INFO Executor: Finished task 79.0 in stage 3.0 (TID 104). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 83.0 in stage 3.0 (TID 108). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 84.0 in stage 3.0 (TID 109). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 80.0 in stage 3.0 (TID 105). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 88.0 in stage 3.0 (TID 113). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 81.0 in stage 3.0 (TID 106). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 92.0 in stage 3.0 (TID 117). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 75.0 in stage 3.0 (TID 100). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 82.0 in stage 3.0 (TID 107). 752 bytes result sent to driver
+16/12/15 20:38:15 INFO Executor: Finished task 90.0 in stage 3.0 (TID 115). 752 bytes result sent to driver
+16/12/15 20:38:15 WARN NewHadoopRDD: Exception in RecordReader.close()
+org.elasticsearch.hadoop.rest.EsHadoopInvalidRequest: [DELETE] on [_search/scroll] failed; server[hcc-metrics.unl.edu:9200] returned [405|Method Not Allowed:]
+	at org.elasticsearch.hadoop.rest.RestClient.checkResponse(RestClient.java:488)
+	at org.elasticsearch.hadoop.rest.RestClient.executeNotFoundAllowed(RestClient.java:459)
+	at org.elasticsearch.hadoop.rest.RestClient.deleteScroll(RestClient.java:513)
+	at org.elasticsearch.hadoop.rest.ScrollQuery.close(ScrollQuery.java:77)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$EsInputRecordReader.close(EsInputFormat.java:210)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1.org$apache$spark$rdd$NewHadoopRDD$$anon$$close(NewHadoopRDD.scala:216)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1$$anonfun$2.apply(NewHadoopRDD.scala:175)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1$$anonfun$2.apply(NewHadoopRDD.scala:175)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:123)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:97)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:95)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:95)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:274)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/15 20:38:15 INFO Executor: Finished task 26.0 in stage 3.0 (TID 51). 7169 bytes result sent to driver
+16/12/15 20:38:15 WARN NewHadoopRDD: Exception in RecordReader.close()
+org.elasticsearch.hadoop.rest.EsHadoopInvalidRequest: [DELETE] on [_search/scroll] failed; server[hcc-metrics.unl.edu:9200] returned [405|Method Not Allowed:]
+	at org.elasticsearch.hadoop.rest.RestClient.checkResponse(RestClient.java:488)
+	at org.elasticsearch.hadoop.rest.RestClient.executeNotFoundAllowed(RestClient.java:459)
+	at org.elasticsearch.hadoop.rest.RestClient.deleteScroll(RestClient.java:513)
+	at org.elasticsearch.hadoop.rest.ScrollQuery.close(ScrollQuery.java:77)
+	at org.elasticsearch.hadoop.mr.EsInputFormat$EsInputRecordReader.close(EsInputFormat.java:210)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1.org$apache$spark$rdd$NewHadoopRDD$$anon$$close(NewHadoopRDD.scala:216)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1$$anonfun$2.apply(NewHadoopRDD.scala:175)
+	at org.apache.spark.rdd.NewHadoopRDD$$anon$1$$anonfun$2.apply(NewHadoopRDD.scala:175)
+	at org.apache.spark.TaskContext$$anon$1.onTaskCompletion(TaskContext.scala:123)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:97)
+	at org.apache.spark.TaskContextImpl$$anonfun$markTaskCompleted$1.apply(TaskContextImpl.scala:95)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.TaskContextImpl.markTaskCompleted(TaskContextImpl.scala:95)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:274)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+16/12/15 20:38:15 INFO Executor: Finished task 89.0 in stage 3.0 (TID 114). 7153 bytes result sent to driver
+16/12/15 20:38:16 INFO CoarseGrainedExecutorBackend: Got assigned task 125
+16/12/15 20:38:16 INFO Executor: Running task 0.0 in stage 4.0 (TID 125)
+16/12/15 20:38:16 INFO TorrentBroadcast: Started reading broadcast variable 8
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 1698.0 B, free 397.2 MB)
+16/12/15 20:38:16 INFO TorrentBroadcast: Reading broadcast variable 8 took 8 ms
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 2.7 KB, free 397.2 MB)
+16/12/15 20:38:16 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7526a9c0
+16/12/15 20:38:16 INFO TorrentBroadcast: Started reading broadcast variable 6
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 23.3 KB, free 397.2 MB)
+16/12/15 20:38:16 INFO TorrentBroadcast: Reading broadcast variable 6 took 14 ms
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 294.9 KB, free 396.9 MB)
+16/12/15 20:38:16 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:16 INFO Executor: Finished task 0.0 in stage 4.0 (TID 125). 1673 bytes result sent to driver
+16/12/15 20:38:16 INFO CoarseGrainedExecutorBackend: Got assigned task 126
+16/12/15 20:38:16 INFO CoarseGrainedExecutorBackend: Got assigned task 128
+16/12/15 20:38:16 INFO Executor: Running task 2.0 in stage 5.0 (TID 128)
+16/12/15 20:38:16 INFO TorrentBroadcast: Started reading broadcast variable 9
+16/12/15 20:38:16 INFO Executor: Running task 0.0 in stage 5.0 (TID 126)
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 1698.0 B, free 396.9 MB)
+16/12/15 20:38:16 INFO TorrentBroadcast: Reading broadcast variable 9 took 11 ms
+16/12/15 20:38:16 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 2.7 KB, free 396.9 MB)
+16/12/15 20:38:16 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1591755a
+16/12/15 20:38:16 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@36c6fc63
+16/12/15 20:38:16 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:16 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:16 INFO Executor: Finished task 2.0 in stage 5.0 (TID 128). 2133 bytes result sent to driver
+16/12/15 20:38:16 INFO Executor: Finished task 0.0 in stage 5.0 (TID 126). 1458 bytes result sent to driver
+16/12/15 20:38:17 INFO CoarseGrainedExecutorBackend: Got assigned task 132
+16/12/15 20:38:17 INFO Executor: Running task 1.0 in stage 7.0 (TID 132)
+16/12/15 20:38:17 INFO CoarseGrainedExecutorBackend: Got assigned task 134
+16/12/15 20:38:17 INFO Executor: Running task 3.0 in stage 7.0 (TID 134)
+16/12/15 20:38:17 INFO TorrentBroadcast: Started reading broadcast variable 13
+16/12/15 20:38:17 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 1698.0 B, free 396.9 MB)
+16/12/15 20:38:17 INFO TorrentBroadcast: Reading broadcast variable 13 took 11 ms
+16/12/15 20:38:17 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 2.7 KB, free 396.9 MB)
+16/12/15 20:38:17 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3f023d86
+16/12/15 20:38:17 INFO TorrentBroadcast: Started reading broadcast variable 10
+16/12/15 20:38:17 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 23.2 KB, free 396.8 MB)
+16/12/15 20:38:17 INFO TorrentBroadcast: Reading broadcast variable 10 took 8 ms
+16/12/15 20:38:17 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7be0eaec
+16/12/15 20:38:17 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 295.0 KB, free 396.5 MB)
+16/12/15 20:38:17 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:17 WARN EsInputFormat: Cannot determine task id...
+16/12/15 20:38:17 INFO Executor: Finished task 1.0 in stage 7.0 (TID 132). 2162 bytes result sent to driver
+16/12/15 20:38:17 INFO Executor: Finished task 3.0 in stage 7.0 (TID 134). 2244 bytes result sent to driver
+16/12/15 20:38:17 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/12/15 20:38:17 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown
