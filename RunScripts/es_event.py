@@ -90,11 +90,11 @@ def esConQuery(src, dest):
                                        scroll=scrollPreserve)
             for hit in responseCon["hits"]["hits"]:
                 if not arrRet['return'].size > 0:
-                    arrRet['return'] = np.reshape(np.array([hit["_source"]["KEvents"],
+                    arrRet['return'] = np.reshape(np.array([hit["_source"]["CpuEff"],
                                                             hit["_source"]["EventRate"]]), (1,2))
                 else:
                     arrRet['return'] = np.vstack((arrRet['return'],
-                                                  np.array([hit["_source"]["KEvents"],
+                                                  np.array([hit["_source"]["CpuEff"],
                                                             hit["_source"]["EventRate"]])))
                 conTotalRec -= len(responseCon['hits']['hits'])
         return arrRet
@@ -123,7 +123,7 @@ def main(utcStart):
                         figsT, axsT = plt.subplots(1)
                         axsT.scatter(valRet[:,0],valRet[:,1])
                         axsT.set_ylabel("EventRate")
-                        axsT.set_xlabel("KEvents")
+                        axsT.set_xlabel("CpuEff")
                         axsT.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                         pc.savefig(figsT)
                         plt.close(figsT)

@@ -97,62 +97,62 @@ def esConQuery(src, dest):
                 if 'srcThroughput' in hit["_source"]:
                     if not arrRet['srcThroughput'].size > 0:
                         arrRet['srcThroughput'] = np.reshape(np.array([hit["_source"]["srcThroughput"],
-                                                                       hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                       hit["_source"]["CpuEff"],
                                                                        hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['srcThroughput'] = np.vstack((arrRet['srcThroughput'],
                                                              np.array([hit["_source"]["srcThroughput"],
-                                                                       hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                       hit["_source"]["CpuEff"],
                                                                        hit["_source"]["EventRate"]])))
                 if 'destThroughput' in hit["_source"]:
                     if not arrRet['destThroughput'].size > 0:
                         arrRet['destThroughput'] = np.reshape(np.array([hit["_source"]["destThroughput"],
-                                                                        hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                        hit["_source"]["CpuEff"],
                                                                         hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['destThroughput'] = np.vstack((arrRet['destThroughput'],
                                                               np.array([hit["_source"]["destThroughput"],
-                                                                        hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                        hit["_source"]["CpuEff"],
                                                                         hit["_source"]["EventRate"]])))
                 if 'srcPacket' in hit["_source"]:
                     if not arrRet['srcPacket'].size > 0:
                         arrRet['srcPacket'] = np.reshape(np.array([hit["_source"]["srcPacket"],
-                                                                   hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                   hit["_source"]["CpuEff"],
                                                                    hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['srcPacket'] = np.vstack((arrRet['srcPacket'],
                                                          np.array([hit["_source"]["srcPacket"],
-                                                                   hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                   hit["_source"]["CpuEff"],
                                                                    hit["_source"]["EventRate"]])))
                 if 'destPacket' in hit["_source"]:
                     if not arrRet['destPacket'].size > 0:
                         arrRet['destPacket'] = np.reshape(np.array([hit["_source"]["destPacket"],
-                                                                    hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                    hit["_source"]["CpuEff"],
                                                                     hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['destPacket'] = np.vstack((arrRet['destPacket'],
                                                           np.array([hit["_source"]["destPacket"],
-                                                                    hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                    hit["_source"]["CpuEff"],
                                                                     hit["_source"]["EventRate"]])))
                 if 'srcLatency' in hit["_source"]:
                     if not arrRet['srcLatency'].size > 0:
                         arrRet['srcLatency'] = np.reshape(np.array([hit["_source"]["srcLatency"],
-                                                                    hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                    hit["_source"]["CpuEff"],
                                                                     hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['srcLatency'] = np.vstack((arrRet['srcLatency'], 
                                                           np.array([hit["_source"]["srcLatency"],
-                                                                    hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                    hit["_source"]["CpuEff"],
                                                                     hit["_source"]["EventRate"]])))
                 if 'destLatency' in hit["_source"]:
                     if not arrRet['destLatency'].size > 0:
                         arrRet['destLatency'] = np.reshape(np.array([hit["_source"]["destLatency"],
-                                                                     hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                     hit["_source"]["CpuEff"],
                                                                      hit["_source"]["EventRate"]]), (1,3))
                     else:
                         arrRet['destLatency'] = np.vstack((arrRet['destLatency'], 
                                                            np.array([hit["_source"]["destLatency"],
-                                                                     hit["_source"]["KEvents"]/hit["_source"]["CoreHr"],
+                                                                     hit["_source"]["CpuEff"],
                                                                      hit["_source"]["EventRate"]])))
             conTotalRec -= len(responseCon['hits']['hits'])
         return arrRet
@@ -187,7 +187,7 @@ def main(utcStart):
                             figsT, axsT = plt.subplots(2, sharex=True)
                             axsT[0].scatter(srcThrough[:,0],srcThrough[:,1])
                             axsT[1].scatter(srcThrough[:,0],srcThrough[:,2])
-                            axsT[0].set_ylabel("KEventsOverCoreTime")
+                            axsT[0].set_ylabel("CpuEff")
                             axsT[1].set_ylabel("EventRate")
                             axsT[1].set_xlabel("Source Throughput")
                             axsT[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
@@ -197,7 +197,7 @@ def main(utcStart):
                             figdT, axdT = plt.subplots(2, sharex=True)
                             axdT[0].scatter(destThrough[:,0],destThrough[:,1])
                             axdT[1].scatter(destThrough[:,0],destThrough[:,2])
-                            axdT[0].set_ylabel("KEventsOverCoreTime")
+                            axdT[0].set_ylabel("CpuEff")
                             axdT[1].set_ylabel("EventRate")
                             axdT[1].set_xlabel("Destination Throughput")
                             axdT[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
@@ -207,7 +207,7 @@ def main(utcStart):
                             figsP, axsP = plt.subplots(2, sharex=True)
                             axsP[0].scatter(srcPacket[:,0],srcPacket[:,1])
                             axsP[1].scatter(srcPacket[:,0],srcPacket[:,2])
-                            axsP[0].set_ylabel("KEventsOverCoreTime")
+                            axsP[0].set_ylabel("CpuEff")
                             axsP[1].set_ylabel("EventRate")
                             axsP[1].set_xlabel("Source Packet Loss")
                             axsP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
@@ -217,7 +217,7 @@ def main(utcStart):
                             figdP, axdP = plt.subplots(2, sharex=True)
                             axdP[0].scatter(destPacket[:,0],destPacket[:,1])
                             axdP[1].scatter(destPacket[:,0],destPacket[:,2])
-                            axdP[0].set_ylabel("KEventsOverCoreTime")
+                            axdP[0].set_ylabel("CpuEff")
                             axdP[1].set_ylabel("EventRate")
                             axdP[1].set_xlabel("Destination Packet Loss")
                             axdP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
@@ -227,7 +227,7 @@ def main(utcStart):
                             figL, axL = plt.subplots(2, sharex=True)
                             axL[0].scatter(srcLatency[:,0],srcLatency[:,1])
                             axL[1].scatter(srcLatency[:,0],srcLatency[:,2])
-                            axL[0].set_ylabel("KEventsOverCoreTime")
+                            axL[0].set_ylabel("CpuEff")
                             axL[1].set_ylabel("EventRate")
                             axL[1].set_xlabel("Source Latency")
                             axL[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
@@ -237,7 +237,7 @@ def main(utcStart):
                             figP, axP = plt.subplots(2, sharex=True)
                             axP[1].scatter(destLatency[:,0],destLatency[:,2])
                             axP[0].scatter(destLatency[:,0],destLatency[:,1])
-                            axP[0].set_ylabel("KEventsOverCoreTime")
+                            axP[0].set_ylabel("CpuEff")
                             axP[1].set_ylabel("EventRate")
                             axP[1].set_xlabel("Destination Latency")
                             axP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
