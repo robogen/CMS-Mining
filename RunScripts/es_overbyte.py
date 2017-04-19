@@ -28,8 +28,8 @@ def utcStamp(time):
     return (dt.datetime.strptime(time,'%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
 
 scrollPreserve="3m"
-startDate = "2017-02-07T00:00:00"
-endDate = "2017-02-14T00:00:00"
+startDate = "2017-02-14T00:00:00"
+endDate = "2017-02-21T00:00:00"
 utcStart = utcStamp(startDate)
 utcEnd = utcStamp(endDate)
 oneDay = np.multiply(24,np.multiply(60,60))
@@ -58,6 +58,10 @@ def esConAgg(field):
         for hit in conTotalRec:
             arrRet = np.append(arrRet, hit['key'])
         return arrRet
+
+def esClear(ids):
+    scannerCon = esCon.clear_scroll(scroll_id=ids)
+    return scannerCon
 
 def esConQuery(src, dest, slot):
     queryBody={"query" :
@@ -91,12 +95,14 @@ def esConQuery(src, dest, slot):
                               scroll=scrollPreserve)
     scrollIdCon = scannerCon['_scroll_id']
     conTotalRec = scannerCon["hits"]["total"]
+    idList = []
     arrRet = {}
 
     if conTotalRec == 0:
         return None
     else:
         while conTotalRec > 0:
+            idList.append(str(scrollIdCon))
             responseCon = esCon.scroll(scroll_id=scrollIdCon,
                                        scroll=scrollPreserve)
             for hit in responseCon["hits"]["hits"]:
@@ -171,6 +177,7 @@ def esConQuery(src, dest, slot):
                                                                      hit["_source"]["meanCpuEff"],
                                                                      hit["_source"]["meanInputGB"]])))
             conTotalRec -= len(responseCon['hits']['hits'])
+        esClear(idList)
         return arrRet
 
 #print(esConAgg("src"))
