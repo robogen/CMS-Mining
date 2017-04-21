@@ -29,7 +29,7 @@ def utcStamp(time):
 
 scrollPreserve="3m"
 startDate = "2017-02-14T00:00:00"
-endDate = "2017-02-21T00:00:00"
+endDate = "2017-02-15T00:00:00"
 utcStart = utcStamp(startDate)
 utcEnd = utcStamp(endDate)
 oneDay = np.multiply(24,np.multiply(60,60))

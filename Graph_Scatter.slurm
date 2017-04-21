@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --time=02:00:00          # Run time in hh:mm:ss
+#SBATCH --time=08:00:00          # Run time in hh:mm:ss
 #SBATCH --mem-per-cpu=2500       # Maximum memory required per CPU (in megabytes)
 #SBATCH --ntasks=1
 #SBATCH --job-name=Scatter

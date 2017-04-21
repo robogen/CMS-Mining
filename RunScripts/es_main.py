@@ -37,17 +37,28 @@ def conAtlasTime(time):
 def utcDate(time):
     return dt.datetime.fromtimestamp(time, dt.timezone.utc)
 
+def slotTrim(slot):
+    val = slot[slot.index("@") + 1:]
+    if "@" in slot:
+        return val[val.index("@") + 1:]
+    else:
+        return val
+
 esAtlas = Elasticsearch([{
     'host': contents[4], 'port': contents[3]
-}], timeout=50)
+}], timeout=10000)
 
 esHCC = Elasticsearch([{
     'host': contents[0], 'port': contents[1]
-}], timeout=50)
+}], timeout=10000)
 
 esCon = Elasticsearch([{
     'host': contents[4], 'port': contents[5]
-}], timeout=50)
+}], timeout=10000)
+
+esAtlas.cluster.health(wait_for_status='yellow', request_timeout=1)
+esHCC.cluster.health(wait_for_status='yellow', request_timeout=1)
+esCon.cluster.health(wait_for_status='yellow', request_timeout=1)
 
 scrollPreserve="3m"
 startDate = "2017-02-01T00:00:00"
@@ -444,7 +455,7 @@ def hccQuery(site, task):
                     if not "LastRemoteHost" in hit["_source"]:
                         prevHost = "Unknown"
                     else:
-                        prevHost = str(hit["_source"]["LastRemoteHost"])
+                        prevHost = slotTrim(str(hit["_source"]["LastRemoteHost"]))
 
                     if not str(str(location[0]) + str(hit["_source"]["Workflow"]) + prevHost) in arrRet:
                         if not str(location[0]) in loc["location"]:
