@@ -30,16 +30,10 @@ esHCC = Elasticsearch([{
     'host': contents[0], 'port': contents[1]
 }], timeout=50)
 
-esCon = Elasticsearch([{
-    'host': contents[4], 'port': contents[5]
-}], timeout=50)
-
 scrollPreserve="3m"
 startDate = "2016-07-17T00:00:00"
 endDate = "2016-07-25T00:00:00"
 tenMin = np.multiply(10,60)
-stampStart = conAtlasTime(startDate) - tenMin
-stampEnd = conAtlasTime(endDate)
 
 loc = {}
 loc["location"] = np.array([])
@@ -343,101 +337,9 @@ with PdfPages('CMS_Plots.pdf') as pp:
         loc["location"] = np.array([])
         hccResult = hccQuery(hit)
         for note in loc["location"]:
-            atlasT = atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
+            atlasT = None #atlasThroughput(sitesArray[hit], sitesArray[note.lower()])
             atlasP = atlasPacketLoss(sitesArray[hit], sitesArray[note.lower()])
             atlasL = atlasLatency(sitesArray[hit], sitesArray[note.lower()])
-
-            stampStart = conAtlasTime(startDate) - tenMin
-            while stampStart <= stampEnd:
-                tplCpu = np.array([])
-                tplRate = np.array([])
-                tplCpuTimeHr = np.array([])
-                tplWallClockHr = np.array([])
-                tplRequestCpus = np.array([])
-                tplMemoryMB = np.array([])
-                tplQueueHrs = np.array([])
-                tplRequestMemory = np.array([])
-                tplCoreHr = np.array([])
-                tplCpuBadput = np.array([])
-                tplKEvents = np.array([])
-                #print(hccResult[note])
-                for tpl in hccResult[note]:
-                    if tpl[2] <= int(stampStart) and tpl[3] >= (int(stampStart) + tenMin):
-                        tplCpu = np.append(tplCpu, tpl[0])
-                        tplRate = np.append(tplRate, tpl[1])
-                        tplCpuTimeHr = np.append(tplCpuTimeHr, tpl[4])
-                        tplWallClockHr = np.append(tplWallClockHr, tpl[5])
-                        tplRequestCpus = np.append(tplRequestCpus, tpl[6])
-                        tplMemoryMB = np.append(tplMemoryMB, tpl[7])
-                        tplQueueHrs = np.append(tplQueueHrs, tpl[8])
-                        tplRequestMemory = np.append(tplRequestMemory, tpl[9])
-                        tplCoreHr = np.append(tplCoreHr, tpl[10])
-                        tplCpuBadput = np.append(tplCpuBadput, tpl[11])
-                        tplKEvents = np.append(tplKEvents, tpl[12])
-                if not tplCpu.size > 0:
-                    stampStart = stampStart + tenMin
-                elif type(atlasT) == type(None) and type(atlasP) == type(None) and type(atlasL) == type(None):
-                    stampStart = stampStart + tenMin
-                else:
-                    srcThrough = np.array([])
-                    destThrough = np.array([])
-                    if not type(atlasT) == type(None):
-                        for tpl in atlasT:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[3] == float(0.0):
-                                    srcThrough = np.append(srcThrough, tpl[2])
-                                else:
-                                    destThrough = np.append(destThrough, tpl[2])
-                    srcPacket = np.array([])
-                    destPacket = np.array([])
-                    if not type(atlasP) == type(None):
-                        for tpl in atlasP:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[3] == float(0.0):
-                                    srcPacket = np.append(srcPacket, tpl[2])
-                                else:
-                                    destPacket = np.append(destPacket, tpl[2])
-                    srcLatency = np.array([])
-                    destLatency = np.array([])
-                    if not type(atlasL) == type(None):
-                        for tpl in atlasL:
-                            if tpl[1] <= stampStart and tpl[0] >= (stampStart + tenMin):
-                                if tpl[5] == float(0.0):
-                                    srcLatency = np.append(srcLatency, tpl[2])
-                                else:
-                                    destLatency = np.append(destLatency, tpl[2])
-                    qBody={
-                              "src": hit,
-                              "dest": note,
-                              "CpuEff": np.mean(tplCpu),
-                              "EventRate": np.mean(tplRate),
-                              "CpuTimeHr": np.mean(tplCpuTimeHr),
-                              "WallClockHr": np.mean(tplWallClockHr),
-                              "RequestCpus": np.mean(tplRequestCpus),
-                              "MemoryMB": np.mean(tplMemoryMB),
-                              "QueueHrs": np.mean(tplQueueHrs),
-                              "RequestMemory": np.mean(tplRequestMemory),
-                              "CoreHr": np.mean(tplCoreHr),
-                              "CpuBadput": np.mean(tplCpuBadput),
-                              "KEvents": np.mean(tplKEvents),
-                              "beginDate": int(stampStart),
-                              "endDate": int(stampStart + tenMin)
-                          }
-                    if srcThrough.size > 0:
-                        qBody['srcThroughput'] = np.mean(srcThrough)
-                    if destThrough.size > 0:
-                        qBody['destThroughput'] = np.mean(destThrough)
-                    if srcPacket.size > 0:
-                        qBody['srcPacket'] = np.mean(srcPacket)
-                    if destPacket.size > 0:
-                        qBody['destPacket'] = np.mean(destPacket)
-                    if srcLatency.size > 0:
-                        qBody['srcLatency'] = np.mean(srcLatency)
-                    if destLatency.size > 0:
-                        qBody['destLatency'] = np.mean(destLatency)
-                    print("about to post")
-                    esCon.index(index='net-health', doc_type='dev', body=qBody)
-                    stampStart = stampStart + tenMin
 
             tempArr = hccResult[note]
             arrCpu = np.array([]);
@@ -470,17 +372,17 @@ with PdfPages('CMS_Plots.pdf') as pp:
             plt.close(figH)
             #axA[2].xaxis.set_major_formatter(AutoDateFormatter(locator=AutoDateLocator(),
             #                                                   defaultfmt="%m-%d %H:%M"))
-            if not type(atlasT) == type(None) and not type(atlasP) == type(None):
-                tDate = np.array([])
-                tDatef = np.array([])
-                tPut = np.array([])
+            if not type(atlasP) == type(None):
+                #tDate = np.array([])
+                #tDatef = np.array([])
+                #tPut = np.array([])
                 pDate = np.array([])
                 pDatef = np.array([])
                 pLoss = np.array([])
-                for tpl in atlasT:
-                    tDate = np.append(tDate, tpl[0])
-                    tDatef = np.append(tDatef, tpl[1])
-                    tPut = np.append(tPut, tpl[2])
+                #for tpl in atlasT:
+                #    tDate = np.append(tDate, tpl[0])
+                #    tDatef = np.append(tDatef, tpl[1])
+                #    tPut = np.append(tPut, tpl[2])
                 for tpl in atlasP:
                     pDate = np.append(pDate, tpl[0])
                     pDatef = np.append(pDatef, tpl[1])
@@ -498,11 +400,11 @@ with PdfPages('CMS_Plots.pdf') as pp:
                               pDatef,
                               pDate)
 
-                axA[1].set_ylabel("Throughput")
-                axA[1].plot(tDate, tPut, 'bs')
-                axA[1].hlines(tPut,
-                              tDatef,
-                              tDate)
+                #axA[1].set_ylabel("Throughput")
+                #axA[1].plot(tDate, tPut, 'bs')
+                #axA[1].hlines(tPut,
+                #              tDatef,
+                #              tDate)
                 pp.savefig(figA)
                 plt.close(figA)
 

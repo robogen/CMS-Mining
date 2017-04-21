@@ -97,70 +97,58 @@ def esConQuery(src, dest):
                 if 'srcThroughput' in hit["_source"]:
                     if not arrRet['srcThroughput'].size > 0:
                         arrRet['srcThroughput'] = np.reshape(np.array([hit["_source"]["srcThroughput"],
-                                                                       hit["_source"]["CpuEff"],
-                                                                       hit["_source"]["EventRate"]]), (1,3))
+                                                                       hit["_source"]["QueueHrs"]]), (1,2))
                     else:
                         arrRet['srcThroughput'] = np.vstack((arrRet['srcThroughput'],
                                                              np.array([hit["_source"]["srcThroughput"],
-                                                                       hit["_source"]["CpuEff"],
-                                                                       hit["_source"]["EventRate"]])))
+                                                                       hit["_source"]["QueueHrs"]])))
                 if 'destThroughput' in hit["_source"]:
                     if not arrRet['destThroughput'].size > 0:
                         arrRet['destThroughput'] = np.reshape(np.array([hit["_source"]["destThroughput"],
-                                                                        hit["_source"]["CpuEff"],
-                                                                        hit["_source"]["EventRate"]]), (1,3))
+                                                                        hit["_source"]["CpuEff"]]), (1,2))
                     else:
                         arrRet['destThroughput'] = np.vstack((arrRet['destThroughput'],
                                                               np.array([hit["_source"]["destThroughput"],
-                                                                        hit["_source"]["CpuEff"],
-                                                                        hit["_source"]["EventRate"]])))
+                                                                        hit["_source"]["QueueHrs"]])))
                 if 'srcPacket' in hit["_source"]:
                     if not arrRet['srcPacket'].size > 0:
                         arrRet['srcPacket'] = np.reshape(np.array([hit["_source"]["srcPacket"],
-                                                                   hit["_source"]["CpuEff"],
-                                                                   hit["_source"]["EventRate"]]), (1,3))
+                                                                   hit["_source"]["QueueHrs"]]), (1,2))
                     else:
                         arrRet['srcPacket'] = np.vstack((arrRet['srcPacket'],
                                                          np.array([hit["_source"]["srcPacket"],
-                                                                   hit["_source"]["CpuEff"],
-                                                                   hit["_source"]["EventRate"]])))
+                                                                   hit["_source"]["QueueHrs"]])))
                 if 'destPacket' in hit["_source"]:
                     if not arrRet['destPacket'].size > 0:
                         arrRet['destPacket'] = np.reshape(np.array([hit["_source"]["destPacket"],
-                                                                    hit["_source"]["CpuEff"],
-                                                                    hit["_source"]["EventRate"]]), (1,3))
+                                                                    hit["_source"]["QueueHrs"]]), (1,2))
                     else:
                         arrRet['destPacket'] = np.vstack((arrRet['destPacket'],
                                                           np.array([hit["_source"]["destPacket"],
-                                                                    hit["_source"]["CpuEff"],
-                                                                    hit["_source"]["EventRate"]])))
+                                                                    hit["_source"]["QueueHrs"]])))
                 if 'srcLatency' in hit["_source"]:
                     if not arrRet['srcLatency'].size > 0:
                         arrRet['srcLatency'] = np.reshape(np.array([hit["_source"]["srcLatency"],
-                                                                    hit["_source"]["CpuEff"],
-                                                                    hit["_source"]["EventRate"]]), (1,3))
+                                                                    hit["_source"]["QueueHrs"]]), (1,2))
                     else:
                         arrRet['srcLatency'] = np.vstack((arrRet['srcLatency'], 
                                                           np.array([hit["_source"]["srcLatency"],
-                                                                    hit["_source"]["CpuEff"],
-                                                                    hit["_source"]["EventRate"]])))
+                                                                    hit["_source"]["QueueHrs"]])))
                 if 'destLatency' in hit["_source"]:
                     if not arrRet['destLatency'].size > 0:
                         arrRet['destLatency'] = np.reshape(np.array([hit["_source"]["destLatency"],
-                                                                     hit["_source"]["CpuEff"],
-                                                                     hit["_source"]["EventRate"]]), (1,3))
+                                                                     hit["_source"]["QueueHrs"]]), (1,2))
                     else:
                         arrRet['destLatency'] = np.vstack((arrRet['destLatency'], 
                                                            np.array([hit["_source"]["destLatency"],
-                                                                     hit["_source"]["CpuEff"],
-                                                                     hit["_source"]["EventRate"]])))
+                                                                     hit["_source"]["QueueHrs"]])))
             conTotalRec -= len(responseCon['hits']['hits'])
         return arrRet
 
 #print(esConAgg("src"))
 #print(esConAgg("dest"))
 def main(utcStart):
-    with PdfPages('CMS_Scatter.pdf') as pc:
+    with PdfPages('CMS_Queue.pdf') as pc:
         d = pc.infodict()
         d['Title'] = 'CMS Scatter Plots'
         d['Author'] = u'Jerrod T. Dixon\xe4nen'
@@ -184,63 +172,51 @@ def main(utcStart):
                         srcThrough = qResults['srcThroughput']
                         destThrough = qResults['destThroughput']
                         if srcThrough.size > 0:
-                            figsT, axsT = plt.subplots(2, sharex=True)
-                            axsT[0].scatter(srcThrough[:,0],srcThrough[:,1])
-                            axsT[1].scatter(srcThrough[:,0],srcThrough[:,2])
-                            axsT[0].set_ylabel("CpuEff")
-                            axsT[1].set_ylabel("EventRate")
-                            axsT[1].set_xlabel("Source Throughput")
-                            axsT[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figsT, axsT = plt.subplots(1, sharex=True)
+                            axsT.scatter(srcThrough[:,0],srcThrough[:,1])
+                            axsT.set_ylabel("QueueHrs")
+                            axsT.set_xlabel("Source Throughput")
+                            axsT.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figsT)
                             plt.close(figsT)
                         if destThrough.size > 0:
-                            figdT, axdT = plt.subplots(2, sharex=True)
-                            axdT[0].scatter(destThrough[:,0],destThrough[:,1])
-                            axdT[1].scatter(destThrough[:,0],destThrough[:,2])
-                            axdT[0].set_ylabel("CpuEff")
-                            axdT[1].set_ylabel("EventRate")
-                            axdT[1].set_xlabel("Destination Throughput")
-                            axdT[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figdT, axdT = plt.subplots(1, sharex=True)
+                            axdT.scatter(destThrough[:,0],destThrough[:,1])
+                            axdT.set_ylabel("QueueHrs")
+                            axdT.set_xlabel("Destination Throughput")
+                            axdT.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figdT)
                             plt.close(figdT)
                         if srcPacket.size > 0:
-                            figsP, axsP = plt.subplots(2, sharex=True)
-                            axsP[0].scatter(srcPacket[:,0],srcPacket[:,1])
-                            axsP[1].scatter(srcPacket[:,0],srcPacket[:,2])
-                            axsP[0].set_ylabel("CpuEff")
-                            axsP[1].set_ylabel("EventRate")
-                            axsP[1].set_xlabel("Source Packet Loss")
-                            axsP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figsP, axsP = plt.subplots(1, sharex=True)
+                            axsP.scatter(srcPacket[:,0],srcPacket[:,1])
+                            axsP.set_ylabel("QueueHrs")
+                            axsP.set_xlabel("Source Packet Loss")
+                            axsP.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figsP)
                             plt.close(figsP)
                         if destPacket.size > 0:
-                            figdP, axdP = plt.subplots(2, sharex=True)
-                            axdP[0].scatter(destPacket[:,0],destPacket[:,1])
-                            axdP[1].scatter(destPacket[:,0],destPacket[:,2])
-                            axdP[0].set_ylabel("CpuEff")
-                            axdP[1].set_ylabel("EventRate")
-                            axdP[1].set_xlabel("Destination Packet Loss")
-                            axdP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figdP, axdP = plt.subplots(1, sharex=True)
+                            axdP.scatter(destPacket[:,0],destPacket[:,1])
+                            axdP.set_ylabel("QueueHrs")
+                            axdP.set_xlabel("Destination Packet Loss")
+                            axdP.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figdP)
                             plt.close(figdP)
                         if srcLatency.size > 0:
-                            figL, axL = plt.subplots(2, sharex=True)
-                            axL[0].scatter(srcLatency[:,0],srcLatency[:,1])
-                            axL[1].scatter(srcLatency[:,0],srcLatency[:,2])
-                            axL[0].set_ylabel("CpuEff")
-                            axL[1].set_ylabel("EventRate")
-                            axL[1].set_xlabel("Source Latency")
-                            axL[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figL, axL = plt.subplots(1, sharex=True)
+                            axL.scatter(srcLatency[:,0],srcLatency[:,1])
+                            axL.set_ylabel("QueueHrs")
+                            axL.set_xlabel("Source Latency")
+                            axL.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figL)
                             plt.close(figL)
                         if destLatency.size > 0:
-                            figP, axP = plt.subplots(2, sharex=True)
-                            axP[1].scatter(destLatency[:,0],destLatency[:,2])
-                            axP[0].scatter(destLatency[:,0],destLatency[:,1])
-                            axP[0].set_ylabel("CpuEff")
-                            axP[1].set_ylabel("EventRate")
-                            axP[1].set_xlabel("Destination Latency")
-                            axP[0].set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
+                            figP, axP = plt.subplots(1, sharex=True)
+                            axP.scatter(destLatency[:,0],destLatency[:,1])
+                            axP.set_ylabel("QueueHrs")
+                            axP.set_xlabel("Destination Latency")
+                            axP.set_title(str(ping + " to " + pong + " on " + workDate.strftime('%d-%B-%Y')))
                             pc.savefig(figP)
                             plt.close(figP)
             utcStart = utcStart + oneDay
@@ -249,4 +225,6 @@ def main(utcStart):
     #axC[1].set_ylabel("CpuEff")
 
 # Run Main code
+print("start")
 main(utcStart)
+print("finished")
