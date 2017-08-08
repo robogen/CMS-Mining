@@ -1,0 +1,23 @@
+Spark Command: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131.x86_64/jre/bin/java -cp /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.master.Master --host c0217.crane.hcc.unl.edu --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/26 10:39:53 INFO Master: Started daemon with process name: 97203@c0217.crane.hcc.unl.edu
+17/04/26 10:39:53 INFO SignalUtils: Registered signal handler for TERM
+17/04/26 10:39:53 INFO SignalUtils: Registered signal handler for HUP
+17/04/26 10:39:53 INFO SignalUtils: Registered signal handler for INT
+17/04/26 10:39:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/26 10:39:54 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 10:39:54 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 10:39:54 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 10:39:54 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 10:39:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 10:39:54 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+17/04/26 10:39:55 INFO Master: Starting Spark master at spark://c0217.crane.hcc.unl.edu:7077
+17/04/26 10:39:55 INFO Master: Running Spark version 2.1.0
+17/04/26 10:39:55 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+17/04/26 10:39:55 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://10.138.2.17:8080
+17/04/26 10:39:55 INFO Utils: Successfully started service on port 6066.
+17/04/26 10:39:55 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+17/04/26 10:39:55 INFO Master: I have been elected leader! New state: ALIVE
+17/04/26 10:39:56 INFO Master: Registering worker 10.138.5.15:44993 with 16 cores, 61.8 GB RAM
+17/04/26 10:39:58 INFO Master: Registering worker 10.138.2.17:43612 with 16 cores, 61.8 GB RAM

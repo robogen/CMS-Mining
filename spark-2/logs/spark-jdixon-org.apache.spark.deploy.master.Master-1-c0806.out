@@ -1,0 +1,30 @@
+Spark Command: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131.x86_64/jre/bin/java -cp /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.master.Master --host c0806.crane.hcc.unl.edu --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/05/11 22:27:50 INFO Master: Started daemon with process name: 86792@c0806.crane.hcc.unl.edu
+17/05/11 22:27:50 INFO SignalUtils: Registered signal handler for TERM
+17/05/11 22:27:50 INFO SignalUtils: Registered signal handler for HUP
+17/05/11 22:27:50 INFO SignalUtils: Registered signal handler for INT
+17/05/11 22:27:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/05/11 22:27:51 INFO SecurityManager: Changing view acls to: jdixon
+17/05/11 22:27:51 INFO SecurityManager: Changing modify acls to: jdixon
+17/05/11 22:27:51 INFO SecurityManager: Changing view acls groups to: 
+17/05/11 22:27:51 INFO SecurityManager: Changing modify acls groups to: 
+17/05/11 22:27:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/05/11 22:27:52 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+17/05/11 22:27:52 INFO Master: Starting Spark master at spark://c0806.crane.hcc.unl.edu:7077
+17/05/11 22:27:52 INFO Master: Running Spark version 2.1.0
+17/05/11 22:27:53 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+17/05/11 22:27:53 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://10.138.8.6:8080
+17/05/11 22:27:53 INFO Utils: Successfully started service on port 6066.
+17/05/11 22:27:53 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+17/05/11 22:27:53 INFO Master: I have been elected leader! New state: ALIVE
+17/05/11 22:28:12 INFO Master: Registering worker 10.138.19.6:41318 with 16 cores, 61.8 GB RAM
+17/05/11 22:28:35 INFO Master: Registering app es_scatter.py
+17/05/11 22:28:35 INFO Master: Registered app es_scatter.py with ID app-20170511222835-0000
+17/05/11 22:28:35 INFO Master: Launching executor app-20170511222835-0000/0 on worker worker-20170511222811-10.138.19.6-41318
+17/05/11 22:29:46 INFO Master: Received unregister request from application app-20170511222835-0000
+17/05/11 22:29:46 INFO Master: Removing app app-20170511222835-0000
+17/05/11 22:29:46 INFO Master: 10.138.8.6:57938 got disassociated, removing it.
+17/05/11 22:29:46 INFO Master: 10.138.8.6:44941 got disassociated, removing it.
+17/05/11 22:29:47 WARN Master: Got status update for unknown executor app-20170511222835-0000/0

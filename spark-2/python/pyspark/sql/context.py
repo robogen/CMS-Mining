@@ -28,7 +28,7 @@ from pyspark.sql.session import _monkey_patch_RDD, SparkSession
 from pyspark.sql.dataframe import DataFrame
 from pyspark.sql.readwriter import DataFrameReader
 from pyspark.sql.streaming import DataStreamReader
-from pyspark.sql.types import Row, StringType
+from pyspark.sql.types import IntegerType, Row, StringType
 from pyspark.sql.utils import install_exception_handler
 
 __all__ = ["SQLContext", "HiveContext", "UDFRegistration"]
@@ -202,6 +202,32 @@ class SQLContext(object):
         """
         self.sparkSession.catalog.registerFunction(name, f, returnType)
 
+    @ignore_unicode_prefix
+    @since(2.1)
+    def registerJavaFunction(self, name, javaClassName, returnType=None):
+        """Register a java UDF so it can be used in SQL statements.
+
+        In addition to a name and the function itself, the return type can be optionally specified.
+        When the return type is not specified we would infer it via reflection.
+        :param name:  name of the UDF
+        :param javaClassName: fully qualified name of java class
+        :param returnType: a :class:`pyspark.sql.types.DataType` object
+
+        >>> sqlContext.registerJavaFunction("javaStringLength",
+        ...   "test.org.apache.spark.sql.JavaStringLength", IntegerType())
+        >>> sqlContext.sql("SELECT javaStringLength('test')").collect()
+        [Row(UDF(test)=4)]
+        >>> sqlContext.registerJavaFunction("javaStringLength2",
+        ...   "test.org.apache.spark.sql.JavaStringLength")
+        >>> sqlContext.sql("SELECT javaStringLength2('test')").collect()
+        [Row(UDF(test)=4)]
+
+        """
+        jdt = None
+        if returnType is not None:
+            jdt = self.sparkSession._jsparkSession.parseDataType(returnType.json())
+        self.sparkSession._jsparkSession.udf().registerJava(name, javaClassName, jdt)
+
     # TODO(andrew): delete this once we refactor things to take in SparkSession
     def _inferSchema(self, rdd, samplingRatio=None):
         """
@@ -226,9 +252,8 @@ class SQLContext(object):
         from ``data``, which should be an RDD of :class:`Row`,
         or :class:`namedtuple`, or :class:`dict`.
 
-        When ``schema`` is :class:`pyspark.sql.types.DataType` or
-        :class:`pyspark.sql.types.StringType`, it must match the
-        real data, or an exception will be thrown at runtime. If the given schema is not
+        When ``schema`` is :class:`pyspark.sql.types.DataType` or a datatype string it must match
+        the real data, or an exception will be thrown at runtime. If the given schema is not
         :class:`pyspark.sql.types.StructType`, it will be wrapped into a
         :class:`pyspark.sql.types.StructType` as its only field, and the field name will be "value",
         each record will also be wrapped into a tuple, which can be converted to row later.
@@ -239,8 +264,7 @@ class SQLContext(object):
         :param data: an RDD of any kind of SQL data representation(e.g. :class:`Row`,
             :class:`tuple`, ``int``, ``boolean``, etc.), or :class:`list`, or
             :class:`pandas.DataFrame`.
-        :param schema: a :class:`pyspark.sql.types.DataType` or a
-            :class:`pyspark.sql.types.StringType` or a list of
+        :param schema: a :class:`pyspark.sql.types.DataType` or a datatype string or a list of
             column names, default is None.  The data type string format equals to
             :class:`pyspark.sql.types.DataType.simpleString`, except that top level struct type can
             omit the ``struct<>`` and atomic types use ``typeName()`` as their format, e.g. use
@@ -252,11 +276,11 @@ class SQLContext(object):
 
         .. versionchanged:: 2.0
            The ``schema`` parameter can be a :class:`pyspark.sql.types.DataType` or a
-           :class:`pyspark.sql.types.StringType` after 2.0.
+           datatype string after 2.0.
            If it's not a :class:`pyspark.sql.types.StructType`, it will be wrapped into a
            :class:`pyspark.sql.types.StructType` and each record will also be wrapped into a tuple.
 
-        .. versionchanged:: 2.0.1
+        .. versionchanged:: 2.1
            Added verifySchema.
 
         >>> l = [('Alice', 1)]
@@ -388,7 +412,7 @@ class SQLContext(object):
         >>> sqlContext.registerDataFrameAsTable(df, "table1")
         >>> df2 = sqlContext.tables()
         >>> df2.filter("tableName = 'table1'").first()
-        Row(tableName=u'table1', isTemporary=True)
+        Row(database=u'', tableName=u'table1', isTemporary=True)
         """
         if dbName is None:
             return DataFrame(self._ssql_ctx.tables(), self)
@@ -481,12 +505,11 @@ class HiveContext(SQLContext):
     .. note:: Deprecated in 2.0.0. Use SparkSession.builder.enableHiveSupport().getOrCreate().
     """
 
-    warnings.warn(
-        "HiveContext is deprecated in Spark 2.0.0. Please use " +
-        "SparkSession.builder.enableHiveSupport().getOrCreate() instead.",
-        DeprecationWarning)
-
     def __init__(self, sparkContext, jhiveContext=None):
+        warnings.warn(
+            "HiveContext is deprecated in Spark 2.0.0. Please use " +
+            "SparkSession.builder.enableHiveSupport().getOrCreate() instead.",
+            DeprecationWarning)
         if jhiveContext is None:
             sparkSession = SparkSession.builder.enableHiveSupport().getOrCreate()
         else:

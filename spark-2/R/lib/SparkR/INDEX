@@ -3,14 +3,39 @@ $                       Select
 AFTSurvivalRegressionModel-class
                         S4 class that represents a
                         AFTSurvivalRegressionModel
+ALSModel-class          S4 class that represents an ALSModel
 Column-class            S4 class that represents a SparkDataFrame
                         column
+GBTClassificationModel-class
+                        S4 class that represents a
+                        GBTClassificationModel
+GBTRegressionModel-class
+                        S4 class that represents a GBTRegressionModel
+GaussianMixtureModel-class
+                        S4 class that represents a GaussianMixtureModel
 GeneralizedLinearRegressionModel-class
                         S4 class that represents a generalized linear
                         model
 GroupedData-class       S4 class that represents a GroupedData
+IsotonicRegressionModel-class
+                        S4 class that represents an
+                        IsotonicRegressionModel
 KMeansModel-class       S4 class that represents a KMeansModel
+KSTest-class            S4 class that represents an KSTest
+LDAModel-class          S4 class that represents an LDAModel
+LogisticRegressionModel-class
+                        S4 class that represents an
+                        LogisticRegressionModel
+MultilayerPerceptronClassificationModel-class
+                        S4 class that represents a
+                        MultilayerPerceptronClassificationModel
 NaiveBayesModel-class   S4 class that represents a NaiveBayesModel
+RandomForestClassificationModel-class
+                        S4 class that represents a
+                        RandomForestClassificationModel
+RandomForestRegressionModel-class
+                        S4 class that represents a
+                        RandomForestRegressionModel
 SparkDataFrame-class    S4 class that represents a SparkDataFrame
 WindowSpec-class        S4 class that represents a WindowSpec
 [[                      Subset
@@ -69,6 +94,7 @@ createDataFrame         Create a SparkDataFrame
 createExternalTable     Create an external table
 createOrReplaceTempView
                         Creates a temporary view using the given name.
+crossJoin               CrossJoin
 crosstab                Computes a pair-wise frequency table of the
                         given columns
 cume_dist               cume_dist
@@ -240,11 +266,30 @@ size                    size
 skewness                skewness
 sort_array              sort_array
 soundex                 soundex
+spark.addFile           Add a file or directory to be downloaded with
+                        this Spark job on every node.
+spark.als               Alternating Least Squares (ALS) for
+                        Collaborative Filtering
+spark.gaussianMixture   Multivariate Gaussian Mixture Model (GMM)
+spark.gbt               Gradient Boosted Tree Model for Regression and
+                        Classification
+spark.getSparkFiles     Get the absolute path of a file added through
+                        spark.addFile.
+spark.getSparkFilesRootDirectory
+                        Get the root directory that contains files
+                        added through spark.addFile.
 spark.glm               Generalized Linear Models
+spark.isoreg            Isotonic Regression Model
 spark.kmeans            K-Means Clustering Model
+spark.kstest            (One-Sample) Kolmogorov-Smirnov Test
 spark.lapply            Run a function over a list of elements,
                         distributing the computations with Spark
+spark.lda               Latent Dirichlet Allocation
+spark.logit             Logistic Regression Model
+spark.mlp               Multilayer Perceptron Classification Model
 spark.naiveBayes        Naive Bayes Models
+spark.randomForest      Random Forest Model for Regression and
+                        Classification
 spark.survreg           Accelerated Failure Time (AFT) Survival
                         Regression Model
 sparkR.callJMethod      Call Java Methods
@@ -266,6 +311,7 @@ sqrt                    sqrt
 startsWith              startsWith
 stddev_pop              stddev_pop
 stddev_samp             stddev_samp
+storageLevel            StorageLevel
 str                     Compactly display the structure of a dataset
 struct                  struct
 structField             structField

@@ -1,0 +1,70 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/24 17:33:58 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 174294@c1223.crane.hcc.unl.edu
+17/04/24 17:33:58 INFO SignalUtils: Registered signal handler for TERM
+17/04/24 17:33:58 INFO SignalUtils: Registered signal handler for HUP
+17/04/24 17:33:58 INFO SignalUtils: Registered signal handler for INT
+17/04/24 17:33:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/24 17:33:59 INFO SecurityManager: Changing view acls to: jdixon
+17/04/24 17:33:59 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/24 17:33:59 INFO SecurityManager: Changing view acls groups to: 
+17/04/24 17:33:59 INFO SecurityManager: Changing modify acls groups to: 
+17/04/24 17:33:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/24 17:33:59 INFO TransportClientFactory: Successfully created connection to /10.138.12.23:46621 after 73 ms (0 ms spent in bootstraps)
+17/04/24 17:34:00 INFO SecurityManager: Changing view acls to: jdixon
+17/04/24 17:34:00 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/24 17:34:00 INFO SecurityManager: Changing view acls groups to: 
+17/04/24 17:34:00 INFO SecurityManager: Changing modify acls groups to: 
+17/04/24 17:34:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/24 17:34:00 INFO TransportClientFactory: Successfully created connection to /10.138.12.23:46621 after 7 ms (0 ms spent in bootstraps)
+17/04/24 17:34:00 INFO DiskBlockManager: Created local directory at /tmp/spark-cacd050a-b9c2-4344-a1fa-47286fdaef29/executor-a70260e5-0735-41f5-afbe-770b6f0d67bd/blockmgr-1c374de0-9348-42b2-81ff-e77c83f20778
+17/04/24 17:34:00 INFO MemoryStore: MemoryStore started with capacity 398.7 MB
+17/04/24 17:34:00 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.12.23:46621
+17/04/24 17:34:00 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.12.23:45535
+17/04/24 17:34:00 INFO TransportClientFactory: Successfully created connection to /10.138.12.23:45535 after 1 ms (0 ms spent in bootstraps)
+17/04/24 17:34:00 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.12.23:45535
+17/04/24 17:34:00 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/24 17:34:00 INFO Executor: Starting executor ID 0 on host 10.138.12.23
+17/04/24 17:34:00 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38003.
+17/04/24 17:34:00 INFO NettyBlockTransferService: Server created on 10.138.12.23:38003
+17/04/24 17:34:00 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/24 17:34:00 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.138.12.23, 38003, None)
+17/04/24 17:34:00 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.138.12.23, 38003, None)
+17/04/24 17:34:00 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.138.12.23, 38003, None)
+17/04/24 17:34:01 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/04/24 17:34:01 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/04/24 17:34:01 INFO Executor: Fetching spark://10.138.12.23:46621/files/es_scatter.py with timestamp 1493073236313
+17/04/24 17:34:01 INFO TransportClientFactory: Successfully created connection to /10.138.12.23:46621 after 3 ms (0 ms spent in bootstraps)
+17/04/24 17:34:01 INFO Utils: Fetching spark://10.138.12.23:46621/files/es_scatter.py to /tmp/spark-cacd050a-b9c2-4344-a1fa-47286fdaef29/executor-a70260e5-0735-41f5-afbe-770b6f0d67bd/spark-00f0f911-e3d4-4f1f-b083-e1500f96e8ff/fetchFileTemp237498874140211616.tmp
+17/04/24 17:34:01 INFO Utils: Copying /tmp/spark-cacd050a-b9c2-4344-a1fa-47286fdaef29/executor-a70260e5-0735-41f5-afbe-770b6f0d67bd/spark-00f0f911-e3d4-4f1f-b083-e1500f96e8ff/-18742324161493073236313_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424173356-0000/0/./es_scatter.py
+17/04/24 17:34:01 INFO Executor: Fetching spark://10.138.12.23:46621/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493073236054
+17/04/24 17:34:01 INFO Utils: Fetching spark://10.138.12.23:46621/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-cacd050a-b9c2-4344-a1fa-47286fdaef29/executor-a70260e5-0735-41f5-afbe-770b6f0d67bd/spark-00f0f911-e3d4-4f1f-b083-e1500f96e8ff/fetchFileTemp1304893218995001839.tmp
+17/04/24 17:34:01 INFO Utils: Copying /tmp/spark-cacd050a-b9c2-4344-a1fa-47286fdaef29/executor-a70260e5-0735-41f5-afbe-770b6f0d67bd/spark-00f0f911-e3d4-4f1f-b083-e1500f96e8ff/-1519204561493073236054_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424173356-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/24 17:34:01 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424173356-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/24 17:34:01 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/04/24 17:34:01 INFO TransportClientFactory: Successfully created connection to /10.138.12.23:33854 after 1 ms (0 ms spent in bootstraps)
+17/04/24 17:34:01 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1793.0 B, free 398.7 MB)
+17/04/24 17:34:01 INFO TorrentBroadcast: Reading broadcast variable 2 took 133 ms
+17/04/24 17:34:02 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 398.7 MB)
+17/04/24 17:34:02 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@53a1c3eb
+17/04/24 17:34:02 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/04/24 17:34:02 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 398.7 MB)
+17/04/24 17:34:02 INFO TorrentBroadcast: Reading broadcast variable 0 took 15 ms
+17/04/24 17:34:02 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 325.5 KB, free 398.4 MB)
+17/04/24 17:34:02 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/04/24 17:34:02 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/04/24 17:34:02 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/04/24 17:34:02 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:34:03 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 4588 bytes result sent to driver
+17/04/24 17:34:03 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/04/24 17:34:03 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/04/24 17:34:03 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/24 17:34:03 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 3.4 KB, free 398.4 MB)
+17/04/24 17:34:03 INFO TorrentBroadcast: Reading broadcast variable 3 took 20 ms
+17/04/24 17:34:03 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 5.4 KB, free 398.3 MB)
+17/04/24 17:34:03 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6735de0f
+17/04/24 17:34:03 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:34:04 INFO PythonRunner: Times: total = 1180, boot = 1009, init = 171, finish = 0
+17/04/24 17:34:04 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 4401 bytes result sent to driver
+17/04/24 17:34:05 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/24 17:34:05 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

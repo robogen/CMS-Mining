@@ -1,0 +1,122 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/24 17:26:59 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 144587@c1809.crane.hcc.unl.edu
+17/04/24 17:26:59 INFO SignalUtils: Registered signal handler for TERM
+17/04/24 17:26:59 INFO SignalUtils: Registered signal handler for HUP
+17/04/24 17:26:59 INFO SignalUtils: Registered signal handler for INT
+17/04/24 17:27:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/24 17:27:00 INFO SecurityManager: Changing view acls to: jdixon
+17/04/24 17:27:00 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/24 17:27:00 INFO SecurityManager: Changing view acls groups to: 
+17/04/24 17:27:00 INFO SecurityManager: Changing modify acls groups to: 
+17/04/24 17:27:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/24 17:27:01 INFO TransportClientFactory: Successfully created connection to /10.138.18.9:36818 after 92 ms (0 ms spent in bootstraps)
+17/04/24 17:27:01 INFO SecurityManager: Changing view acls to: jdixon
+17/04/24 17:27:01 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/24 17:27:01 INFO SecurityManager: Changing view acls groups to: 
+17/04/24 17:27:01 INFO SecurityManager: Changing modify acls groups to: 
+17/04/24 17:27:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/24 17:27:01 INFO TransportClientFactory: Successfully created connection to /10.138.18.9:36818 after 1 ms (0 ms spent in bootstraps)
+17/04/24 17:27:01 INFO DiskBlockManager: Created local directory at /tmp/spark-9edc7a95-5bb5-4a1a-ad84-e5a001bfc782/executor-b7937372-dd1b-49d6-9b23-6c4cfe7b08f3/blockmgr-553df217-6e60-4be8-aeb3-514e4d924e8e
+17/04/24 17:27:01 INFO MemoryStore: MemoryStore started with capacity 398.7 MB
+17/04/24 17:27:02 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.18.9:36818
+17/04/24 17:27:02 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.18.9:38612
+17/04/24 17:27:02 INFO TransportClientFactory: Successfully created connection to /10.138.18.9:38612 after 15 ms (0 ms spent in bootstraps)
+17/04/24 17:27:02 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.18.9:38612
+17/04/24 17:27:02 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/24 17:27:02 INFO Executor: Starting executor ID 0 on host 10.138.18.9
+17/04/24 17:27:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38091.
+17/04/24 17:27:02 INFO NettyBlockTransferService: Server created on 10.138.18.9:38091
+17/04/24 17:27:02 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/24 17:27:02 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.138.18.9, 38091, None)
+17/04/24 17:27:02 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.138.18.9, 38091, None)
+17/04/24 17:27:02 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.138.18.9, 38091, None)
+17/04/24 17:27:02 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/04/24 17:27:02 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/04/24 17:27:02 INFO Executor: Fetching spark://10.138.18.9:36818/files/es_scatter.py with timestamp 1493072817115
+17/04/24 17:27:02 INFO TransportClientFactory: Successfully created connection to /10.138.18.9:36818 after 5 ms (0 ms spent in bootstraps)
+17/04/24 17:27:02 INFO Utils: Fetching spark://10.138.18.9:36818/files/es_scatter.py to /tmp/spark-9edc7a95-5bb5-4a1a-ad84-e5a001bfc782/executor-b7937372-dd1b-49d6-9b23-6c4cfe7b08f3/spark-0ffe3e1c-bd91-4df6-947e-1e7a48658612/fetchFileTemp7948205295594674216.tmp
+17/04/24 17:27:02 INFO Utils: Copying /tmp/spark-9edc7a95-5bb5-4a1a-ad84-e5a001bfc782/executor-b7937372-dd1b-49d6-9b23-6c4cfe7b08f3/spark-0ffe3e1c-bd91-4df6-947e-1e7a48658612/15146778571493072817115_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424172657-0000/0/./es_scatter.py
+17/04/24 17:27:02 INFO Executor: Fetching spark://10.138.18.9:36818/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493072816830
+17/04/24 17:27:02 INFO Utils: Fetching spark://10.138.18.9:36818/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-9edc7a95-5bb5-4a1a-ad84-e5a001bfc782/executor-b7937372-dd1b-49d6-9b23-6c4cfe7b08f3/spark-0ffe3e1c-bd91-4df6-947e-1e7a48658612/fetchFileTemp1471433904918782467.tmp
+17/04/24 17:27:02 INFO Utils: Copying /tmp/spark-9edc7a95-5bb5-4a1a-ad84-e5a001bfc782/executor-b7937372-dd1b-49d6-9b23-6c4cfe7b08f3/spark-0ffe3e1c-bd91-4df6-947e-1e7a48658612/6038563431493072816830_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424172657-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/24 17:27:02 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170424172657-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/24 17:27:02 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/04/24 17:27:02 INFO TransportClientFactory: Successfully created connection to /10.138.18.9:42413 after 2 ms (0 ms spent in bootstraps)
+17/04/24 17:27:02 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1793.0 B, free 398.7 MB)
+17/04/24 17:27:02 INFO TorrentBroadcast: Reading broadcast variable 2 took 172 ms
+17/04/24 17:27:03 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 398.7 MB)
+17/04/24 17:27:03 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@61116658
+17/04/24 17:27:03 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/04/24 17:27:03 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 398.7 MB)
+17/04/24 17:27:03 INFO TorrentBroadcast: Reading broadcast variable 0 took 29 ms
+17/04/24 17:27:03 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 325.5 KB, free 398.4 MB)
+17/04/24 17:27:03 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/04/24 17:27:03 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/04/24 17:27:03 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/04/24 17:27:03 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:03 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1842 bytes result sent to driver
+17/04/24 17:27:04 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/04/24 17:27:04 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/04/24 17:27:04 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+17/04/24 17:27:04 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/04/24 17:27:04 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+17/04/24 17:27:04 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/24 17:27:04 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+17/04/24 17:27:04 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 1793.0 B, free 398.4 MB)
+17/04/24 17:27:04 INFO TorrentBroadcast: Reading broadcast variable 3 took 37 ms
+17/04/24 17:27:04 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 2.9 KB, free 398.4 MB)
+17/04/24 17:27:04 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@640b4f53
+17/04/24 17:27:04 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@5d3562ea
+17/04/24 17:27:04 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1f19cc77
+17/04/24 17:27:04 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:04 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1809 bytes result sent to driver
+17/04/24 17:27:04 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:04 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:04 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+17/04/24 17:27:04 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+17/04/24 17:27:04 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 994 bytes result sent to driver
+17/04/24 17:27:04 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@226c5667
+17/04/24 17:27:04 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 1081 bytes result sent to driver
+17/04/24 17:27:04 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:04 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 921 bytes result sent to driver
+17/04/24 17:27:04 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+17/04/24 17:27:04 INFO Executor: Running task 0.0 in stage 2.0 (TID 5)
+17/04/24 17:27:04 INFO TorrentBroadcast: Started reading broadcast variable 4
+17/04/24 17:27:04 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 3.4 KB, free 398.3 MB)
+17/04/24 17:27:04 INFO TorrentBroadcast: Reading broadcast variable 4 took 14 ms
+17/04/24 17:27:04 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 5.4 KB, free 398.3 MB)
+17/04/24 17:27:04 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@72a4c60f
+17/04/24 17:27:04 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:05 INFO PythonRunner: Times: total = 1088, boot = 1064, init = 24, finish = 0
+17/04/24 17:27:05 INFO Executor: Finished task 0.0 in stage 2.0 (TID 5). 2157 bytes result sent to driver
+17/04/24 17:27:05 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+17/04/24 17:27:05 INFO Executor: Running task 0.0 in stage 3.0 (TID 6)
+17/04/24 17:27:05 INFO TorrentBroadcast: Started reading broadcast variable 5
+17/04/24 17:27:05 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+17/04/24 17:27:05 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+17/04/24 17:27:05 INFO Executor: Running task 1.0 in stage 3.0 (TID 7)
+17/04/24 17:27:05 INFO Executor: Running task 2.0 in stage 3.0 (TID 8)
+17/04/24 17:27:05 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 3.4 KB, free 398.3 MB)
+17/04/24 17:27:05 INFO TorrentBroadcast: Reading broadcast variable 5 took 24 ms
+17/04/24 17:27:05 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 5.4 KB, free 398.3 MB)
+17/04/24 17:27:05 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@617dd821
+17/04/24 17:27:05 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2f64bc15
+17/04/24 17:27:05 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:05 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@79fccb5e
+17/04/24 17:27:05 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:05 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:05 INFO PythonRunner: Times: total = 48, boot = -87, init = 135, finish = 0
+17/04/24 17:27:05 INFO Executor: Finished task 0.0 in stage 3.0 (TID 6). 2070 bytes result sent to driver
+17/04/24 17:27:05 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+17/04/24 17:27:05 INFO Executor: Running task 3.0 in stage 3.0 (TID 9)
+17/04/24 17:27:05 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@460d07d9
+17/04/24 17:27:05 INFO PythonRunner: Times: total = 58, boot = 27, init = 31, finish = 0
+17/04/24 17:27:05 INFO Executor: Finished task 2.0 in stage 3.0 (TID 8). 1539 bytes result sent to driver
+17/04/24 17:27:05 INFO PythonRunner: Times: total = 67, boot = 31, init = 36, finish = 0
+17/04/24 17:27:05 INFO Executor: Finished task 1.0 in stage 3.0 (TID 7). 1539 bytes result sent to driver
+17/04/24 17:27:05 WARN EsInputFormat: Cannot determine task id...
+17/04/24 17:27:05 INFO PythonRunner: Times: total = 62, boot = -49, init = 111, finish = 0
+17/04/24 17:27:05 INFO Executor: Finished task 3.0 in stage 3.0 (TID 9). 1539 bytes result sent to driver
+17/04/24 17:27:06 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/24 17:27:06 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

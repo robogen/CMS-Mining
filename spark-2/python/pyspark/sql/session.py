@@ -176,7 +176,7 @@ class SparkSession(object):
                         sc._conf.set(key, value)
                     session = SparkSession(sc)
                 for key, value in self._options.items():
-                    session.conf.set(key, value)
+                    session._jsparkSession.sessionState().conf().setConfString(key, value)
                 for key, value in self._options.items():
                     session.sparkContext._conf.set(key, value)
                 return session
@@ -412,9 +412,8 @@ class SparkSession(object):
         from ``data``, which should be an RDD of :class:`Row`,
         or :class:`namedtuple`, or :class:`dict`.
 
-        When ``schema`` is :class:`pyspark.sql.types.DataType` or
-        :class:`pyspark.sql.types.StringType`, it must match the
-        real data, or an exception will be thrown at runtime. If the given schema is not
+        When ``schema`` is :class:`pyspark.sql.types.DataType` or a datatype string, it must match
+        the real data, or an exception will be thrown at runtime. If the given schema is not
         :class:`pyspark.sql.types.StructType`, it will be wrapped into a
         :class:`pyspark.sql.types.StructType` as its only field, and the field name will be "value",
         each record will also be wrapped into a tuple, which can be converted to row later.
@@ -424,8 +423,7 @@ class SparkSession(object):
 
         :param data: an RDD of any kind of SQL data representation(e.g. row, tuple, int, boolean,
             etc.), or :class:`list`, or :class:`pandas.DataFrame`.
-        :param schema: a :class:`pyspark.sql.types.DataType` or a
-            :class:`pyspark.sql.types.StringType` or a list of
+        :param schema: a :class:`pyspark.sql.types.DataType` or a datatype string or a list of
             column names, default is ``None``.  The data type string format equals to
             :class:`pyspark.sql.types.DataType.simpleString`, except that top level struct type can
             omit the ``struct<>`` and atomic types use ``typeName()`` as their format, e.g. use
@@ -435,7 +433,7 @@ class SparkSession(object):
         :param verifySchema: verify data types of every row against schema.
         :return: :class:`DataFrame`
 
-        .. versionchanged:: 2.0.1
+        .. versionchanged:: 2.1
            Added verifySchema.
 
         >>> l = [('Alice', 1)]

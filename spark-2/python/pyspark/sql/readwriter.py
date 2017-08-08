@@ -98,9 +98,11 @@ class DataFrameReader(OptionUtils):
 
         :param schema: a :class:`pyspark.sql.types.StructType` object
         """
+        from pyspark.sql import SparkSession
         if not isinstance(schema, StructType):
             raise TypeError("schema should be StructType")
-        jschema = self._spark._ssql_ctx.parseDataType(schema.json())
+        spark = SparkSession.builder.getOrCreate()
+        jschema = spark._jsparkSession.parseDataType(schema.json())
         self._jreader = self._jreader.schema(jschema)
         return self
 
@@ -158,8 +160,9 @@ class DataFrameReader(OptionUtils):
              allowNumericLeadingZero=None, allowBackslashEscapingAnyCharacter=None,
              mode=None, columnNameOfCorruptRecord=None, dateFormat=None, timestampFormat=None):
         """
-        Loads a JSON file (one object per line) or an RDD of Strings storing JSON objects
-        (one object per record) and returns the result as a :class`DataFrame`.
+        Loads a JSON file (`JSON Lines text format or newline-delimited JSON
+        <http://jsonlines.org/>`_) or an RDD of Strings storing JSON objects (one object per
+        record) and returns the result as a :class`DataFrame`.
 
         If the ``schema`` parameter is not specified, this function goes
         through the input once to determine the input schema.
@@ -347,7 +350,7 @@ class DataFrameReader(OptionUtils):
                            set, it uses the default value, ``20480``.
         :param maxCharsPerColumn: defines the maximum number of characters allowed for any given
                                   value being read. If None is set, it uses the default value,
-                                  ``1000000``.
+                                  ``-1`` meaning unlimited length.
         :param maxMalformedLogPerPartition: sets the maximum number of malformed rows Spark will
                                             log for each partition. Malformed records beyond this
                                             number will be ignored. If None is set, it

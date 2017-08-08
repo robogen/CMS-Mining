@@ -12,7 +12,6 @@
 
 <p>Return a new SparkDataFrame containing the union of rows in this SparkDataFrame
 and another SparkDataFrame. This is equivalent to <code>UNION ALL</code> in SQL.
-Note that this does not remove duplicate rows across the two SparkDataFrames.
 </p>
 <p>unionAll is deprecated - use union instead
 </p>
@@ -45,6 +44,12 @@ unionAll(x, y)
 <p>A SparkDataFrame</p>
 </td></tr>
 </table>
+
+
+<h3>Details</h3>
+
+<p>Note: This does not remove duplicate rows across the two SparkDataFrames.
+</p>
 
 
 <h3>Value</h3>
@@ -117,6 +122,8 @@ unionAll(x, y)
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView</a></code>,
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView</a></code>,
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView,SparkDataFrame,character-method</a></code>;
+<code><a href="crossJoin.html">crossJoin</a></code>,
+<code><a href="crossJoin.html">crossJoin,SparkDataFrame,SparkDataFrame-method</a></code>;
 <code><a href="dapplyCollect.html">dapplyCollect</a></code>, <code><a href="dapplyCollect.html">dapplyCollect</a></code>,
 <code><a href="dapplyCollect.html">dapplyCollect,SparkDataFrame,function-method</a></code>;
 <code><a href="dapply.html">dapply</a></code>, <code><a href="dapply.html">dapply</a></code>,
@@ -227,7 +234,7 @@ unionAll(x, y)
 <code><a href="write.df.html">saveDF,SparkDataFrame,character-method</a></code>,
 <code><a href="write.df.html">write.df</a></code>, <code><a href="write.df.html">write.df</a></code>,
 <code><a href="write.df.html">write.df</a></code>,
-<code><a href="write.df.html">write.df,SparkDataFrame,character-method</a></code>;
+<code><a href="write.df.html">write.df,SparkDataFrame-method</a></code>;
 <code><a href="schema.html">schema</a></code>, <code><a href="schema.html">schema</a></code>,
 <code><a href="schema.html">schema,SparkDataFrame-method</a></code>;
 <code><a href="selectExpr.html">selectExpr</a></code>, <code><a href="selectExpr.html">selectExpr</a></code>,
@@ -238,12 +245,15 @@ unionAll(x, y)
 <code><a href="show.html">show,Column-method</a></code>,
 <code><a href="show.html">show,GroupedData-method</a></code>,
 <code><a href="show.html">show,SparkDataFrame-method</a></code>,
-<code><a href="show.html">show,WindowSpec-method</a></code>; <code><a href="str.html">str</a></code>,
+<code><a href="show.html">show,WindowSpec-method</a></code>;
+<code><a href="storageLevel.html">storageLevel</a></code>,
+<code><a href="storageLevel.html">storageLevel,SparkDataFrame-method</a></code>;
+<code><a href="str.html">str</a></code>,
 <code><a href="str.html">str,SparkDataFrame-method</a></code>;
 <code><a href="take.html">take</a></code>, <code><a href="take.html">take</a></code>,
 <code><a href="take.html">take,SparkDataFrame,numeric-method</a></code>;
-<code><a href="unpersist-methods.html">unpersist</a></code>, <code><a href="unpersist-methods.html">unpersist</a></code>,
-<code><a href="unpersist-methods.html">unpersist,SparkDataFrame-method</a></code>;
+<code><a href="unpersist.html">unpersist</a></code>, <code><a href="unpersist.html">unpersist</a></code>,
+<code><a href="unpersist.html">unpersist,SparkDataFrame-method</a></code>;
 <code><a href="withColumn.html">withColumn</a></code>, <code><a href="withColumn.html">withColumn</a></code>,
 <code><a href="withColumn.html">withColumn,SparkDataFrame,character,Column-method</a></code>;
 <code><a href="with.html">with</a></code>,
@@ -272,5 +282,5 @@ unions &lt;- rbind(df, df2, df3, df4)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -26,11 +26,11 @@ spark.naiveBayes(data, formula, ...)
 predict(object, newData)
 
 ## S4 method for signature 'NaiveBayesModel'
-summary(object, ...)
+summary(object)
 
 ## S4 method for signature 'SparkDataFrame,formula'
 spark.naiveBayes(data, formula,
-  smoothing = 1, ...)
+  smoothing = 1)
 
 ## S4 method for signature 'NaiveBayesModel,character'
 write.ml(object, path,
@@ -68,7 +68,7 @@ operators are supported, including '~', '.', ':', '+', and '-'.</p>
 </td></tr>
 <tr valign="top"><td><code>path</code></td>
 <td>
-<p>the directory where the model is saved</p>
+<p>the directory where the model is saved.</p>
 </td></tr>
 <tr valign="top"><td><code>overwrite</code></td>
 <td>
@@ -81,10 +81,11 @@ which means throw exception if the output path exists.</p>
 <h3>Value</h3>
 
 <p><code>predict</code> returns a SparkDataFrame containing predicted labeled in a column named
-&quot;prediction&quot;
+&quot;prediction&quot;.
 </p>
-<p><code>summary</code> returns a list containing <code>apriori</code>, the label distribution, and
-<code>tables</code>, conditional probabilities given the target label.
+<p><code>summary</code> returns summary information of the fitted model, which is a list.
+The list includes <code>apriori</code> (the label distribution) and
+<code>tables</code> (conditional probabilities given the target label).
 </p>
 <p><code>spark.naiveBayes</code> returns a fitted naive Bayes model.
 </p>
@@ -106,7 +107,7 @@ which means throw exception if the output path exists.</p>
 
 <p>e1071: <a href="https://cran.r-project.org/package=e1071">https://cran.r-project.org/package=e1071</a>
 </p>
-<p><a href="read.ml.html">read.ml</a>
+<p><a href="write.ml.html">write.ml</a>
 </p>
 
 
@@ -135,5 +136,5 @@ summary(savedModel)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

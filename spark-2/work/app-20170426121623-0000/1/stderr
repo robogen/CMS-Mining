@@ -1,0 +1,296 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/26 12:16:24 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 199252@c0405.crane.hcc.unl.edu
+17/04/26 12:16:24 INFO SignalUtils: Registered signal handler for TERM
+17/04/26 12:16:24 INFO SignalUtils: Registered signal handler for HUP
+17/04/26 12:16:24 INFO SignalUtils: Registered signal handler for INT
+17/04/26 12:16:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/26 12:16:25 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 12:16:25 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 12:16:25 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 12:16:25 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 12:16:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 12:16:26 INFO TransportClientFactory: Successfully created connection to /10.138.4.3:41779 after 80 ms (0 ms spent in bootstraps)
+17/04/26 12:16:26 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 12:16:26 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 12:16:26 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 12:16:26 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 12:16:26 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 12:16:26 INFO TransportClientFactory: Successfully created connection to /10.138.4.3:41779 after 1 ms (0 ms spent in bootstraps)
+17/04/26 12:16:26 INFO DiskBlockManager: Created local directory at /lustre/work/swanson/jdixon/tmp/spark-b72841f4-1c5a-44a4-8f34-78384137d26f/executor-ede79e1e-9e43-41db-a630-289134332c96/blockmgr-0a1b08e6-0d62-490d-afa6-fc8d24bf199e
+17/04/26 12:16:26 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/04/26 12:16:26 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.4.3:41779
+17/04/26 12:16:26 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.4.5:37646
+17/04/26 12:16:26 INFO TransportClientFactory: Successfully created connection to /10.138.4.5:37646 after 1 ms (0 ms spent in bootstraps)
+17/04/26 12:16:26 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.4.5:37646
+17/04/26 12:16:26 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/26 12:16:26 INFO Executor: Starting executor ID 1 on host 10.138.4.5
+17/04/26 12:16:26 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41422.
+17/04/26 12:16:26 INFO NettyBlockTransferService: Server created on 10.138.4.5:41422
+17/04/26 12:16:26 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/26 12:16:26 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 10.138.4.5, 41422, None)
+17/04/26 12:16:26 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 10.138.4.5, 41422, None)
+17/04/26 12:16:26 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, 10.138.4.5, 41422, None)
+17/04/26 12:16:26 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/04/26 12:16:27 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/04/26 12:16:27 INFO Executor: Fetching spark://10.138.4.3:41779/files/es_scatter.py with timestamp 1493226983280
+17/04/26 12:16:27 INFO TransportClientFactory: Successfully created connection to /10.138.4.3:41779 after 1 ms (0 ms spent in bootstraps)
+17/04/26 12:16:27 INFO Utils: Fetching spark://10.138.4.3:41779/files/es_scatter.py to /lustre/work/swanson/jdixon/tmp/spark-b72841f4-1c5a-44a4-8f34-78384137d26f/executor-ede79e1e-9e43-41db-a630-289134332c96/spark-a0ed7382-ec1f-471e-b6de-452b820b03ec/fetchFileTemp7780266024954519957.tmp
+17/04/26 12:16:27 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-b72841f4-1c5a-44a4-8f34-78384137d26f/executor-ede79e1e-9e43-41db-a630-289134332c96/spark-a0ed7382-ec1f-471e-b6de-452b820b03ec/14822290441493226983280_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426121623-0000/1/./es_scatter.py
+17/04/26 12:16:27 INFO Executor: Fetching spark://10.138.4.3:41779/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493226982854
+17/04/26 12:16:27 INFO Utils: Fetching spark://10.138.4.3:41779/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /lustre/work/swanson/jdixon/tmp/spark-b72841f4-1c5a-44a4-8f34-78384137d26f/executor-ede79e1e-9e43-41db-a630-289134332c96/spark-a0ed7382-ec1f-471e-b6de-452b820b03ec/fetchFileTemp8657436161663348977.tmp
+17/04/26 12:16:27 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-b72841f4-1c5a-44a4-8f34-78384137d26f/executor-ede79e1e-9e43-41db-a630-289134332c96/spark-a0ed7382-ec1f-471e-b6de-452b820b03ec/20650487401493226982854_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426121623-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/26 12:16:27 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426121623-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/26 12:16:27 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/04/26 12:16:27 INFO TransportClientFactory: Successfully created connection to /10.138.4.3:41390 after 1 ms (0 ms spent in bootstraps)
+17/04/26 12:16:27 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1790.0 B, free 912.3 MB)
+17/04/26 12:16:27 INFO TorrentBroadcast: Reading broadcast variable 2 took 144 ms
+17/04/26 12:16:27 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 912.3 MB)
+17/04/26 12:16:27 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@4df5e7c0
+17/04/26 12:16:27 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/04/26 12:16:27 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 912.3 MB)
+17/04/26 12:16:27 INFO TorrentBroadcast: Reading broadcast variable 0 took 21 ms
+17/04/26 12:16:27 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 294.6 KB, free 912.0 MB)
+17/04/26 12:16:27 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/04/26 12:16:28 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/04/26 12:16:28 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/04/26 12:16:28 WARN EsInputFormat: Cannot determine task id...
+17/04/26 12:16:28 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 4589 bytes result sent to driver
+17/04/26 12:16:29 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/04/26 12:16:29 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/04/26 12:16:29 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+17/04/26 12:16:29 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+17/04/26 12:16:29 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/04/26 12:16:29 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+17/04/26 12:16:29 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+17/04/26 12:16:29 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/26 12:16:29 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+17/04/26 12:16:29 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.5 KB, free 912.0 MB)
+17/04/26 12:16:29 INFO TorrentBroadcast: Reading broadcast variable 3 took 29 ms
+17/04/26 12:16:29 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 10.5 KB, free 912.0 MB)
+17/04/26 12:16:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3f1074b4
+17/04/26 12:16:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@515df5c4
+17/04/26 12:16:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6fb24097
+17/04/26 12:16:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1faeb2cb
+17/04/26 12:16:29 WARN EsInputFormat: Cannot determine task id...
+17/04/26 12:16:29 WARN EsInputFormat: Cannot determine task id...
+17/04/26 12:16:29 WARN EsInputFormat: Cannot determine task id...
+17/04/26 12:16:29 WARN EsInputFormat: Cannot determine task id...
+17/04/26 12:16:34 INFO PythonRunner: Times: total = 5686, boot = 1018, init = 402, finish = 4266
+17/04/26 12:16:34 INFO MemoryStore: Block rdd_3_3 stored as bytes in memory (estimated size 6.4 MB, free 905.5 MB)
+17/04/26 12:16:34 INFO PythonRunner: Times: total = 5706, boot = 1023, init = 402, finish = 4281
+17/04/26 12:16:34 INFO MemoryStore: Block rdd_3_1 stored as bytes in memory (estimated size 6.3 MB, free 899.3 MB)
+17/04/26 12:16:34 INFO PythonRunner: Times: total = 5720, boot = 1014, init = 401, finish = 4305
+17/04/26 12:16:34 INFO MemoryStore: Block rdd_3_0 stored as bytes in memory (estimated size 6.5 MB, free 892.8 MB)
+17/04/26 12:16:35 INFO PythonRunner: Times: total = 5771, boot = 1009, init = 399, finish = 4363
+17/04/26 12:16:35 INFO MemoryStore: Block rdd_3_2 stored as bytes in memory (estimated size 6.4 MB, free 886.4 MB)
+17/04/26 12:16:35 INFO PythonRunner: Times: total = 243, boot = -7, init = 19, finish = 231
+17/04/26 12:16:35 INFO PythonRunner: Times: total = 330, boot = -33, init = 42, finish = 321
+17/04/26 12:16:35 INFO PythonRunner: Times: total = 393, boot = -24, init = 49, finish = 368
+17/04/26 12:16:35 INFO PythonRunner: Times: total = 405, boot = -10, init = 62, finish = 353
+17/04/26 12:16:35 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 2558 bytes result sent to driver
+17/04/26 12:16:35 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 2471 bytes result sent to driver
+17/04/26 12:16:35 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2678 bytes result sent to driver
+17/04/26 12:16:35 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 2471 bytes result sent to driver
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+17/04/26 12:16:38 INFO Executor: Running task 0.0 in stage 2.0 (TID 6)
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+17/04/26 12:16:38 INFO Executor: Running task 2.0 in stage 2.0 (TID 8)
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+17/04/26 12:16:38 INFO Executor: Running task 3.0 in stage 2.0 (TID 10)
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+17/04/26 12:16:38 INFO TorrentBroadcast: Started reading broadcast variable 4
+17/04/26 12:16:38 INFO TransportClientFactory: Successfully created connection to /10.138.4.4:39915 after 6 ms (0 ms spent in bootstraps)
+17/04/26 12:16:38 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.6 KB, free 886.4 MB)
+17/04/26 12:16:38 INFO TorrentBroadcast: Reading broadcast variable 4 took 63 ms
+17/04/26 12:16:38 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.1 KB, free 886.4 MB)
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.138.4.3:41779)
+17/04/26 12:16:38 INFO MapOutputTrackerWorker: Got the output locations
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 12 ms
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 12 ms
+17/04/26 12:16:38 ERROR Executor: Exception in task 2.0 in stage 2.0 (TID 8)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 ERROR Executor: Exception in task 0.0 in stage 2.0 (TID 6)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 INFO PythonRunner: Times: total = 42, boot = -3116, init = 3157, finish = 1
+17/04/26 12:16:38 INFO Executor: Finished task 3.0 in stage 2.0 (TID 10). 2091 bytes result sent to driver
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+17/04/26 12:16:38 INFO Executor: Running task 2.1 in stage 2.0 (TID 12)
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+17/04/26 12:16:38 INFO Executor: Running task 4.1 in stage 2.0 (TID 13)
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+17/04/26 12:16:38 ERROR Executor: Exception in task 2.1 in stage 2.0 (TID 12)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+17/04/26 12:16:38 INFO Executor: Running task 2.2 in stage 2.0 (TID 15)
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 0 ms
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+17/04/26 12:16:38 INFO Executor: Running task 0.2 in stage 2.0 (TID 16)
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+17/04/26 12:16:38 ERROR Executor: Exception in task 4.1 in stage 2.0 (TID 13)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 ERROR Executor: Exception in task 2.2 in stage 2.0 (TID 15)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 ERROR Executor: Exception in task 0.2 in stage 2.0 (TID 16)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+17/04/26 12:16:38 INFO Executor: Running task 1.3 in stage 2.0 (TID 22)
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/04/26 12:16:38 INFO ShuffleBlockFetcherIterator: Started 1 remote fetches in 1 ms
+17/04/26 12:16:38 ERROR Executor: Exception in task 1.3 in stage 2.0 (TID 22)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+TypeError: 'bool' object is not iterable
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 12:16:38 INFO Executor: Executor is trying to kill task 1.3 in stage 2.0 (TID 22)
+17/04/26 12:16:39 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/26 12:16:39 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

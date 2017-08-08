@@ -10,7 +10,8 @@
 
 <h3>Description</h3>
 
-<p>Loads a JSON file (one object per line), returning the result as a SparkDataFrame
+<p>Loads a JSON file (<a href="http://jsonlines.org/">JSON Lines text format or newline-delimited JSON</a>
+), returning the result as a SparkDataFrame
 It goes through the entire dataset once to determine the schema.
 </p>
 
@@ -19,7 +20,7 @@ It goes through the entire dataset once to determine the schema.
 
 <pre>
 ## Default S3 method:
-read.json(path)
+read.json(path, ...)
 
 ## Default S3 method:
 jsonFile(path)
@@ -32,6 +33,10 @@ jsonFile(path)
 <tr valign="top"><td><code>path</code></td>
 <td>
 <p>Path of file to read. A vector of multiple paths is allowed.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional external data source specific named properties.</p>
 </td></tr>
 </table>
 
@@ -62,5 +67,5 @@ df &lt;- jsonFile(path)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

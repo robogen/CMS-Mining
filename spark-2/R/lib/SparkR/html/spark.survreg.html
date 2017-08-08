@@ -74,8 +74,9 @@ which means throw exception if the output path exists.</p>
 
 <p><code>spark.survreg</code> returns a fitted AFT survival regression model.
 </p>
-<p><code>summary</code> returns a list containing the model's coefficients,
-intercept and log(scale)
+<p><code>summary</code> returns summary information of the fitted model, which is a list.
+The list includes the model's <code>coefficients</code> (features, coefficients,
+intercept and log(scale)).
 </p>
 <p><code>predict</code> returns a SparkDataFrame containing predicted values
 on the original scale of the data (mean predicted value at scale = 1.0).
@@ -96,7 +97,7 @@ on the original scale of the data (mean predicted value at scale = 1.0).
 
 <h3>See Also</h3>
 
-<p><a href="read.ml.html">read.ml</a>
+<p><a href="write.ml.html">write.ml</a>
 </p>
 <p>survival: <a href="https://cran.r-project.org/package=survival">https://cran.r-project.org/package=survival</a>
 </p>
@@ -125,5 +126,5 @@ summary(savedModel)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

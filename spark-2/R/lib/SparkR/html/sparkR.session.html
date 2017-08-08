@@ -14,6 +14,9 @@
 SparkSession or initializes a new SparkSession.
 Additional Spark properties can be set in <code>...</code>, and these named parameters take priority
 over values in <code>master</code>, <code>appName</code>, named lists of <code>sparkConfig</code>.
+When called in an interactive session, this checks for the Spark installation, and, if not
+found, it will be downloaded and cached automatically. Alternatively, <code>install.spark</code> can
+be called manually.
 </p>
 
 
@@ -95,5 +98,5 @@ sparkR.session(spark.master = "yarn-client", spark.executor.memory = "4g")
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

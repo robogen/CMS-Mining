@@ -1,0 +1,460 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/26 11:48:53 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 20731@c2019.crane.hcc.unl.edu
+17/04/26 11:48:53 INFO SignalUtils: Registered signal handler for TERM
+17/04/26 11:48:53 INFO SignalUtils: Registered signal handler for HUP
+17/04/26 11:48:53 INFO SignalUtils: Registered signal handler for INT
+17/04/26 11:48:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/26 11:48:54 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 11:48:54 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 11:48:54 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 11:48:54 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 11:48:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 11:48:54 INFO TransportClientFactory: Successfully created connection to /10.138.4.5:38438 after 87 ms (0 ms spent in bootstraps)
+17/04/26 11:48:54 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 11:48:54 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 11:48:54 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 11:48:54 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 11:48:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 11:48:54 INFO TransportClientFactory: Successfully created connection to /10.138.4.5:38438 after 1 ms (0 ms spent in bootstraps)
+17/04/26 11:48:54 INFO DiskBlockManager: Created local directory at /lustre/work/swanson/jdixon/tmp/spark-6162c0b1-7f19-4964-a6fd-18603ec9f9f4/executor-b3dd93b9-04a1-4983-b348-f0477d8ed93e/blockmgr-d5478598-0485-4b03-9e39-8430ca70b9e1
+17/04/26 11:48:55 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/04/26 11:48:55 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.4.5:38438
+17/04/26 11:48:55 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.20.19:44756
+17/04/26 11:48:55 INFO TransportClientFactory: Successfully created connection to /10.138.20.19:44756 after 13 ms (0 ms spent in bootstraps)
+17/04/26 11:48:55 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.20.19:44756
+17/04/26 11:48:55 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/26 11:48:55 INFO Executor: Starting executor ID 1 on host 10.138.20.19
+17/04/26 11:48:55 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45819.
+17/04/26 11:48:55 INFO NettyBlockTransferService: Server created on 10.138.20.19:45819
+17/04/26 11:48:55 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/26 11:48:55 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 10.138.20.19, 45819, None)
+17/04/26 11:48:55 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 10.138.20.19, 45819, None)
+17/04/26 11:48:55 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, 10.138.20.19, 45819, None)
+17/04/26 11:48:55 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/04/26 11:48:55 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/04/26 11:48:55 INFO Executor: Fetching spark://10.138.4.5:38438/files/es_scatter.py with timestamp 1493225331656
+17/04/26 11:48:55 INFO TransportClientFactory: Successfully created connection to /10.138.4.5:38438 after 1 ms (0 ms spent in bootstraps)
+17/04/26 11:48:55 INFO Utils: Fetching spark://10.138.4.5:38438/files/es_scatter.py to /lustre/work/swanson/jdixon/tmp/spark-6162c0b1-7f19-4964-a6fd-18603ec9f9f4/executor-b3dd93b9-04a1-4983-b348-f0477d8ed93e/spark-2935765e-abeb-4714-bf95-741ef489ffdb/fetchFileTemp78408757241860395.tmp
+17/04/26 11:48:55 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-6162c0b1-7f19-4964-a6fd-18603ec9f9f4/executor-b3dd93b9-04a1-4983-b348-f0477d8ed93e/spark-2935765e-abeb-4714-bf95-741ef489ffdb/6302653581493225331656_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426114852-0000/1/./es_scatter.py
+17/04/26 11:48:55 INFO Executor: Fetching spark://10.138.4.5:38438/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493225331358
+17/04/26 11:48:55 INFO Utils: Fetching spark://10.138.4.5:38438/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /lustre/work/swanson/jdixon/tmp/spark-6162c0b1-7f19-4964-a6fd-18603ec9f9f4/executor-b3dd93b9-04a1-4983-b348-f0477d8ed93e/spark-2935765e-abeb-4714-bf95-741ef489ffdb/fetchFileTemp4914515345200494407.tmp
+17/04/26 11:48:55 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-6162c0b1-7f19-4964-a6fd-18603ec9f9f4/executor-b3dd93b9-04a1-4983-b348-f0477d8ed93e/spark-2935765e-abeb-4714-bf95-741ef489ffdb/662222181493225331358_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426114852-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/26 11:48:55 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426114852-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/26 11:48:55 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/04/26 11:48:55 INFO TransportClientFactory: Successfully created connection to /10.138.4.5:45241 after 1 ms (0 ms spent in bootstraps)
+17/04/26 11:48:55 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1793.0 B, free 912.3 MB)
+17/04/26 11:48:55 INFO TorrentBroadcast: Reading broadcast variable 2 took 151 ms
+17/04/26 11:48:56 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 912.3 MB)
+17/04/26 11:48:56 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@8270a83
+17/04/26 11:48:56 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/04/26 11:48:56 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 912.3 MB)
+17/04/26 11:48:56 INFO TorrentBroadcast: Reading broadcast variable 0 took 14 ms
+17/04/26 11:48:56 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 294.6 KB, free 912.0 MB)
+17/04/26 11:48:56 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/04/26 11:48:56 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/04/26 11:48:56 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/04/26 11:48:56 WARN EsInputFormat: Cannot determine task id...
+17/04/26 11:48:57 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 4588 bytes result sent to driver
+17/04/26 11:48:57 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/04/26 11:48:57 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/04/26 11:48:57 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/04/26 11:48:57 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+17/04/26 11:48:57 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+17/04/26 11:48:57 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/26 11:48:57 INFO Executor: Running task 4.0 in stage 1.0 (TID 5)
+17/04/26 11:48:57 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 3.7 KB, free 912.0 MB)
+17/04/26 11:48:57 INFO TorrentBroadcast: Reading broadcast variable 3 took 28 ms
+17/04/26 11:48:57 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 6.7 KB, free 912.0 MB)
+17/04/26 11:48:57 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@6b729f89
+17/04/26 11:48:57 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3248127b
+17/04/26 11:48:57 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@19b56307
+17/04/26 11:48:57 WARN EsInputFormat: Cannot determine task id...
+17/04/26 11:48:57 WARN EsInputFormat: Cannot determine task id...
+17/04/26 11:48:57 WARN EsInputFormat: Cannot determine task id...
+17/04/26 11:49:02 INFO PythonRunner: Times: total = 5144, boot = 957, init = 407, finish = 3780
+17/04/26 11:49:02 INFO MemoryStore: Block rdd_3_2 stored as bytes in memory (estimated size 6.1 MB, free 905.8 MB)
+17/04/26 11:49:02 INFO PythonRunner: Times: total = 5168, boot = 951, init = 426, finish = 3791
+17/04/26 11:49:02 INFO MemoryStore: Block rdd_3_0 stored as bytes in memory (estimated size 6.3 MB, free 899.5 MB)
+17/04/26 11:49:02 INFO PythonRunner: Times: total = 5256, boot = 961, init = 405, finish = 3890
+17/04/26 11:49:02 INFO MemoryStore: Block rdd_3_4 stored as bytes in memory (estimated size 6.4 MB, free 893.1 MB)
+17/04/26 11:49:03 INFO PythonRunner: Times: total = 251, boot = -6, init = 14, finish = 243
+17/04/26 11:49:03 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 183021 bytes result sent to driver
+17/04/26 11:49:03 INFO PythonRunner: Times: total = 351, boot = -39, init = 76, finish = 314
+17/04/26 11:49:03 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 188625 bytes result sent to driver
+17/04/26 11:49:03 INFO PythonRunner: Times: total = 312, boot = 9, init = 6, finish = 297
+17/04/26 11:49:03 INFO Executor: Finished task 4.0 in stage 1.0 (TID 5). 191310 bytes result sent to driver
+17/04/26 11:49:06 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+17/04/26 11:49:06 INFO Executor: Running task 0.0 in stage 2.0 (TID 7)
+17/04/26 11:49:06 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+17/04/26 11:49:06 INFO Executor: Running task 2.0 in stage 2.0 (TID 9)
+17/04/26 11:49:06 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+17/04/26 11:49:06 INFO Executor: Running task 4.0 in stage 2.0 (TID 10)
+17/04/26 11:49:06 INFO TorrentBroadcast: Started reading broadcast variable 4
+17/04/26 11:49:06 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 6.5 KB, free 893.1 MB)
+17/04/26 11:49:06 INFO TorrentBroadcast: Reading broadcast variable 4 took 21 ms
+17/04/26 11:49:06 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 10.5 KB, free 893.1 MB)
+17/04/26 11:49:06 INFO BlockManager: Found block rdd_3_0 locally
+17/04/26 11:49:06 INFO BlockManager: Found block rdd_3_4 locally
+17/04/26 11:49:06 INFO BlockManager: Found block rdd_3_2 locally
+17/04/26 11:49:07 ERROR Executor: Exception in task 0.0 in stage 2.0 (TID 7)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 2.0 in stage 2.0 (TID 9)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 4.0 in stage 2.0 (TID 10)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+17/04/26 11:49:07 INFO Executor: Running task 0.1 in stage 2.0 (TID 11)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+17/04/26 11:49:07 INFO Executor: Running task 2.1 in stage 2.0 (TID 13)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+17/04/26 11:49:07 INFO Executor: Running task 4.1 in stage 2.0 (TID 15)
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_4 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_2 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_0 locally
+17/04/26 11:49:07 ERROR Executor: Exception in task 4.1 in stage 2.0 (TID 15)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 2.1 in stage 2.0 (TID 13)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 0.1 in stage 2.0 (TID 11)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+17/04/26 11:49:07 INFO Executor: Running task 4.2 in stage 2.0 (TID 16)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+17/04/26 11:49:07 INFO Executor: Running task 2.2 in stage 2.0 (TID 17)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+17/04/26 11:49:07 INFO Executor: Running task 0.2 in stage 2.0 (TID 18)
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_4 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_0 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_2 locally
+17/04/26 11:49:07 ERROR Executor: Exception in task 2.2 in stage 2.0 (TID 17)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 0.2 in stage 2.0 (TID 18)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 4.2 in stage 2.0 (TID 16)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+17/04/26 11:49:07 INFO Executor: Running task 2.3 in stage 2.0 (TID 21)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+17/04/26 11:49:07 INFO Executor: Running task 0.3 in stage 2.0 (TID 22)
+17/04/26 11:49:07 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+17/04/26 11:49:07 INFO Executor: Running task 4.3 in stage 2.0 (TID 23)
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_2 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_4 locally
+17/04/26 11:49:07 INFO BlockManager: Found block rdd_3_0 locally
+17/04/26 11:49:07 ERROR Executor: Exception in task 2.3 in stage 2.0 (TID 21)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 ERROR Executor: Exception in task 4.3 in stage 2.0 (TID 23)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 138, in dump_stream
+    for obj in iterator:
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 1753, in add_shuffle_key
+    buckets[partitionFunc(k) % numPartitions].append((k, v))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/rdd.py", line 72, in portable_hash
+    raise Exception("Randomness of hash of string should be disabled via PYTHONHASHSEED")
+Exception: Randomness of hash of string should be disabled via PYTHONHASHSEED
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.api.python.PairwiseRDD.compute(PythonRDD.scala:390)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 11:49:07 INFO Executor: Executor is trying to kill task 0.3 in stage 2.0 (TID 22)
+17/04/26 11:49:08 INFO Executor: Executor killed task 0.3 in stage 2.0 (TID 22)
+17/04/26 11:49:08 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/26 11:49:08 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

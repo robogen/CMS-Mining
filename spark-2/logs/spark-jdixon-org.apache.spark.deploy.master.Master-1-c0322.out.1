@@ -1,0 +1,42 @@
+Spark Command: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131.x86_64/jre/bin/java -cp /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.master.Master --host c0322.crane.hcc.unl.edu --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/27 21:02:36 INFO Master: Started daemon with process name: 118622@c0322.crane.hcc.unl.edu
+17/04/27 21:02:36 INFO SignalUtils: Registered signal handler for TERM
+17/04/27 21:02:36 INFO SignalUtils: Registered signal handler for HUP
+17/04/27 21:02:36 INFO SignalUtils: Registered signal handler for INT
+17/04/27 21:02:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/27 21:02:37 INFO SecurityManager: Changing view acls to: jdixon
+17/04/27 21:02:37 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/27 21:02:37 INFO SecurityManager: Changing view acls groups to: 
+17/04/27 21:02:37 INFO SecurityManager: Changing modify acls groups to: 
+17/04/27 21:02:37 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/27 21:02:38 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+17/04/27 21:02:38 INFO Master: Starting Spark master at spark://c0322.crane.hcc.unl.edu:7077
+17/04/27 21:02:38 INFO Master: Running Spark version 2.1.0
+17/04/27 21:02:38 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+17/04/27 21:02:38 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://10.138.3.22:8080
+17/04/27 21:02:38 INFO Utils: Successfully started service on port 6066.
+17/04/27 21:02:38 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+17/04/27 21:02:39 INFO Master: I have been elected leader! New state: ALIVE
+17/04/27 21:02:39 INFO Master: Registering worker 10.138.22.4:44680 with 16 cores, 61.8 GB RAM
+17/04/27 21:02:39 INFO Master: Registering worker 10.138.3.23:39685 with 16 cores, 61.8 GB RAM
+17/04/27 21:02:39 INFO Master: Registering worker 10.138.22.20:39464 with 16 cores, 61.8 GB RAM
+17/04/27 21:02:39 INFO Master: Registering worker 10.138.22.2:34026 with 16 cores, 61.8 GB RAM
+17/04/27 21:02:39 INFO Master: Registering worker 10.138.22.9:42213 with 16 cores, 61.8 GB RAM
+17/04/27 21:03:17 INFO Master: Registering app es_scatter.py
+17/04/27 21:03:17 INFO Master: Registered app es_scatter.py with ID app-20170427210317-0000
+17/04/27 21:03:17 INFO Master: Launching executor app-20170427210317-0000/0 on worker worker-20170427210238-10.138.22.4-44680
+17/04/27 21:03:17 INFO Master: Launching executor app-20170427210317-0000/1 on worker worker-20170427210238-10.138.22.9-42213
+17/04/27 21:03:17 INFO Master: Launching executor app-20170427210317-0000/2 on worker worker-20170427210238-10.138.22.2-34026
+17/04/27 21:03:17 INFO Master: Launching executor app-20170427210317-0000/3 on worker worker-20170427210238-10.138.3.23-39685
+17/04/27 21:03:17 INFO Master: Launching executor app-20170427210317-0000/4 on worker worker-20170427210238-10.138.22.20-39464
+17/04/27 21:03:49 INFO Master: Received unregister request from application app-20170427210317-0000
+17/04/27 21:03:49 INFO Master: Removing app app-20170427210317-0000
+17/04/27 21:03:49 INFO Master: 10.138.3.22:56006 got disassociated, removing it.
+17/04/27 21:03:49 INFO Master: 10.138.3.22:38649 got disassociated, removing it.
+17/04/27 21:03:50 WARN Master: Got status update for unknown executor app-20170427210317-0000/3
+17/04/27 21:03:50 WARN Master: Got status update for unknown executor app-20170427210317-0000/4
+17/04/27 21:03:50 WARN Master: Got status update for unknown executor app-20170427210317-0000/2
+17/04/27 21:03:50 WARN Master: Got status update for unknown executor app-20170427210317-0000/1
+17/04/27 21:03:50 WARN Master: Got status update for unknown executor app-20170427210317-0000/0

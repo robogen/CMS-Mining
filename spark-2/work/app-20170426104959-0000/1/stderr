@@ -1,0 +1,129 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/26 10:50:00 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 99522@c0217.crane.hcc.unl.edu
+17/04/26 10:50:00 INFO SignalUtils: Registered signal handler for TERM
+17/04/26 10:50:00 INFO SignalUtils: Registered signal handler for HUP
+17/04/26 10:50:00 INFO SignalUtils: Registered signal handler for INT
+17/04/26 10:50:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/26 10:50:01 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 10:50:01 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 10:50:01 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 10:50:01 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 10:50:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 10:50:02 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:37097 after 123 ms (0 ms spent in bootstraps)
+17/04/26 10:50:02 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 10:50:02 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 10:50:02 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 10:50:02 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 10:50:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 10:50:02 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:37097 after 1 ms (0 ms spent in bootstraps)
+17/04/26 10:50:03 INFO DiskBlockManager: Created local directory at /lustre/work/swanson/jdixon/tmp/spark-ff90e4c7-a9a6-40d9-aee0-50871758c788/executor-f37eb566-6b0b-4863-b136-f0ecc7c3508c/blockmgr-711a7682-0382-4192-8640-048eb2341d0e
+17/04/26 10:50:03 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/04/26 10:50:03 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.2.17:37097
+17/04/26 10:50:03 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.2.17:44418
+17/04/26 10:50:03 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:44418 after 4 ms (0 ms spent in bootstraps)
+17/04/26 10:50:03 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.2.17:44418
+17/04/26 10:50:03 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/26 10:50:03 INFO Executor: Starting executor ID 1 on host 10.138.2.17
+17/04/26 10:50:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36154.
+17/04/26 10:50:03 INFO NettyBlockTransferService: Server created on 10.138.2.17:36154
+17/04/26 10:50:03 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/26 10:50:03 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(1, 10.138.2.17, 36154, None)
+17/04/26 10:50:03 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(1, 10.138.2.17, 36154, None)
+17/04/26 10:50:03 INFO BlockManager: Initialized BlockManager: BlockManagerId(1, 10.138.2.17, 36154, None)
+17/04/26 10:50:09 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+17/04/26 10:50:09 INFO Executor: Running task 0.1 in stage 1.0 (TID 2)
+17/04/26 10:50:09 INFO Executor: Fetching spark://10.138.2.17:37097/files/es_scatter.py with timestamp 1493221798593
+17/04/26 10:50:09 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:37097 after 9 ms (0 ms spent in bootstraps)
+17/04/26 10:50:09 INFO Utils: Fetching spark://10.138.2.17:37097/files/es_scatter.py to /lustre/work/swanson/jdixon/tmp/spark-ff90e4c7-a9a6-40d9-aee0-50871758c788/executor-f37eb566-6b0b-4863-b136-f0ecc7c3508c/spark-df76c505-2562-4cae-9aa2-e9a3eed20b80/fetchFileTemp3785874594243738563.tmp
+17/04/26 10:50:09 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-ff90e4c7-a9a6-40d9-aee0-50871758c788/executor-f37eb566-6b0b-4863-b136-f0ecc7c3508c/spark-df76c505-2562-4cae-9aa2-e9a3eed20b80/-2736461131493221798593_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426104959-0000/1/./es_scatter.py
+17/04/26 10:50:09 INFO Executor: Fetching spark://10.138.2.17:37097/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493221798259
+17/04/26 10:50:09 INFO Utils: Fetching spark://10.138.2.17:37097/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /lustre/work/swanson/jdixon/tmp/spark-ff90e4c7-a9a6-40d9-aee0-50871758c788/executor-f37eb566-6b0b-4863-b136-f0ecc7c3508c/spark-df76c505-2562-4cae-9aa2-e9a3eed20b80/fetchFileTemp943660121944095556.tmp
+17/04/26 10:50:09 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-ff90e4c7-a9a6-40d9-aee0-50871758c788/executor-f37eb566-6b0b-4863-b136-f0ecc7c3508c/spark-df76c505-2562-4cae-9aa2-e9a3eed20b80/13260775931493221798259_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426104959-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/26 10:50:09 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170426104959-0000/1/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/26 10:50:09 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/26 10:50:09 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:41237 after 8 ms (0 ms spent in bootstraps)
+17/04/26 10:50:09 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.1 KB, free 912.3 MB)
+17/04/26 10:50:10 INFO TorrentBroadcast: Reading broadcast variable 3 took 213 ms
+17/04/26 10:50:10 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 7.7 KB, free 912.3 MB)
+17/04/26 10:50:10 INFO TransportClientFactory: Successfully created connection to /10.138.19.7:38893 after 7 ms (0 ms spent in bootstraps)
+17/04/26 10:50:10 INFO BlockManager: Found block rdd_3_0 remotely
+17/04/26 10:50:12 WARN BlockManager: Putting block rdd_4_0 failed due to an exception
+17/04/26 10:50:12 WARN BlockManager: Block rdd_4_0 could not be removed as it was not found on disk or in memory
+17/04/26 10:50:12 ERROR Executor: Exception in task 0.1 in stage 1.0 (TID 2)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/SparkScripts/es_scatter.py", line 129, in <lambda>
+    hcc_single = hcc_rdd.filter(lambda x: str(x["Site"]).lower() == ping) \
+KeyError: 'Site'
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 10:50:12 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/04/26 10:50:12 INFO Executor: Running task 0.2 in stage 1.0 (TID 3)
+17/04/26 10:50:12 INFO BlockManager: Found block rdd_3_0 remotely
+17/04/26 10:50:12 WARN BlockManager: Putting block rdd_4_0 failed due to an exception
+17/04/26 10:50:12 WARN BlockManager: Block rdd_4_0 could not be removed as it was not found on disk or in memory
+17/04/26 10:50:12 ERROR Executor: Exception in task 0.2 in stage 1.0 (TID 3)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 174, in main
+    process()
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 169, in process
+    serializer.dump_stream(func(split_index, iterator), outfile)
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/serializers.py", line 268, in dump_stream
+    vs = list(itertools.islice(iterator, batch))
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/SparkScripts/es_scatter.py", line 129, in <lambda>
+    hcc_single = hcc_rdd.filter(lambda x: str(x["Site"]).lower() == ping) \
+KeyError: 'Site'
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/26 10:50:12 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/26 10:50:12 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

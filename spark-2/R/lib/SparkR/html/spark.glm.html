@@ -23,10 +23,10 @@ spark.glm(data, formula, ...)
 
 ## S4 method for signature 'SparkDataFrame,formula'
 spark.glm(data, formula, family = gaussian,
-  tol = 1e-06, maxIter = 25)
+  tol = 1e-06, maxIter = 25, weightCol = NULL, regParam = 0)
 
 ## S4 method for signature 'GeneralizedLinearRegressionModel'
-summary(object, ...)
+summary(object)
 
 ## S3 method for class 'summary.GeneralizedLinearRegressionModel'
 print(x, ...)
@@ -71,13 +71,22 @@ the result of a call to a family function. Refer R family at
 <td>
 <p>integer giving the maximal number of IRLS iterations.</p>
 </td></tr>
+<tr valign="top"><td><code>weightCol</code></td>
+<td>
+<p>the weight column name. If this is not set or <code>NULL</code>, we treat all instance
+weights as 1.0.</p>
+</td></tr>
+<tr valign="top"><td><code>regParam</code></td>
+<td>
+<p>regularization parameter for L2 regularization.</p>
+</td></tr>
 <tr valign="top"><td><code>object</code></td>
 <td>
 <p>a fitted generalized linear model.</p>
 </td></tr>
 <tr valign="top"><td><code>x</code></td>
 <td>
-<p>summary object of fitted generalized linear model returned by <code>summary</code> function</p>
+<p>summary object of fitted generalized linear model returned by <code>summary</code> function.</p>
 </td></tr>
 <tr valign="top"><td><code>newData</code></td>
 <td>
@@ -97,14 +106,17 @@ which means throw exception if the output path exists.</p>
 
 <h3>Value</h3>
 
-<p><code>spark.glm</code> returns a fitted generalized linear model
+<p><code>spark.glm</code> returns a fitted generalized linear model.
 </p>
-<p><code>summary</code> returns a summary object of the fitted model, a list of components
-including at least the coefficients, null/residual deviance, null/residual degrees
-of freedom, AIC and number of iterations IRLS takes.
+<p><code>summary</code> returns summary information of the fitted model, which is a list.
+The list of components includes at least the <code>coefficients</code> (coefficients matrix, which includes
+coefficients, standard error of coefficients, t value and p value),
+<code>null.deviance</code> (null/residual degrees of freedom), <code>aic</code> (AIC)
+and <code>iter</code> (number of iterations IRLS takes). If there are collinear columns in the data,
+the coefficients matrix only provides coefficients.
 </p>
 <p><code>predict</code> returns a SparkDataFrame containing predicted labels in a column named
-&quot;prediction&quot;
+&quot;prediction&quot;.
 </p>
 
 
@@ -153,5 +165,5 @@ summary(savedModel)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -1,0 +1,35 @@
+Spark Command: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131.x86_64/jre/bin/java -cp /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/* -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://c0806.crane.hcc.unl.edu:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/05/11 22:28:05 INFO Worker: Started daemon with process name: 31000@c1906.crane.hcc.unl.edu
+17/05/11 22:28:05 INFO SignalUtils: Registered signal handler for TERM
+17/05/11 22:28:05 INFO SignalUtils: Registered signal handler for HUP
+17/05/11 22:28:05 INFO SignalUtils: Registered signal handler for INT
+17/05/11 22:28:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/05/11 22:28:10 INFO SecurityManager: Changing view acls to: jdixon
+17/05/11 22:28:10 INFO SecurityManager: Changing modify acls to: jdixon
+17/05/11 22:28:10 INFO SecurityManager: Changing view acls groups to: 
+17/05/11 22:28:10 INFO SecurityManager: Changing modify acls groups to: 
+17/05/11 22:28:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/05/11 22:28:11 INFO Utils: Successfully started service 'sparkWorker' on port 41318.
+17/05/11 22:28:11 INFO Worker: Starting Spark worker 10.138.19.6:41318 with 16 cores, 61.8 GB RAM
+17/05/11 22:28:11 INFO Worker: Running Spark version 2.1.0
+17/05/11 22:28:11 INFO Worker: Spark home: /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2
+17/05/11 22:28:12 INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+17/05/11 22:28:12 INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://10.138.19.6:8081
+17/05/11 22:28:12 INFO Worker: Connecting to master c0806.crane.hcc.unl.edu:7077...
+17/05/11 22:28:12 INFO TransportClientFactory: Successfully created connection to c0806.crane.hcc.unl.edu/10.138.8.6:7077 after 48 ms (0 ms spent in bootstraps)
+17/05/11 22:28:12 INFO Worker: Successfully registered with master spark://c0806.crane.hcc.unl.edu:7077
+17/05/11 22:28:35 INFO Worker: Asked to launch executor app-20170511222835-0000/0 for es_scatter.py
+17/05/11 22:28:35 INFO SecurityManager: Changing view acls to: jdixon
+17/05/11 22:28:35 INFO SecurityManager: Changing modify acls to: jdixon
+17/05/11 22:28:35 INFO SecurityManager: Changing view acls groups to: 
+17/05/11 22:28:35 INFO SecurityManager: Changing modify acls groups to: 
+17/05/11 22:28:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/05/11 22:28:35 INFO ExecutorRunner: Launch command: "/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.131.x86_64/jre/bin/java" "-cp" "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/conf/:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/jars/*" "-Xmx2048M" "-Dspark.driver.port=44941" "-XX:MaxPermSize=256m" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.138.8.6:44941" "--executor-id" "0" "--hostname" "10.138.19.6" "--cores" "6" "--app-id" "app-20170511222835-0000" "--worker-url" "spark://Worker@10.138.19.6:41318"
+17/05/11 22:29:46 INFO Worker: Asked to kill executor app-20170511222835-0000/0
+17/05/11 22:29:46 INFO ExecutorRunner: Runner thread for executor app-20170511222835-0000/0 interrupted
+17/05/11 22:29:46 INFO ExecutorRunner: Killing process!
+17/05/11 22:29:47 INFO Worker: Executor app-20170511222835-0000/0 finished with state KILLED exitStatus 143
+17/05/11 22:29:47 INFO Worker: Cleaning up local directories for application app-20170511222835-0000
+17/05/11 22:29:47 INFO ExternalShuffleBlockResolver: Application app-20170511222835-0000 removed, cleanupLocalDirs = true

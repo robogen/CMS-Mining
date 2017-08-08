@@ -1,0 +1,35 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/26 10:47:50 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 98795@c0217.crane.hcc.unl.edu
+17/04/26 10:47:50 INFO SignalUtils: Registered signal handler for TERM
+17/04/26 10:47:50 INFO SignalUtils: Registered signal handler for HUP
+17/04/26 10:47:50 INFO SignalUtils: Registered signal handler for INT
+17/04/26 10:47:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/26 10:47:51 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 10:47:51 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 10:47:51 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 10:47:51 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 10:47:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 10:47:52 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:33617 after 122 ms (0 ms spent in bootstraps)
+17/04/26 10:47:52 INFO SecurityManager: Changing view acls to: jdixon
+17/04/26 10:47:52 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/26 10:47:52 INFO SecurityManager: Changing view acls groups to: 
+17/04/26 10:47:52 INFO SecurityManager: Changing modify acls groups to: 
+17/04/26 10:47:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/26 10:47:52 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:33617 after 1 ms (0 ms spent in bootstraps)
+17/04/26 10:47:53 INFO DiskBlockManager: Created local directory at /lustre/work/swanson/jdixon/tmp/spark-a8335532-c2ce-4a95-9f40-7dbd36962bf0/executor-d5edf3fc-7447-4f7d-b030-7690e8847eb1/blockmgr-6da4af13-8b9a-4287-81f5-323fe0b229cd
+17/04/26 10:47:53 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/04/26 10:47:53 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.2.17:33617
+17/04/26 10:47:53 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.2.17:43015
+17/04/26 10:47:53 INFO TransportClientFactory: Successfully created connection to /10.138.2.17:43015 after 8 ms (0 ms spent in bootstraps)
+17/04/26 10:47:53 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.2.17:43015
+17/04/26 10:47:53 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/26 10:47:53 INFO Executor: Starting executor ID 0 on host 10.138.2.17
+17/04/26 10:47:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39694.
+17/04/26 10:47:53 INFO NettyBlockTransferService: Server created on 10.138.2.17:39694
+17/04/26 10:47:53 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/26 10:47:53 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.138.2.17, 39694, None)
+17/04/26 10:47:53 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.138.2.17, 39694, None)
+17/04/26 10:47:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.138.2.17, 39694, None)
+17/04/26 10:48:00 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/26 10:48:00 INFO MemoryStore: MemoryStore cleared
+ver commanded a shutdown

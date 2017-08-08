@@ -24,7 +24,7 @@ glm(formula, family = gaussian, data, weights, subset, na.action,
 
 ## S4 method for signature 'formula,ANY,SparkDataFrame'
 glm(formula, family = gaussian, data,
-  epsilon = 1e-06, maxit = 25)
+  epsilon = 1e-06, maxit = 25, weightCol = NULL)
 </pre>
 
 
@@ -139,6 +139,11 @@ of <code>model.matrix.default</code>.</p>
 <td>
 <p>integer giving the maximal number of IRLS iterations.</p>
 </td></tr>
+<tr valign="top"><td><code>weightCol</code></td>
+<td>
+<p>the weight column name. If this is not set or <code>NULL</code>, we treat all instance
+weights as 1.0.</p>
+</td></tr>
 </table>
 
 
@@ -173,5 +178,5 @@ summary(model)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

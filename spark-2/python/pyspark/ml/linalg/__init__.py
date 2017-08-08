@@ -478,6 +478,14 @@ class SparseVector(Vector):
         SparseVector(4, {1: 1.0, 3: 5.5})
         >>> SparseVector(4, [1, 3], [1.0, 5.5])
         SparseVector(4, {1: 1.0, 3: 5.5})
+        >>> SparseVector(4, {1:1.0, 6:2.0})
+        Traceback (most recent call last):
+        ...
+        AssertionError: Index 6 is out of the the size of vector with size=4
+        >>> SparseVector(4, {-1:1.0})
+        Traceback (most recent call last):
+        ...
+        AssertionError: Contains negative index -1
         """
         self.size = int(size)
         """ Size of the vector. """
@@ -510,6 +518,13 @@ class SparseVector(Vector):
                     raise TypeError(
                         "Indices %s and %s are not strictly increasing"
                         % (self.indices[i], self.indices[i + 1]))
+
+        if self.indices.size > 0:
+            assert np.max(self.indices) < self.size, \
+                "Index %d is out of the the size of vector with size=%d" \
+                % (np.max(self.indices), self.size)
+            assert np.min(self.indices) >= 0, \
+                "Contains negative index %d" % (np.min(self.indices))
 
     def numNonzeros(self):
         """
@@ -731,11 +746,12 @@ class SparseVector(Vector):
 class Vectors(object):
 
     """
-    Factory methods for working with vectors. Note that dense vectors
-    are simply represented as NumPy array objects, so there is no need
-    to covert them for use in MLlib. For sparse vectors, the factory
-    methods in this class create an MLlib-compatible type, or users
-    can pass in SciPy's C{scipy.sparse} column vectors.
+    Factory methods for working with vectors.
+
+    .. note:: Dense vectors are simply represented as NumPy array objects,
+        so there is no need to covert them for use in MLlib. For sparse vectors,
+        the factory methods in this class create an MLlib-compatible type, or users
+        can pass in SciPy's C{scipy.sparse} column vectors.
     """
 
     @staticmethod

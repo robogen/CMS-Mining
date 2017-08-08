@@ -1,0 +1,591 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/05/11 18:16:39 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 142601@c0419.crane.hcc.unl.edu
+17/05/11 18:16:39 INFO SignalUtils: Registered signal handler for TERM
+17/05/11 18:16:39 INFO SignalUtils: Registered signal handler for HUP
+17/05/11 18:16:39 INFO SignalUtils: Registered signal handler for INT
+17/05/11 18:16:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/05/11 18:16:40 INFO SecurityManager: Changing view acls to: jdixon
+17/05/11 18:16:40 INFO SecurityManager: Changing modify acls to: jdixon
+17/05/11 18:16:40 INFO SecurityManager: Changing view acls groups to: 
+17/05/11 18:16:40 INFO SecurityManager: Changing modify acls groups to: 
+17/05/11 18:16:40 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/05/11 18:16:41 INFO TransportClientFactory: Successfully created connection to /10.138.4.11:34994 after 147 ms (0 ms spent in bootstraps)
+17/05/11 18:16:41 INFO SecurityManager: Changing view acls to: jdixon
+17/05/11 18:16:41 INFO SecurityManager: Changing modify acls to: jdixon
+17/05/11 18:16:41 INFO SecurityManager: Changing view acls groups to: 
+17/05/11 18:16:41 INFO SecurityManager: Changing modify acls groups to: 
+17/05/11 18:16:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/05/11 18:16:41 INFO TransportClientFactory: Successfully created connection to /10.138.4.11:34994 after 2 ms (0 ms spent in bootstraps)
+17/05/11 18:16:41 INFO DiskBlockManager: Created local directory at /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/blockmgr-c0f4041c-d319-4ab3-ac43-fb2aff084cf3
+17/05/11 18:16:41 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/05/11 18:16:42 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.4.11:34994
+17/05/11 18:16:42 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.4.19:37239
+17/05/11 18:16:42 INFO TransportClientFactory: Successfully created connection to /10.138.4.19:37239 after 1 ms (0 ms spent in bootstraps)
+17/05/11 18:16:42 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.4.19:37239
+17/05/11 18:16:42 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/05/11 18:16:42 INFO Executor: Starting executor ID 0 on host 10.138.4.19
+17/05/11 18:16:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45924.
+17/05/11 18:16:42 INFO NettyBlockTransferService: Server created on 10.138.4.19:45924
+17/05/11 18:16:42 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/05/11 18:16:42 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.138.4.19, 45924, None)
+17/05/11 18:16:42 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.138.4.19, 45924, None)
+17/05/11 18:16:42 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.138.4.19, 45924, None)
+17/05/11 18:16:47 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/05/11 18:16:47 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/05/11 18:16:47 INFO Executor: Fetching spark://10.138.4.11:34994/files/es_scatter.py with timestamp 1494544597100
+17/05/11 18:16:47 INFO TransportClientFactory: Successfully created connection to /10.138.4.11:34994 after 8 ms (0 ms spent in bootstraps)
+17/05/11 18:16:47 INFO Utils: Fetching spark://10.138.4.11:34994/files/es_scatter.py to /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/spark-0f18bc56-0b99-4913-acf0-a49bc8bd57bd/fetchFileTemp6943086052781506306.tmp
+17/05/11 18:16:47 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/spark-0f18bc56-0b99-4913-acf0-a49bc8bd57bd/4541825921494544597100_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170511181637-0000/0/./es_scatter.py
+17/05/11 18:16:47 INFO Executor: Fetching spark://10.138.4.11:34994/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1494544596618
+17/05/11 18:16:47 INFO Utils: Fetching spark://10.138.4.11:34994/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/spark-0f18bc56-0b99-4913-acf0-a49bc8bd57bd/fetchFileTemp8664293078646777750.tmp
+17/05/11 18:16:47 INFO Utils: Copying /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/spark-0f18bc56-0b99-4913-acf0-a49bc8bd57bd/15408623601494544596618_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170511181637-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/05/11 18:16:47 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170511181637-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/05/11 18:16:47 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/05/11 18:16:47 INFO TransportClientFactory: Successfully created connection to /10.138.4.11:37408 after 2 ms (0 ms spent in bootstraps)
+17/05/11 18:16:47 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1790.0 B, free 912.3 MB)
+17/05/11 18:16:47 INFO TorrentBroadcast: Reading broadcast variable 2 took 220 ms
+17/05/11 18:16:47 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 912.3 MB)
+17/05/11 18:16:48 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@52cd030f
+17/05/11 18:16:48 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/05/11 18:16:48 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 912.3 MB)
+17/05/11 18:16:48 INFO TorrentBroadcast: Reading broadcast variable 0 took 20 ms
+17/05/11 18:16:48 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 294.9 KB, free 912.0 MB)
+17/05/11 18:16:48 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/05/11 18:16:49 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/05/11 18:16:49 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/05/11 18:16:49 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:10 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 4589 bytes result sent to driver
+17/05/11 18:17:10 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/05/11 18:17:10 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/05/11 18:17:10 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+17/05/11 18:17:10 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+17/05/11 18:17:10 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/05/11 18:17:10 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+17/05/11 18:17:10 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+17/05/11 18:17:10 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+17/05/11 18:17:10 INFO Executor: Running task 4.0 in stage 1.0 (TID 5)
+17/05/11 18:17:10 INFO Executor: Running task 3.0 in stage 1.0 (TID 4)
+17/05/11 18:17:10 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/05/11 18:17:10 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.5 KB, free 912.0 MB)
+17/05/11 18:17:10 INFO TorrentBroadcast: Reading broadcast variable 3 took 15 ms
+17/05/11 18:17:10 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 10.5 KB, free 912.0 MB)
+17/05/11 18:17:10 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7a990d69
+17/05/11 18:17:10 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1370a06f
+17/05/11 18:17:10 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@15650e04
+17/05/11 18:17:10 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@1d7b3395
+17/05/11 18:17:10 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@3778a52
+17/05/11 18:17:10 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:10 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:10 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:10 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:10 WARN EsInputFormat: Cannot determine task id...
+17/05/11 18:17:24 INFO PythonRunner: Times: total = 13984, boot = 1054, init = 7493, finish = 5437
+17/05/11 18:17:24 INFO MemoryStore: Block rdd_3_3 stored as bytes in memory (estimated size 6.4 MB, free 905.5 MB)
+17/05/11 18:17:25 INFO PythonRunner: Times: total = 215, boot = -34, init = 36, finish = 213
+17/05/11 18:17:25 INFO Executor: Finished task 3.0 in stage 1.0 (TID 4). 2559 bytes result sent to driver
+17/05/11 18:17:26 INFO PythonRunner: Times: total = 16019, boot = 1070, init = 7420, finish = 7529
+17/05/11 18:17:26 INFO MemoryStore: Block rdd_3_1 stored as bytes in memory (estimated size 6.5 MB, free 899.0 MB)
+17/05/11 18:17:27 INFO PythonRunner: Times: total = 383, boot = -1785, init = 1790, finish = 378
+17/05/11 18:17:27 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 2679 bytes result sent to driver
+17/05/11 18:17:28 INFO PythonRunner: Times: total = 17363, boot = 1060, init = 7501, finish = 8802
+17/05/11 18:17:28 INFO MemoryStore: Block rdd_3_4 stored as bytes in memory (estimated size 6.3 MB, free 892.8 MB)
+17/05/11 18:17:28 INFO PythonRunner: Times: total = 331, boot = -1336, init = 1340, finish = 327
+17/05/11 18:17:28 INFO Executor: Finished task 4.0 in stage 1.0 (TID 5). 2559 bytes result sent to driver
+17/05/11 18:17:29 INFO PythonRunner: Times: total = 18954, boot = 1066, init = 7562, finish = 10326
+17/05/11 18:17:29 INFO MemoryStore: Block rdd_3_2 stored as bytes in memory (estimated size 6.4 MB, free 886.4 MB)
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 266, boot = -2548, init = 2557, finish = 257
+17/05/11 18:17:30 INFO Executor: Finished task 2.0 in stage 1.0 (TID 3). 2472 bytes result sent to driver
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 19377, boot = 1079, init = 17246, finish = 1052
+17/05/11 18:17:30 INFO MemoryStore: Block rdd_3_0 stored as bytes in memory (estimated size 6.5 MB, free 879.9 MB)
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 337, boot = -2011, init = 2014, finish = 334
+17/05/11 18:17:30 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2472 bytes result sent to driver
+17/05/11 18:17:30 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+17/05/11 18:17:30 INFO Executor: Running task 0.0 in stage 2.0 (TID 6)
+17/05/11 18:17:30 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+17/05/11 18:17:30 INFO Executor: Running task 1.0 in stage 2.0 (TID 7)
+17/05/11 18:17:30 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+17/05/11 18:17:30 INFO Executor: Running task 2.0 in stage 2.0 (TID 8)
+17/05/11 18:17:30 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+17/05/11 18:17:30 INFO Executor: Running task 4.0 in stage 2.0 (TID 9)
+17/05/11 18:17:30 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+17/05/11 18:17:30 INFO Executor: Running task 3.0 in stage 2.0 (TID 10)
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+17/05/11 18:17:30 INFO TorrentBroadcast: Started reading broadcast variable 4
+17/05/11 18:17:30 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.5 KB, free 879.9 MB)
+17/05/11 18:17:30 INFO TorrentBroadcast: Reading broadcast variable 4 took 17 ms
+17/05/11 18:17:30 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.1 KB, free 879.9 MB)
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.138.4.11:34994)
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+17/05/11 18:17:30 INFO MapOutputTrackerWorker: Got the output locations
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 5 blocks
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/05/11 18:17:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 46, boot = -2242, init = 2286, finish = 2
+17/05/11 18:17:30 INFO Executor: Finished task 3.0 in stage 2.0 (TID 10). 2091 bytes result sent to driver
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 42, boot = -724, init = 765, finish = 1
+17/05/11 18:17:30 INFO Executor: Finished task 2.0 in stage 2.0 (TID 8). 2279 bytes result sent to driver
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 44, boot = -246, init = 289, finish = 1
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 53, boot = -982, init = 1026, finish = 9
+17/05/11 18:17:30 INFO Executor: Finished task 4.0 in stage 2.0 (TID 9). 2227 bytes result sent to driver
+17/05/11 18:17:30 INFO Executor: Finished task 0.0 in stage 2.0 (TID 6). 2285 bytes result sent to driver
+17/05/11 18:17:30 INFO PythonRunner: Times: total = 62, boot = -591, init = 637, finish = 16
+17/05/11 18:17:30 INFO Executor: Finished task 1.0 in stage 2.0 (TID 7). 2789 bytes result sent to driver
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+17/05/11 18:17:31 INFO Executor: Running task 0.0 in stage 3.0 (TID 11)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+17/05/11 18:17:31 INFO Executor: Running task 1.0 in stage 3.0 (TID 12)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+17/05/11 18:17:31 INFO TorrentBroadcast: Started reading broadcast variable 5
+17/05/11 18:17:31 INFO Executor: Running task 2.0 in stage 3.0 (TID 13)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+17/05/11 18:17:31 INFO Executor: Running task 3.0 in stage 3.0 (TID 14)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+17/05/11 18:17:31 INFO Executor: Running task 4.0 in stage 3.0 (TID 15)
+17/05/11 18:17:31 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 6.5 KB, free 879.9 MB)
+17/05/11 18:17:31 INFO TorrentBroadcast: Reading broadcast variable 5 took 30 ms
+17/05/11 18:17:31 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 10.5 KB, free 879.9 MB)
+17/05/11 18:17:31 INFO BlockManager: Found block rdd_3_2 locally
+17/05/11 18:17:31 INFO BlockManager: Found block rdd_3_0 locally
+17/05/11 18:17:31 INFO BlockManager: Found block rdd_3_3 locally
+17/05/11 18:17:31 INFO BlockManager: Found block rdd_3_1 locally
+17/05/11 18:17:31 INFO BlockManager: Found block rdd_3_4 locally
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 385, boot = -282, init = 285, finish = 382
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 424, boot = -267, init = 291, finish = 400
+17/05/11 18:17:31 INFO Executor: Finished task 2.0 in stage 3.0 (TID 13). 2040 bytes result sent to driver
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 460, boot = -272, init = 289, finish = 443
+17/05/11 18:17:31 INFO Executor: Finished task 1.0 in stage 3.0 (TID 12). 2644 bytes result sent to driver
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 488, boot = -248, init = 334, finish = 402
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 498, boot = -261, init = 326, finish = 433
+17/05/11 18:17:31 INFO Executor: Finished task 0.0 in stage 3.0 (TID 11). 2200 bytes result sent to driver
+17/05/11 18:17:31 INFO Executor: Finished task 4.0 in stage 3.0 (TID 15). 2040 bytes result sent to driver
+17/05/11 18:17:31 INFO Executor: Finished task 3.0 in stage 3.0 (TID 14). 2040 bytes result sent to driver
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+17/05/11 18:17:31 INFO Executor: Running task 0.0 in stage 4.0 (TID 16)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+17/05/11 18:17:31 INFO Executor: Running task 2.0 in stage 4.0 (TID 17)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+17/05/11 18:17:31 INFO Executor: Running task 1.0 in stage 4.0 (TID 18)
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+17/05/11 18:17:31 INFO Executor: Running task 3.0 in stage 4.0 (TID 19)
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Updating epoch to 2 and clearing cache
+17/05/11 18:17:31 INFO TorrentBroadcast: Started reading broadcast variable 6
+17/05/11 18:17:31 INFO CoarseGrainedExecutorBackend: Got assigned task 20
+17/05/11 18:17:31 INFO Executor: Running task 4.0 in stage 4.0 (TID 20)
+17/05/11 18:17:31 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 4.5 KB, free 879.9 MB)
+17/05/11 18:17:31 INFO TorrentBroadcast: Reading broadcast variable 6 took 19 ms
+17/05/11 18:17:31 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 7.1 KB, free 879.9 MB)
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.138.4.11:34994)
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 1, fetching them
+17/05/11 18:17:31 INFO MapOutputTrackerWorker: Got the output locations
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 5 blocks
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 5 blocks
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 5 blocks
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:31 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 44, boot = -215, init = 258, finish = 1
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 45, boot = -152, init = 196, finish = 1
+17/05/11 18:17:31 INFO Executor: Finished task 1.0 in stage 4.0 (TID 18). 2091 bytes result sent to driver
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 51, boot = -170, init = 220, finish = 1
+17/05/11 18:17:31 INFO Executor: Finished task 4.0 in stage 4.0 (TID 20). 2091 bytes result sent to driver
+17/05/11 18:17:31 INFO Executor: Finished task 3.0 in stage 4.0 (TID 19). 2091 bytes result sent to driver
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 43, boot = -147, init = 189, finish = 1
+17/05/11 18:17:31 INFO PythonRunner: Times: total = 42, boot = -139, init = 180, finish = 1
+17/05/11 18:17:31 INFO Executor: Finished task 0.0 in stage 4.0 (TID 16). 2175 bytes result sent to driver
+17/05/11 18:17:31 INFO Executor: Finished task 2.0 in stage 4.0 (TID 17). 2706 bytes result sent to driver
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 21
+17/05/11 18:17:32 INFO Executor: Running task 0.0 in stage 5.0 (TID 21)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 22
+17/05/11 18:17:32 INFO Executor: Running task 1.0 in stage 5.0 (TID 22)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 23
+17/05/11 18:17:32 INFO Executor: Running task 2.0 in stage 5.0 (TID 23)
+17/05/11 18:17:32 INFO TorrentBroadcast: Started reading broadcast variable 7
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 24
+17/05/11 18:17:32 INFO Executor: Running task 3.0 in stage 5.0 (TID 24)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 25
+17/05/11 18:17:32 INFO Executor: Running task 4.0 in stage 5.0 (TID 25)
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 6.5 KB, free 879.9 MB)
+17/05/11 18:17:32 INFO TorrentBroadcast: Reading broadcast variable 7 took 34 ms
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 10.5 KB, free 879.8 MB)
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_0 locally
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_1 locally
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_2 locally
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_4 locally
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_3 locally
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 343, boot = -167, init = 210, finish = 300
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 353, boot = -172, init = 188, finish = 337
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 355, boot = -181, init = 214, finish = 322
+17/05/11 18:17:32 INFO Executor: Finished task 4.0 in stage 5.0 (TID 25). 2040 bytes result sent to driver
+17/05/11 18:17:32 INFO Executor: Finished task 3.0 in stage 5.0 (TID 24). 2040 bytes result sent to driver
+17/05/11 18:17:32 INFO Executor: Finished task 1.0 in stage 5.0 (TID 22). 2571 bytes result sent to driver
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 461, boot = -188, init = 190, finish = 459
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 477, boot = -181, init = 251, finish = 407
+17/05/11 18:17:32 INFO Executor: Finished task 0.0 in stage 5.0 (TID 21). 2040 bytes result sent to driver
+17/05/11 18:17:32 INFO Executor: Finished task 2.0 in stage 5.0 (TID 23). 2040 bytes result sent to driver
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 26
+17/05/11 18:17:32 INFO Executor: Running task 0.0 in stage 6.0 (TID 26)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 27
+17/05/11 18:17:32 INFO Executor: Running task 1.0 in stage 6.0 (TID 27)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 28
+17/05/11 18:17:32 INFO Executor: Running task 2.0 in stage 6.0 (TID 28)
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 29
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 30
+17/05/11 18:17:32 INFO Executor: Running task 4.0 in stage 6.0 (TID 30)
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Updating epoch to 3 and clearing cache
+17/05/11 18:17:32 INFO TorrentBroadcast: Started reading broadcast variable 8
+17/05/11 18:17:32 INFO Executor: Running task 3.0 in stage 6.0 (TID 29)
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 4.5 KB, free 879.8 MB)
+17/05/11 18:17:32 INFO TorrentBroadcast: Reading broadcast variable 8 took 14 ms
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 7.1 KB, free 879.8 MB)
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.138.4.11:34994)
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 2, fetching them
+17/05/11 18:17:32 INFO MapOutputTrackerWorker: Got the output locations
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Getting 5 non-empty blocks out of 5 blocks
+17/05/11 18:17:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 25, boot = -114, init = 135, finish = 4
+17/05/11 18:17:32 INFO Executor: Finished task 1.0 in stage 6.0 (TID 27). 5676 bytes result sent to driver
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 44, boot = -221, init = 263, finish = 2
+17/05/11 18:17:32 INFO Executor: Finished task 3.0 in stage 6.0 (TID 29). 5796 bytes result sent to driver
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 48, boot = -205, init = 251, finish = 2
+17/05/11 18:17:32 INFO Executor: Finished task 2.0 in stage 6.0 (TID 28). 6839 bytes result sent to driver
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 49, boot = -136, init = 183, finish = 2
+17/05/11 18:17:32 INFO Executor: Finished task 0.0 in stage 6.0 (TID 26). 6329 bytes result sent to driver
+17/05/11 18:17:32 INFO PythonRunner: Times: total = 60, boot = -198, init = 256, finish = 2
+17/05/11 18:17:32 INFO Executor: Finished task 4.0 in stage 6.0 (TID 30). 5080 bytes result sent to driver
+17/05/11 18:17:32 INFO CoarseGrainedExecutorBackend: Got assigned task 31
+17/05/11 18:17:32 INFO Executor: Running task 0.0 in stage 7.0 (TID 31)
+17/05/11 18:17:32 INFO TorrentBroadcast: Started reading broadcast variable 9
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 4.8 KB, free 879.8 MB)
+17/05/11 18:17:32 INFO TorrentBroadcast: Reading broadcast variable 9 took 10 ms
+17/05/11 18:17:32 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 8.9 KB, free 879.8 MB)
+17/05/11 18:17:32 INFO BlockManager: Found block rdd_3_0 locally
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 226, boot = -156, init = 158, finish = 224
+17/05/11 18:17:33 INFO MemoryStore: Block rdd_19_0 stored as bytes in memory (estimated size 808.2 KB, free 879.0 MB)
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 24, boot = -381, init = 383, finish = 22
+17/05/11 18:17:33 INFO Executor: Finished task 0.0 in stage 7.0 (TID 31). 2344 bytes result sent to driver
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 32
+17/05/11 18:17:33 INFO Executor: Running task 0.0 in stage 8.0 (TID 32)
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 33
+17/05/11 18:17:33 INFO Executor: Running task 1.0 in stage 8.0 (TID 33)
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 34
+17/05/11 18:17:33 INFO Executor: Running task 2.0 in stage 8.0 (TID 34)
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 35
+17/05/11 18:17:33 INFO TorrentBroadcast: Started reading broadcast variable 10
+17/05/11 18:17:33 INFO Executor: Running task 3.0 in stage 8.0 (TID 35)
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 4.8 KB, free 879.0 MB)
+17/05/11 18:17:33 INFO TorrentBroadcast: Reading broadcast variable 10 took 33 ms
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 8.9 KB, free 879.0 MB)
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_3_4 locally
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_3_3 locally
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_3_2 locally
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_3_1 locally
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 301, boot = -504, init = 510, finish = 295
+17/05/11 18:17:33 INFO MemoryStore: Block rdd_19_3 stored as bytes in memory (estimated size 770.2 KB, free 878.3 MB)
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 302, boot = -515, init = 517, finish = 300
+17/05/11 18:17:33 INFO MemoryStore: Block rdd_19_4 stored as bytes in memory (estimated size 788.1 KB, free 877.5 MB)
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 50, boot = -431, init = 432, finish = 49
+17/05/11 18:17:33 INFO Executor: Finished task 2.0 in stage 8.0 (TID 34). 2210 bytes result sent to driver
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 39, boot = -36, init = 46, finish = 29
+17/05/11 18:17:33 INFO Executor: Finished task 3.0 in stage 8.0 (TID 35). 2210 bytes result sent to driver
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 433, boot = -504, init = 564, finish = 373
+17/05/11 18:17:33 INFO MemoryStore: Block rdd_19_2 stored as bytes in memory (estimated size 758.8 KB, free 876.8 MB)
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 437, boot = -141, init = 152, finish = 426
+17/05/11 18:17:33 INFO MemoryStore: Block rdd_19_1 stored as bytes in memory (estimated size 849.4 KB, free 875.9 MB)
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 38, boot = -171, init = 174, finish = 35
+17/05/11 18:17:33 INFO Executor: Finished task 1.0 in stage 8.0 (TID 33). 2417 bytes result sent to driver
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 41, boot = -94, init = 97, finish = 38
+17/05/11 18:17:33 INFO Executor: Finished task 0.0 in stage 8.0 (TID 32). 2210 bytes result sent to driver
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 36
+17/05/11 18:17:33 INFO Executor: Running task 0.0 in stage 9.0 (TID 36)
+17/05/11 18:17:33 INFO TorrentBroadcast: Started reading broadcast variable 11
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 4.8 KB, free 875.9 MB)
+17/05/11 18:17:33 INFO TorrentBroadcast: Reading broadcast variable 11 took 14 ms
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 8.9 KB, free 875.9 MB)
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:33 INFO PythonRunner: Times: total = 6, boot = -223, init = 225, finish = 4
+17/05/11 18:17:33 INFO Executor: Finished task 0.0 in stage 9.0 (TID 36). 4550 bytes result sent to driver
+17/05/11 18:17:33 INFO CoarseGrainedExecutorBackend: Got assigned task 37
+17/05/11 18:17:33 INFO Executor: Running task 0.0 in stage 10.0 (TID 37)
+17/05/11 18:17:33 INFO TorrentBroadcast: Started reading broadcast variable 12
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.9 MB)
+17/05/11 18:17:33 INFO TorrentBroadcast: Reading broadcast variable 12 took 10 ms
+17/05/11 18:17:33 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 9.1 KB, free 875.9 MB)
+17/05/11 18:17:33 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 24, boot = -260, init = 263, finish = 21
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 10.0 (TID 37). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 38
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 11.0 (TID 38)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 39
+17/05/11 18:17:34 INFO Executor: Running task 1.0 in stage 11.0 (TID 39)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 40
+17/05/11 18:17:34 INFO Executor: Running task 2.0 in stage 11.0 (TID 40)
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 13
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 41
+17/05/11 18:17:34 INFO Executor: Running task 3.0 in stage 11.0 (TID 41)
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 13 took 12 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 9.1 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_1 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_4 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_3 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_2 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 33, boot = -77, init = 86, finish = 24
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 47, boot = -268, init = 291, finish = 24
+17/05/11 18:17:34 INFO Executor: Finished task 1.0 in stage 11.0 (TID 39). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO Executor: Finished task 3.0 in stage 11.0 (TID 41). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 32, boot = -358, init = 367, finish = 23
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 54, boot = -265, init = 294, finish = 25
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 11.0 (TID 38). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO Executor: Finished task 2.0 in stage 11.0 (TID 40). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 42
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 12.0 (TID 42)
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 14
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 14 took 10 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 9.1 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 45, boot = -83, init = 85, finish = 43
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 12.0 (TID 42). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 43
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 13.0 (TID 43)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 44
+17/05/11 18:17:34 INFO Executor: Running task 1.0 in stage 13.0 (TID 44)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 45
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 15
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 46
+17/05/11 18:17:34 INFO Executor: Running task 2.0 in stage 13.0 (TID 45)
+17/05/11 18:17:34 INFO Executor: Running task 3.0 in stage 13.0 (TID 46)
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 15 took 13 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 9.1 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_1 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_3 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_4 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_2 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 22, boot = -185, init = 187, finish = 20
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 28, boot = -176, init = 181, finish = 23
+17/05/11 18:17:34 INFO Executor: Finished task 3.0 in stage 13.0 (TID 46). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO Executor: Finished task 2.0 in stage 13.0 (TID 45). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 38, boot = -176, init = 186, finish = 28
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 13.0 (TID 43). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 59, boot = -60, init = 88, finish = 31
+17/05/11 18:17:34 INFO Executor: Finished task 1.0 in stage 13.0 (TID 44). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 47
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 14.0 (TID 47)
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 16
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.9 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 16 took 11 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 9.1 KB, free 875.8 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 23, boot = -110, init = 112, finish = 21
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 14.0 (TID 47). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 48
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 15.0 (TID 48)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 49
+17/05/11 18:17:34 INFO Executor: Running task 1.0 in stage 15.0 (TID 49)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 50
+17/05/11 18:17:34 INFO Executor: Running task 2.0 in stage 15.0 (TID 50)
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 17
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 51
+17/05/11 18:17:34 INFO Executor: Running task 3.0 in stage 15.0 (TID 51)
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.8 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 17 took 12 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 9.1 KB, free 875.8 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_4 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_1 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_2 locally
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_3 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 25, boot = -192, init = 193, finish = 24
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 29, boot = -67, init = 76, finish = 20
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 38, boot = -161, init = 173, finish = 26
+17/05/11 18:17:34 INFO Executor: Finished task 2.0 in stage 15.0 (TID 50). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO Executor: Finished task 0.0 in stage 15.0 (TID 48). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO Executor: Finished task 3.0 in stage 15.0 (TID 51). 1699 bytes result sent to driver
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 85, boot = -184, init = 214, finish = 55
+17/05/11 18:17:34 INFO Executor: Finished task 1.0 in stage 15.0 (TID 49). 2230 bytes result sent to driver
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 52
+17/05/11 18:17:34 INFO Executor: Running task 0.0 in stage 16.0 (TID 52)
+17/05/11 18:17:34 INFO TorrentBroadcast: Started reading broadcast variable 18
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 5.0 KB, free 875.8 MB)
+17/05/11 18:17:34 INFO TorrentBroadcast: Reading broadcast variable 18 took 12 ms
+17/05/11 18:17:34 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 9.1 KB, free 875.8 MB)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 4, boot = -122, init = 123, finish = 3
+17/05/11 18:17:34 ERROR Executor: Exception in task 0.0 in stage 16.0 (TID 52)
+java.lang.AssertionError: assertion failed
+	at scala.Predef$.assert(Predef.scala:156)
+	at org.apache.spark.storage.BlockInfo.checkInvariants(BlockInfoManager.scala:84)
+	at org.apache.spark.storage.BlockInfo.readerCount_$eq(BlockInfoManager.scala:66)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:362)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:361)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:361)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:356)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockInfoManager.releaseAllLocksForTask(BlockInfoManager.scala:356)
+	at org.apache.spark.storage.BlockManager.releaseAllLocksForTask(BlockManager.scala:670)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:289)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 53
+17/05/11 18:17:34 INFO Executor: Running task 0.1 in stage 16.0 (TID 53)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 ERROR Utils: Uncaught exception in thread stdout writer for /home/swanson/jdixon/.conda/envs/cms/bin/python3.5
+java.lang.AssertionError: assertion failed: Block rdd_19_0 is not locked for reading
+	at scala.Predef$.assert(Predef.scala:170)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:294)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:654)
+	at org.apache.spark.storage.BlockManager$$anonfun$1.apply$mcV$sp(BlockManager.scala:458)
+	at org.apache.spark.util.CompletionIterator$$anon$1.completion(CompletionIterator.scala:46)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:35)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1951)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+17/05/11 18:17:34 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[stdout writer for /home/swanson/jdixon/.conda/envs/cms/bin/python3.5,5,main]
+java.lang.AssertionError: assertion failed: Block rdd_19_0 is not locked for reading
+	at scala.Predef$.assert(Predef.scala:170)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:294)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:654)
+	at org.apache.spark.storage.BlockManager$$anonfun$1.apply$mcV$sp(BlockManager.scala:458)
+	at org.apache.spark.util.CompletionIterator$$anon$1.completion(CompletionIterator.scala:46)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:35)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1951)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 7, boot = -208, init = 212, finish = 3
+17/05/11 18:17:34 ERROR Executor: Exception in task 0.1 in stage 16.0 (TID 53)
+java.lang.AssertionError: assertion failed
+	at scala.Predef$.assert(Predef.scala:156)
+	at org.apache.spark.storage.BlockInfo.checkInvariants(BlockInfoManager.scala:84)
+	at org.apache.spark.storage.BlockInfo.readerCount_$eq(BlockInfoManager.scala:66)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:362)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:361)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:361)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:356)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockInfoManager.releaseAllLocksForTask(BlockInfoManager.scala:356)
+	at org.apache.spark.storage.BlockManager.releaseAllLocksForTask(BlockManager.scala:670)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:289)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 54
+17/05/11 18:17:34 INFO Executor: Running task 0.2 in stage 16.0 (TID 54)
+17/05/11 18:17:34 INFO DiskBlockManager: Shutdown hook called
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 6, boot = -224, init = 227, finish = 3
+17/05/11 18:17:34 ERROR Executor: Exception in task 0.2 in stage 16.0 (TID 54)
+java.lang.AssertionError: assertion failed
+	at scala.Predef$.assert(Predef.scala:156)
+	at org.apache.spark.storage.BlockInfo.checkInvariants(BlockInfoManager.scala:84)
+	at org.apache.spark.storage.BlockInfo.readerCount_$eq(BlockInfoManager.scala:66)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:362)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:361)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:361)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:356)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockInfoManager.releaseAllLocksForTask(BlockInfoManager.scala:356)
+	at org.apache.spark.storage.BlockManager.releaseAllLocksForTask(BlockManager.scala:670)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:289)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/05/11 18:17:34 INFO CoarseGrainedExecutorBackend: Got assigned task 55
+17/05/11 18:17:34 INFO Executor: Running task 0.3 in stage 16.0 (TID 55)
+17/05/11 18:17:34 INFO BlockManager: Found block rdd_19_0 locally
+17/05/11 18:17:34 ERROR Utils: Uncaught exception in thread stdout writer for /home/swanson/jdixon/.conda/envs/cms/bin/python3.5
+java.lang.AssertionError: assertion failed: Block rdd_19_0 is not locked for reading
+	at scala.Predef$.assert(Predef.scala:170)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:294)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:654)
+	at org.apache.spark.storage.BlockManager$$anonfun$1.apply$mcV$sp(BlockManager.scala:458)
+	at org.apache.spark.util.CompletionIterator$$anon$1.completion(CompletionIterator.scala:46)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:35)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1951)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+17/05/11 18:17:34 INFO PythonRunner: Times: total = 8, boot = -204, init = 208, finish = 4
+17/05/11 18:17:34 ERROR SparkUncaughtExceptionHandler: [Container in shutdown] Uncaught exception in thread Thread[stdout writer for /home/swanson/jdixon/.conda/envs/cms/bin/python3.5,5,main]
+java.lang.AssertionError: assertion failed: Block rdd_19_0 is not locked for reading
+	at scala.Predef$.assert(Predef.scala:170)
+	at org.apache.spark.storage.BlockInfoManager.unlock(BlockInfoManager.scala:294)
+	at org.apache.spark.storage.BlockManager.releaseLock(BlockManager.scala:654)
+	at org.apache.spark.storage.BlockManager$$anonfun$1.apply$mcV$sp(BlockManager.scala:458)
+	at org.apache.spark.util.CompletionIterator$$anon$1.completion(CompletionIterator.scala:46)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:35)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:39)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at org.apache.spark.InterruptibleIterator.foreach(InterruptibleIterator.scala:28)
+	at org.apache.spark.api.python.PythonRDD$.writeIteratorToStream(PythonRDD.scala:504)
+	at org.apache.spark.api.python.PythonRunner$WriterThread$$anonfun$run$3.apply(PythonRDD.scala:328)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1951)
+	at org.apache.spark.api.python.PythonRunner$WriterThread.run(PythonRDD.scala:269)
+17/05/11 18:17:34 ERROR Executor: Exception in task 0.3 in stage 16.0 (TID 55)
+java.lang.AssertionError: assertion failed
+	at scala.Predef$.assert(Predef.scala:156)
+	at org.apache.spark.storage.BlockInfo.checkInvariants(BlockInfoManager.scala:84)
+	at org.apache.spark.storage.BlockInfo.readerCount_$eq(BlockInfoManager.scala:66)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:362)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2$$anonfun$apply$2.apply(BlockInfoManager.scala:361)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:361)
+	at org.apache.spark.storage.BlockInfoManager$$anonfun$releaseAllLocksForTask$2.apply(BlockInfoManager.scala:356)
+	at scala.collection.Iterator$class.foreach(Iterator.scala:893)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1336)
+	at org.apache.spark.storage.BlockInfoManager.releaseAllLocksForTask(BlockInfoManager.scala:356)
+	at org.apache.spark.storage.BlockManager.releaseAllLocksForTask(BlockManager.scala:670)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:289)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/05/11 18:17:35 INFO ShutdownHookManager: Shutdown hook called
+17/05/11 18:17:35 INFO ShutdownHookManager: Deleting directory /lustre/work/swanson/jdixon/tmp/spark-af447160-0f07-4352-818b-c82ff4d3ab73/executor-24124da3-5f14-4368-908f-1a0253d6b391/spark-0f18bc56-0b99-4913-acf0-a49bc8bd57bd

@@ -20,9 +20,9 @@ Each row becomes a new line in the output file.
 
 <pre>
 ## S4 method for signature 'SparkDataFrame,character'
-write.text(x, path)
+write.text(x, path, mode = "error", ...)
 
-write.text(x, path)
+write.text(x, path, ...)
 </pre>
 
 
@@ -36,6 +36,14 @@ write.text(x, path)
 <tr valign="top"><td><code>path</code></td>
 <td>
 <p>The directory where the file is saved</p>
+</td></tr>
+<tr valign="top"><td><code>mode</code></td>
+<td>
+<p>one of 'append', 'overwrite', 'error', 'ignore' save mode (it is 'error' by default)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional argument(s) passed to the method.</p>
 </td></tr>
 </table>
 
@@ -100,6 +108,8 @@ write.text(x, path)
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView</a></code>,
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView</a></code>,
 <code><a href="createOrReplaceTempView.html">createOrReplaceTempView,SparkDataFrame,character-method</a></code>;
+<code><a href="crossJoin.html">crossJoin</a></code>,
+<code><a href="crossJoin.html">crossJoin,SparkDataFrame,SparkDataFrame-method</a></code>;
 <code><a href="dapplyCollect.html">dapplyCollect</a></code>, <code><a href="dapplyCollect.html">dapplyCollect</a></code>,
 <code><a href="dapplyCollect.html">dapplyCollect,SparkDataFrame,function-method</a></code>;
 <code><a href="dapply.html">dapply</a></code>, <code><a href="dapply.html">dapply</a></code>,
@@ -210,7 +220,7 @@ write.text(x, path)
 <code><a href="write.df.html">saveDF,SparkDataFrame,character-method</a></code>,
 <code><a href="write.df.html">write.df</a></code>, <code><a href="write.df.html">write.df</a></code>,
 <code><a href="write.df.html">write.df</a></code>,
-<code><a href="write.df.html">write.df,SparkDataFrame,character-method</a></code>;
+<code><a href="write.df.html">write.df,SparkDataFrame-method</a></code>;
 <code><a href="schema.html">schema</a></code>, <code><a href="schema.html">schema</a></code>,
 <code><a href="schema.html">schema,SparkDataFrame-method</a></code>;
 <code><a href="selectExpr.html">selectExpr</a></code>, <code><a href="selectExpr.html">selectExpr</a></code>,
@@ -221,7 +231,10 @@ write.text(x, path)
 <code><a href="show.html">show,Column-method</a></code>,
 <code><a href="show.html">show,GroupedData-method</a></code>,
 <code><a href="show.html">show,SparkDataFrame-method</a></code>,
-<code><a href="show.html">show,WindowSpec-method</a></code>; <code><a href="str.html">str</a></code>,
+<code><a href="show.html">show,WindowSpec-method</a></code>;
+<code><a href="storageLevel.html">storageLevel</a></code>,
+<code><a href="storageLevel.html">storageLevel,SparkDataFrame-method</a></code>;
+<code><a href="str.html">str</a></code>,
 <code><a href="str.html">str,SparkDataFrame-method</a></code>;
 <code><a href="take.html">take</a></code>, <code><a href="take.html">take</a></code>,
 <code><a href="take.html">take,SparkDataFrame,numeric-method</a></code>;
@@ -229,8 +242,8 @@ write.text(x, path)
 <code><a href="union.html">union,SparkDataFrame,SparkDataFrame-method</a></code>,
 <code><a href="union.html">unionAll</a></code>, <code><a href="union.html">unionAll</a></code>,
 <code><a href="union.html">unionAll,SparkDataFrame,SparkDataFrame-method</a></code>;
-<code><a href="unpersist-methods.html">unpersist</a></code>, <code><a href="unpersist-methods.html">unpersist</a></code>,
-<code><a href="unpersist-methods.html">unpersist,SparkDataFrame-method</a></code>;
+<code><a href="unpersist.html">unpersist</a></code>, <code><a href="unpersist.html">unpersist</a></code>,
+<code><a href="unpersist.html">unpersist,SparkDataFrame-method</a></code>;
 <code><a href="withColumn.html">withColumn</a></code>, <code><a href="withColumn.html">withColumn</a></code>,
 <code><a href="withColumn.html">withColumn,SparkDataFrame,character,Column-method</a></code>;
 <code><a href="with.html">with</a></code>,
@@ -256,5 +269,5 @@ write.text(df, "/tmp/sparkr-tmp/")
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

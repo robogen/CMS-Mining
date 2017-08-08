@@ -1,0 +1,206 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/04/25 13:12:22 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 146670@c0515.crane.hcc.unl.edu
+17/04/25 13:12:22 INFO SignalUtils: Registered signal handler for TERM
+17/04/25 13:12:22 INFO SignalUtils: Registered signal handler for HUP
+17/04/25 13:12:22 INFO SignalUtils: Registered signal handler for INT
+17/04/25 13:12:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/04/25 13:12:23 INFO SecurityManager: Changing view acls to: jdixon
+17/04/25 13:12:23 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/25 13:12:23 INFO SecurityManager: Changing view acls groups to: 
+17/04/25 13:12:23 INFO SecurityManager: Changing modify acls groups to: 
+17/04/25 13:12:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/25 13:12:24 INFO TransportClientFactory: Successfully created connection to /10.138.5.15:33168 after 147 ms (0 ms spent in bootstraps)
+17/04/25 13:12:24 INFO SecurityManager: Changing view acls to: jdixon
+17/04/25 13:12:24 INFO SecurityManager: Changing modify acls to: jdixon
+17/04/25 13:12:24 INFO SecurityManager: Changing view acls groups to: 
+17/04/25 13:12:24 INFO SecurityManager: Changing modify acls groups to: 
+17/04/25 13:12:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(jdixon); groups with view permissions: Set(); users  with modify permissions: Set(jdixon); groups with modify permissions: Set()
+17/04/25 13:12:24 INFO TransportClientFactory: Successfully created connection to /10.138.5.15:33168 after 1 ms (0 ms spent in bootstraps)
+17/04/25 13:12:24 INFO DiskBlockManager: Created local directory at /tmp/spark-3b24a9e9-7def-4373-814c-43198fc5bbf6/executor-b16b521f-ff00-4319-9cfa-a2a9ff50bc45/blockmgr-8f3e0e3f-c4b7-4b62-bd1d-a09d4bc44163
+17/04/25 13:12:24 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+17/04/25 13:12:25 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.138.5.15:33168
+17/04/25 13:12:25 INFO WorkerWatcher: Connecting to worker spark://Worker@10.138.5.15:36221
+17/04/25 13:12:25 INFO TransportClientFactory: Successfully created connection to /10.138.5.15:36221 after 2 ms (0 ms spent in bootstraps)
+17/04/25 13:12:25 INFO WorkerWatcher: Successfully connected to spark://Worker@10.138.5.15:36221
+17/04/25 13:12:25 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+17/04/25 13:12:25 INFO Executor: Starting executor ID 0 on host 10.138.5.15
+17/04/25 13:12:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39276.
+17/04/25 13:12:25 INFO NettyBlockTransferService: Server created on 10.138.5.15:39276
+17/04/25 13:12:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/04/25 13:12:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.138.5.15, 39276, None)
+17/04/25 13:12:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.138.5.15, 39276, None)
+17/04/25 13:12:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.138.5.15, 39276, None)
+17/04/25 13:12:25 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+17/04/25 13:12:25 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/04/25 13:12:25 INFO Executor: Fetching spark://10.138.5.15:33168/files/es_scatter.py with timestamp 1493143940476
+17/04/25 13:12:25 INFO TransportClientFactory: Successfully created connection to /10.138.5.15:33168 after 2 ms (0 ms spent in bootstraps)
+17/04/25 13:12:25 INFO Utils: Fetching spark://10.138.5.15:33168/files/es_scatter.py to /tmp/spark-3b24a9e9-7def-4373-814c-43198fc5bbf6/executor-b16b521f-ff00-4319-9cfa-a2a9ff50bc45/spark-bd58f872-41e5-4804-adaa-bb5cd6aabc92/fetchFileTemp6395507492768241914.tmp
+17/04/25 13:12:25 INFO Utils: Copying /tmp/spark-3b24a9e9-7def-4373-814c-43198fc5bbf6/executor-b16b521f-ff00-4319-9cfa-a2a9ff50bc45/spark-bd58f872-41e5-4804-adaa-bb5cd6aabc92/13804182111493143940476_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170425131220-0000/0/./es_scatter.py
+17/04/25 13:12:25 INFO Executor: Fetching spark://10.138.5.15:33168/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar with timestamp 1493143940218
+17/04/25 13:12:25 INFO Utils: Fetching spark://10.138.5.15:33168/jars/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to /tmp/spark-3b24a9e9-7def-4373-814c-43198fc5bbf6/executor-b16b521f-ff00-4319-9cfa-a2a9ff50bc45/spark-bd58f872-41e5-4804-adaa-bb5cd6aabc92/fetchFileTemp8590642970357384979.tmp
+17/04/25 13:12:25 INFO Utils: Copying /tmp/spark-3b24a9e9-7def-4373-814c-43198fc5bbf6/executor-b16b521f-ff00-4319-9cfa-a2a9ff50bc45/spark-bd58f872-41e5-4804-adaa-bb5cd6aabc92/16024681811493143940218_cache to /lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170425131220-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar
+17/04/25 13:12:25 INFO Executor: Adding file:/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/work/app-20170425131220-0000/0/./elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar to class loader
+17/04/25 13:12:25 INFO TorrentBroadcast: Started reading broadcast variable 2
+17/04/25 13:12:26 INFO TransportClientFactory: Successfully created connection to /10.138.5.15:36942 after 2 ms (0 ms spent in bootstraps)
+17/04/25 13:12:26 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 1792.0 B, free 912.3 MB)
+17/04/25 13:12:26 INFO TorrentBroadcast: Reading broadcast variable 2 took 219 ms
+17/04/25 13:12:26 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 2.9 KB, free 912.3 MB)
+17/04/25 13:12:26 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@2afd942
+17/04/25 13:12:26 INFO TorrentBroadcast: Started reading broadcast variable 0
+17/04/25 13:12:26 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.2 KB, free 912.3 MB)
+17/04/25 13:12:26 INFO TorrentBroadcast: Reading broadcast variable 0 took 16 ms
+17/04/25 13:12:26 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 294.6 KB, free 912.0 MB)
+17/04/25 13:12:26 INFO deprecation: mapred.mapoutput.value.class is deprecated. Instead, use mapreduce.map.output.value.class
+17/04/25 13:12:27 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+17/04/25 13:12:27 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+17/04/25 13:12:27 WARN EsInputFormat: Cannot determine task id...
+17/04/25 13:12:28 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 4588 bytes result sent to driver
+17/04/25 13:12:28 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+17/04/25 13:12:28 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/04/25 13:12:28 INFO TorrentBroadcast: Started reading broadcast variable 3
+17/04/25 13:12:28 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 3.8 KB, free 912.0 MB)
+17/04/25 13:12:28 INFO TorrentBroadcast: Reading broadcast variable 3 took 20 ms
+17/04/25 13:12:28 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 6.4 KB, free 912.0 MB)
+17/04/25 13:12:28 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@c565a43
+17/04/25 13:12:28 WARN EsInputFormat: Cannot determine task id...
+17/04/25 13:12:29 WARN BlockManager: Putting block rdd_3_0 failed due to an exception
+17/04/25 13:12:29 WARN BlockManager: Block rdd_3_0 could not be removed as it was not found on disk or in memory
+17/04/25 13:12:29 ERROR Executor: Exception in task 0.0 in stage 1.0 (TID 1)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 3.5, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/25 13:12:29 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+17/04/25 13:12:29 INFO Executor: Running task 0.1 in stage 1.0 (TID 2)
+17/04/25 13:12:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@47151bfb
+17/04/25 13:12:29 WARN EsInputFormat: Cannot determine task id...
+17/04/25 13:12:29 WARN BlockManager: Putting block rdd_3_0 failed due to an exception
+17/04/25 13:12:29 WARN BlockManager: Block rdd_3_0 could not be removed as it was not found on disk or in memory
+17/04/25 13:12:29 ERROR Executor: Exception in task 0.1 in stage 1.0 (TID 2)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 3.5, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/25 13:12:29 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+17/04/25 13:12:29 INFO Executor: Running task 0.2 in stage 1.0 (TID 3)
+17/04/25 13:12:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@723b789b
+17/04/25 13:12:29 WARN EsInputFormat: Cannot determine task id...
+17/04/25 13:12:29 WARN BlockManager: Putting block rdd_3_0 failed due to an exception
+17/04/25 13:12:29 WARN BlockManager: Block rdd_3_0 could not be removed as it was not found on disk or in memory
+17/04/25 13:12:29 ERROR Executor: Exception in task 0.2 in stage 1.0 (TID 3)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 3.5, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/25 13:12:29 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+17/04/25 13:12:29 INFO Executor: Running task 0.3 in stage 1.0 (TID 4)
+17/04/25 13:12:29 INFO NewHadoopRDD: Input split: org.elasticsearch.hadoop.mr.EsInputFormat$EsInputSplit@7e03afbd
+17/04/25 13:12:29 WARN EsInputFormat: Cannot determine task id...
+17/04/25 13:12:29 WARN BlockManager: Putting block rdd_3_0 failed due to an exception
+17/04/25 13:12:29 WARN BlockManager: Block rdd_3_0 could not be removed as it was not found on disk or in memory
+17/04/25 13:12:29 ERROR Executor: Exception in task 0.3 in stage 1.0 (TID 4)
+org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+  File "/lustre/work/swanson/jdixon/CMS/CMS-Mining/spark-2/python/lib/pyspark.zip/pyspark/worker.py", line 125, in main
+    ("%d.%d" % sys.version_info[:2], version))
+Exception: Python in worker has different version 2.6 than that in driver 3.5, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+	at org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:193)
+	at org.apache.spark.api.python.PythonRunner$$anon$1.<init>(PythonRDD.scala:234)
+	at org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:152)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:336)
+	at org.apache.spark.rdd.RDD$$anonfun$8.apply(RDD.scala:334)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:973)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:63)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:87)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+17/04/25 13:12:30 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+17/04/25 13:12:30 INFO MemoryStore: MemoryStore cleared
+17/04/25 13:12:30 INFO BlockManager: BlockManager stopped
+17/04/25 13:12:30 INFO ShutdownHookManager: Shutdown hook called
+17/04/25 13:12:30 INFO ShutdownHookManager: Deleting directory /t

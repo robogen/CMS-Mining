@@ -1,0 +1,6 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/05/12 02:49:29 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 242971@c2212.crane.hcc.unl.edu
+17/05/12 02:49:29 INFO SignalUtils: Registered signal handler for TERM
+17/05/12 02:49:29 INFO SignalUtils: Registered signal handler for HUP
+17/05/12 02:49:29 INFO SignalUtils: Registered signal handler for INT
+17/05/12 02:49:29 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL 

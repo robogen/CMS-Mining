@@ -26,7 +26,7 @@ spark.kmeans(data, formula, k = 2,
   maxIter = 20, initMode = c("k-means||", "random"))
 
 ## S4 method for signature 'KMeansModel'
-summary(object, ...)
+summary(object)
 
 ## S4 method for signature 'KMeansModel'
 predict(object, newData)
@@ -89,7 +89,11 @@ which means throw exception if the output path exists.</p>
 
 <p><code>spark.kmeans</code> returns a fitted k-means model.
 </p>
-<p><code>summary</code> returns the model's coefficients, size and cluster.
+<p><code>summary</code> returns summary information of the fitted model, which is a list.
+The list includes the model's <code>k</code> (number of cluster centers),
+<code>coefficients</code> (model cluster centers),
+<code>size</code> (number of data points in each cluster), and <code>cluster</code>
+(cluster centers of the transformed data).
 </p>
 <p><code>predict</code> returns the predicted values based on a k-means model.
 </p>
@@ -138,5 +142,5 @@ summary(savedModel)
 ## End(Not run)
 </pre>
 
-<hr><div align="center">[Package <em>SparkR</em> version 2.0.2 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>SparkR</em> version 2.1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>
