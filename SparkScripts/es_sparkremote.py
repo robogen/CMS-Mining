@@ -32,8 +32,8 @@ def utcDate(time):
 def utcStamp(time):
     return (dt.datetime.strptime(time,'%Y-%m-%dT%X')).replace(tzinfo=dt.timezone.utc).timestamp()
 scrollPreserve="3m"
-startDate = "2016-07-17T00:00:00"
-endDate = "2016-07-25T00:00:00"
+startDate = "2017-02-14T00:00:00"
+endDate = "2017-02-21T00:00:00"
 utcStart = utcStamp(startDate)
 utcEnd = utcStamp(endDate)
 oneDay = np.multiply(24,np.multiply(60,60))
@@ -99,7 +99,7 @@ hcc_conf= {
         "es.scroll.keepalive" : "10m"
       }
 atlas_through_conf= {
-        "es.resource" : "network_weather_2-*/throughput",
+        "es.resource" : "network_weather-*/throughput",
         "es.nodes" : contents[4],
         "es.port" : contents[5],
 #        "es.nodes.wan.only" : "true",
@@ -111,7 +111,7 @@ atlas_through_conf= {
         "es.scroll.keepalive" : "10m"
       }
 atlas_packet_conf= {
-        "es.resource" : "network_weather_2-*/packet_loss_rate",
+        "es.resource" : "network_weather-*/packet_loss_rate",
         "es.nodes" : contents[4],
         "es.port" : contents[5],
 #        "es.nodes.wan.only" : "true",
@@ -123,7 +123,7 @@ atlas_packet_conf= {
         "es.scroll.keepalive" : "10m"
       }
 atlas_latency_conf= {
-        "es.resource" : "network_weather_2-*/latency",
+        "es.resource" : "network_weather-*/latency",
         "es.nodes" : contents[4],
         "es.port" : contents[5],
 #        "es.nodes.wan.only" : "true",
@@ -389,7 +389,7 @@ def main(ps):
 
 
 print("Started")
-with PdfPages('CMS_SparkScatter_%s.pdf' % str(sys.argv[1])) as ps:
+with PdfPages('PDFOut/CMS_SparkScatter_%s.pdf' % str(sys.argv[1])) as ps:
     d = ps.infodict()
     d['Title'] = 'CMS Scatter Plots'
     d['Author'] = u'Jerrod T. Dixon\xe4nen'

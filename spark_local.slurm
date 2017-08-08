@@ -2,7 +2,7 @@
 #SBATCH --time=02:00:00
 #SBATCH --nodes=1
 #SBATCH --mem=8000
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=2
 #SBATCH --cpus-per-task=3
 #SBATCH --network=devtype=iponly
 #SBATCH --job-name=full-local-spark
@@ -21,7 +21,7 @@ source activate cms
 
 $SLURM_SUBMIT_DIR/spark-2/bin/spark-submit \
     --jars $SLURM_SUBMIT_DIR/elasticsearch-hadoop/elasticsearch-hadoop-6.0.0.BUILD.SNAPSHOT.jar \
-    --total-executor-cores 24 \
+    --total-executor-cores 6 \
     --master spark://$MASTER:7077 \
     $SLURM_SUBMIT_DIR/es_sparklocal.py 0
 

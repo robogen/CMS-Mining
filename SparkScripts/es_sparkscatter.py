@@ -56,7 +56,8 @@ hcc_query=json.dumps(
                   "must": [
                       {"range" : {
                          "beginDate" : {
-                             "gt" : int(utcStart)
+                             "gt" : int(utcStart),
+                             "lt" : int(endDate)
                          }
                       }}]
               }
@@ -64,13 +65,13 @@ hcc_query=json.dumps(
 )
 
 hcc_conf= {
-        "es.resource" : "net-health/dev",
+        "es.resource" : "net-health/DIGIRECO",
         "es.nodes" : contents[4],
         "es.port" : contents[5],
         "es.nodes.wan.only" : "true",
         "es.nodes.discovery": "false",
         "es.nodes.data.only": "false",
-#        "es.query" : hcc_query,
+        "es.query" : hcc_query,
         "es.http.timeout" : "20m",
         "es.http.retries" : "10",
         "es.scroll.keepalive" : "10m"
@@ -80,7 +81,7 @@ hcc_rdd = sc.newAPIHadoopRDD(inputFormatClass="org.elasticsearch.hadoop.mr.EsInp
                              keyClass="org.apache.hadoop.io.NullWritable",\
                              valueClass="org.elasticsearch.hadoop.mr.LinkedMapWritable",\
                              conf=hcc_conf).map(lambda x: x[1]) \
-                             .cache()
+                             .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK)
 
 def hccSite(x):
     return str(x["Site"]).lower() == hit
@@ -90,7 +91,7 @@ def hccSrcT(accum, x):
           'CpuEff' : np.append(accum["CpuEff"], x["CpuEff"]),
           'EventRate' : np.append(accum["EventRate"], x["EventRate"])}
     return temp
-def hccSrcT(accum, x):
+def hccDestT(accum, x):
     temp={'destThroughput' : np.append(accum["destThroughput"], x["destThroughput"]),
           'CpuEff' : np.append(accum["CpuEff"], x["CpuEff"]),
           'EventRate' : np.append(accum["EventRate"], x["EventRate"])}
@@ -106,11 +107,11 @@ def main(ps):
                 hcc_single = hcc_rdd.filter(lambda x: x["src"] == ping and x["dest"] == pong).filter(lambda x: x["beginDate"] >= int(utcStart) and x["beginDate"] <= int(utcStart + oneDay))
                 if not hcc_single.isEmpty():
                     hcc_src_t = hcc_single.map(lambda x: x["srcThroughput"]).reduce(hccSrcT)
-                    hcc_dest_t = hcc_single.map(lambda x: x["destThroughput"]).reduce(hccDestT)
+                    #hcc_dest_t = hcc_single.map(lambda x: x["destThroughput"]).reduce(hccDestT)
                     if not hcc_src_t.isEmpty():
                          figsT, axsT = plt.subplots(2, sharex=True)
-                         axsT[0].scatter(srcThrough[:,0],srcThrough[:,1])
-                         axsT[1].scatter(srcThrough[:,0],srcThrough[:,2])
+                         axsT[0].scatter(hcc_src_t[:,0],hcc_src_t[:,1])
+                         axsT[1].scatter(hcc_src_t[:,0],hcc_src_t[:,2])
                          axsT[0].set_ylabel("CpuEff")
                          axsT[1].set_ylabel("EventRate")
                          axsT[1].set_xlabel("Source Throughput")
