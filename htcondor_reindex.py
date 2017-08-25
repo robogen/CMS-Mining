@@ -7,8 +7,8 @@ from elasticsearch import Elasticsearch, RequestsHttpConnection, exceptions as e
 from elasticsearch.client import IndicesClient
 
 es = Elasticsearch([{'host':'10.71.102.210', 'port':9200}], timeout=600)
-#ce = Elasticsearch([{'host':'hcc-metrics.unl.edu', 'port':9200}], timeout=600)
-ce = Elasticsearch([{'host':'cl-analytics.mwt2.org', 'port':9200}], timeout=600)
+ce = Elasticsearch([{'host':'hcc-metrics.unl.edu', 'port':9200}], timeout=600)
+#ce = Elasticsearch([{'host':'cl-analytics.mwt2.org', 'port':9200}], timeout=600)
 
 esCon = IndicesClient(es)
 
@@ -87,7 +87,7 @@ props = {"mappings":
 
 
 for day in range(1,32):
-    indice = 'network_weather-2017.7.' + str(day)
+    indice = 'cms-2017-07-' + str(day)
     print (indice)
     try:
         if esCon.exists(index=indice):

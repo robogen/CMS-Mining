@@ -16,3 +16,5 @@ local/*
 protobuf-2.5.0.zip
 protobuf-2.5.0/
 spark/*
+derby.log
+metastore_db/*
